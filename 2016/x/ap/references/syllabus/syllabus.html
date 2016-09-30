@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
     <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    displayMath: [["\\[", "\\]"]],
+                    ignoreClass: "nostem|nostem|nolatexmath",
+                    inlineMath: [["\\(", "\\)"]]
+                },
+                asciimath2jax: {
+                    delimiters: [["\\$", "\\$"]],
+                    ignoreClass: "nostem|nostem|noasciimath",
+                    processEnvironments: true
+                }
+            });
+        </script>
+        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script>
 
-        <meta content="4851b15326f6b290-09e175a0bcd24dcd-gab2f4fb87b61a9c2-c" name="google-translate-customization"/>
-        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        
-            
-        
-            
-        
-            
-        
-            
-        
+            $(function() {
 
-        <!-- asciidoctor -a coderay-css=class,linkcss,source-highlighter=coderay -b html5 -D . /dev/null -->
+                // add start=0 to ordered lists
+                $('ol').each(function() {
+                    if (!$(this).attr('start')) {
+                        $(this).attr('start', '0');
+                    }
+                });
+
+                // responsive embed
+                // http://getbootstrap.com/components/#responsive-embed
+                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
+                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
+
+            });
+
+        </script>
         <style>
+
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 audio, canvas, video { display: inline-block; }
@@ -370,211 +395,150 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .conum:not([data-value]):empty { display: none; }
 .literalblock > .content > pre, .listingblock > .content > pre { -webkit-border-radius: 0; border-radius: 0; }
 
-        </style>
-        <style>
-            /* Foundation stylesheet for CodeRay (to match GitHub theme) | MIT License | http://foundation.zurb.com */
-table.CodeRay { border-collapse: collapse; padding: 2px; margin-bottom: 0; border: 0; background: transparent; }
-table.CodeRay td { padding: 0 .5em; vertical-align: top; }
-table.CodeRay td.line-numbers { text-align: right; color: #999; border-right: 1px solid #e5e5e5; padding-left: 0; }
-span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inline-block; margin-right: 0.5em; padding-right: 0.5em; }
-.CodeRay td.line-numbers strong, .CodeRay span.line-numbers strong { font-weight: normal; }
-.CodeRay .debug { color: white !important; background: blue !important; }
-.CodeRay .annotation { color: #007; }
-.CodeRay .attribute-name { color: #f08; }
-.CodeRay .attribute-value { color: #700; }
-.CodeRay .binary { color: #509; }
-.CodeRay .comment  { color: #999; font-style: italic; }
-.CodeRay .char { color: #04D; }
-.CodeRay .char .content { color: #04D; }
-.CodeRay .char .delimiter { color: #039; }
-.CodeRay .class { color: #458; }
-.CodeRay .complex { color: #A08; }
-.CodeRay .constant { color: teal; }
-.CodeRay .color { color: #0A0; }
-.CodeRay .class-variable { color: #369; }
-.CodeRay .decorator { color: #B0B; }
-.CodeRay .definition { color: #099; }
-.CodeRay .directive { color: #088; }
-.CodeRay .delimiter { color: black; }
-.CodeRay .doc { color: #970; }
-.CodeRay .doctype { color: #34b; }
-.CodeRay .doc-string { color: #D42; }
-.CodeRay .escape  { color: #666; }
-.CodeRay .entity { color: #800; }
-.CodeRay .error { color: #808; }
-.CodeRay .exception { color: #C00; }
-.CodeRay .filename { color: #099; }
-.CodeRay .function { color: #900; }
-.CodeRay .global-variable { color: teal; }
-.CodeRay .hex { color: #058; }
-.CodeRay .integer  { color: #099; }
-.CodeRay .include { color: #B44; }
-.CodeRay .inline { color: black; }
-.CodeRay .inline .inline { background: #ccc; }
-.CodeRay .inline .inline .inline { background: #bbb; }
-.CodeRay .inline .inline-delimiter { color: #D14; }
-.CodeRay .inline-delimiter { color: #D14; }
-.CodeRay .important { color: #f00; }
-.CodeRay .interpreted { color: #B2B; }
-.CodeRay .instance-variable { color: teal; }
-.CodeRay .label { color: #970; }
-.CodeRay .local-variable { color: #963; }
-.CodeRay .octal { color: #40E; }
-.CodeRay .predefined { color: #369; }
-.CodeRay .preprocessor { color: #579; }
-.CodeRay .pseudo-class { color: #00C; }
-.CodeRay .predefined-type { color: #074; }
-.CodeRay .reserved, .keyword  { color: #000; }
-.CodeRay .key { color: #808; }
-.CodeRay .key .delimiter { color: #606; }
-.CodeRay .key .char { color: #80f; }
-.CodeRay .value { color: #088; }
-.CodeRay .regexp { background-color: #fff0ff; }
-.CodeRay .regexp .content { color: #808; }
-.CodeRay .regexp .delimiter { color: #404; }
-.CodeRay .regexp .modifier { color: #C2C; }
-.CodeRay .regexp .function  { color: #404; font-weight: bold; }
-.CodeRay .string { color: #D20; }
-.CodeRay .string .string { }
-.CodeRay .string .string .string { background-color: #ffd0d0; }
-.CodeRay .string .content { color: #D14; }
-.CodeRay .string .char { color: #D14; }
-.CodeRay .string .delimiter { color: #D14; }
-.CodeRay .shell { color: #D14; }
-.CodeRay .shell .content { }
-.CodeRay .shell .delimiter { color: #D14; }
-.CodeRay .symbol { color: #990073; }
-.CodeRay .symbol .content { color: #A60; }
-.CodeRay .symbol .delimiter { color: #630; }
-.CodeRay .tag, .CodeRay .attribute-name { color: #070; }
-.CodeRay .tag-special { color: #D70; }
-.CodeRay .type { color: #339; }
-.CodeRay .variable  { color: #036; }
-.CodeRay .insert { background: #afa; }
-.CodeRay .delete { background: #faa; }
-.CodeRay .change { color: #aaf; background: #007; }
-.CodeRay .head { color: #f8f; background: #505; }
-.CodeRay .insert .insert { color: #080; }
-.CodeRay .delete .delete { color: #800; }
-.CodeRay .change .change { color: #66f; }
-.CodeRay .head .head { color: #f4f; }
 
         </style>
         <style>
 
-            
-            
+            .listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments, .listingblock .pygments code { background: #ffffff; }
+.listingblock .pygments .tok-c { color: #008000 } /* Comment */
+.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+.listingblock .pygments .tok-k { color: #0000ff } /* Keyword */
+.listingblock .pygments .tok-cm { color: #008000 } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #0000ff } /* Comment.Preproc */
+.listingblock .pygments .tok-c1 { color: #008000 } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #008000 } /* Comment.Special */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gh { font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gp { font-weight: bold } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-kc { color: #0000ff } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #0000ff } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #0000ff } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #0000ff } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #0000ff } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #2b91af } /* Keyword.Type */
+.listingblock .pygments .tok-s { color: #a31515 } /* Literal.String */
+.listingblock .pygments .tok-nc { color: #2b91af } /* Name.Class */
+.listingblock .pygments .tok-ow { color: #0000ff } /* Operator.Word */
+.listingblock .pygments .tok-sb { color: #a31515 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #a31515 } /* Literal.String.Char */
+.listingblock .pygments .tok-sd { color: #a31515 } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #a31515 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #a31515 } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #a31515 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #a31515 } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #a31515 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #a31515 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #a31515 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
-            #footer {
-                background-color: inherit;
-                text-align: right;
-            }
+        </style>
+        <style>
 
-            #google_translate_element {
-                padding-top: 32px;
-            }
-
-            
-            .green {
-                color: #006400;
-            }
-
-            
-            .listingblock > .content pre {
-                overflow: auto;
+            /* don't wrap long code lines */
+            pre code {
                 white-space: pre;
-                word-wrap: inherit;
             }
 
-            pre {
-                margin-bottom: 0.625em;
+            /* match margin-bottom of div.paragraph */
+            div.stemblock div.content {
+                margin-bottom: 1.25em;
             }
 
-            .red {
-                color: #ff0000;
+            /* fill page */
+            table {
+                width: 100%;
             }
 
-            select {
-                width: inherit;
-            }
-
-            
-            .yellow {
-                color: #cc0;
+            /* allow captions to wrap */
+            .tableblock > caption {
+                max-width: inherit;
+                white-space: inherit;
             }
 
         </style>
-
         <title>Syllabus</title>
-
     </head>
-
-    <body class="article toc2 toc-left">
-
-        
-
-            <div id="header">
-
-                
-                    
-                        <h1>Syllabus</h1>
-                    
-                    <span id="author" class="author">
-                        This is CS50. Harvard University.
-                    </span>
-                
-
-                
-                    <div id="toc" class="toc2">
-                        <div id="toctitle">Table of Contents</div>
-                        <ul class="sectlevel1">
+    <body class="toc2 toc-left">
+        <div id="header">
+            <div class="toc2" id="toc">
+                <div id="toctitle">Table of Contents</div>
+                <ul class="sectlevel1">
 <li><a href="#instructor">Instructor</a></li>
 <li><a href="#description">Description</a></li>
 <li><a href="#expectations">Expectations</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#website">Website</a></li>
 <li><a href="#books">Books</a>
 <ul class="sectlevel2">
-<li><a href="#for_those_less_comfortable">For Those Less Comfortable</a></li>
-<li><a href="#for_those_more_comfortable">For Those More Comfortable</a></li>
+<li><a href="#for-those-less-comfortable">For Those Less Comfortable</a></li>
+<li><a href="#for-those-more-comfortable">For Those More Comfortable</a></li>
 </ul>
 </li>
-<li><a href="#lectures">Lectures</a>
+<li><a href="#overview">Overview</a>
 <ul class="sectlevel2">
-<li><a href="#week_0">Week 0</a></li>
-<li><a href="#week_1">Week 1</a></li>
-<li><a href="#week_2">Week 2</a></li>
-<li><a href="#week_3">Week 3</a></li>
-<li><a href="#week_4">Week 4</a></li>
-<li><a href="#week_5">Week 5</a></li>
-<li><a href="#week_6">Week 6</a></li>
-<li><a href="#week_7">Week 7</a></li>
-<li><a href="#week_8">Week 8</a></li>
-<li><a href="#week_9">Week 9</a></li>
-<li><a href="#week_10">Week 10</a></li>
-<li><a href="#week_11">Week 11</a></li>
-<li><a href="#week_12">Week 12</a></li>
+<li><a href="#chapter-0-computers-and-computing">Chapter 0 - Computers and Computing</a></li>
+<li><a href="#chapter-1-building-blocks-of-programming">Chapter 1 - Building Blocks of Programming</a></li>
+<li><a href="#chapter-2-putting-the-blocks-together">Chapter 2 - Putting the Blocks Together</a></li>
+<li><a href="#chapter-3-thinking-computationally">Chapter 3 - Thinking Computationally</a></li>
+<li><a href="#chapter-4-design-elegance-and-efficiency">Chapter 4 - Design, Elegance, and Efficiency</a></li>
+<li><a href="#chapter-5-networking-and-the-internet">Chapter 5 - Networking and the Internet</a></li>
+<li><a href="#chapter-6-problem-solving-in-an-interconnected-world">Chapter 6 - Problem Solving in an Interconnected World</a></li>
+<li><a href="#optional-chapters">Optional Chapters</a></li>
 </ul>
 </li>
-<li><a href="#sections">Sections</a></li>
-<li><a href="#postmortems">Postmortems</a></li>
-<li><a href="#problem_sets">Problem Sets</a></li>
-<li><a href="#final_project">Final Project</a></li>
-<li><a href="#academic_honesty">Academic Honesty</a>
+<li><a href="#problem-sets">Problem Sets</a></li>
+<li><a href="#explore-and-create-task">Explore and Create Task</a></li>
+<li><a href="#academic-honesty">Academic Honesty</a>
 <ul class="sectlevel2">
 <li><a href="#reasonable">Reasonable</a></li>
-<li><a href="#not_reasonable">Not Reasonable</a></li>
+<li><a href="#not-reasonable">Not Reasonable</a></li>
 </ul>
 </li>
 </ul>
-                    </div>
-                
-
             </div>
-
-        
-
+        </div>
         <div id="content">
-            <div id="preamble">
+            <h1>Syllabus</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#instructor">Instructor</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#expectations">Expectations</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#website">Website</a></li>
+<li><a href="#books">Books</a>
+<ul class="sectlevel2">
+<li><a href="#for-those-less-comfortable">For Those Less Comfortable</a></li>
+<li><a href="#for-those-more-comfortable">For Those More Comfortable</a></li>
+</ul>
+</li>
+<li><a href="#overview">Overview</a>
+<ul class="sectlevel2">
+<li><a href="#chapter-0-computers-and-computing">Chapter 0 - Computers and Computing</a></li>
+<li><a href="#chapter-1-building-blocks-of-programming">Chapter 1 - Building Blocks of Programming</a></li>
+<li><a href="#chapter-2-putting-the-blocks-together">Chapter 2 - Putting the Blocks Together</a></li>
+<li><a href="#chapter-3-thinking-computationally">Chapter 3 - Thinking Computationally</a></li>
+<li><a href="#chapter-4-design-elegance-and-efficiency">Chapter 4 - Design, Elegance, and Efficiency</a></li>
+<li><a href="#chapter-5-networking-and-the-internet">Chapter 5 - Networking and the Internet</a></li>
+<li><a href="#chapter-6-problem-solving-in-an-interconnected-world">Chapter 6 - Problem Solving in an Interconnected World</a></li>
+<li><a href="#optional-chapters">Optional Chapters</a></li>
+</ul>
+</li>
+<li><a href="#problem-sets">Problem Sets</a></li>
+<li><a href="#explore-and-create-task">Explore and Create Task</a></li>
+<li><a href="#academic-honesty">Academic Honesty</a>
+<ul class="sectlevel2">
+<li><a href="#reasonable">Reasonable</a></li>
+<li><a href="#not-reasonable">Not Reasonable</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>version 0</p>
@@ -587,7 +551,7 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <div class="paragraph">
 <p>David J. Malan<br>
 <a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
-<a href="http://cs.harvard.edu/malan">http://cs.harvard.edu/malan</a></p>
+<a href="http://cs.harvard.edu/malan" class="bare">http://cs.harvard.edu/malan</a></p>
 </div>
 </div>
 </div>
@@ -595,7 +559,7 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <h2 id="description"><a class="link" href="#description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Introduction to the intellectual enterprises of computer science and the art of programming. This course teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. Languages include C, PHP, and JavaScript plus SQL, CSS, and HTML. Problem sets inspired by real-world domains of biology, cryptography, finance, forensics, and gaming. Designed for concentrators and non-concentrators alike, with or without prior programming experience.</p>
+<p>CS50 is Harvard University’s introduction to the intellectual enterprises of computer science and the art of programming for students with a diversity of technological background and experience. CS50 for AP Computer Science Principles is an adaptation of CS50 specifically tailored to align with the AP Computer Science Principles curriculum framework. The course’s assignments, materials, and resources are all identical to the version of the course taught at the college-level, albeit adapted to suit a secondary school audience.Among this course’s objectives is to supply you with a comprehensive introduction to the fundamentals of the discipline of computer science. We will do so using programming in several different languages as a vehicle to introduce these fundamentals, including such topics as algorithms, abstraction, data, global impact, and internet technologies. Though the course is programming-heavy, it should be stressed that this is not a “programming course”; rather, this course should be considered one of problem-solving, creativity, and exploration. By year’s end, you will have a richer understanding of the key principles of the discipline of computer science. You will be able to speak intelligently about how computers work and how they enable us to become better problem-solvers, and will hopefully be able to communicate that knowledge to others. Whether you elect to take no other computer science courses in your lifetime or consider this class the first step in a longer course of study, it is our sincere hope that you feel more comfortable with—and indeed sometimes skeptical of—the technologies that surround us each day.</p>
 </div>
 </div>
 </div>
@@ -603,7 +567,15 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <h2 id="expectations"><a class="link" href="#expectations">Expectations</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You are expected to submit nine problem sets and a final project.</p>
+<p>You are expected to submit all problems and coordinate with your high school to complete the <a href="http://apcentral.collegeboard.com/apc/public/exam/exam_information/231726.html#anchor2">create and explore tasks</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites"><a class="link" href="#prerequisites">Prerequisites</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The only background required for CS50 for AP Computer Science Principles is completion of Algebra I or its equivalent.</p>
 </div>
 </div>
 </div>
@@ -611,7 +583,7 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <h2 id="website"><a class="link" href="#website">Website</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This course lives at <a href="http://cs50.edx.org/">http://cs50.edx.org/</a>.</p>
+<p>This course lives at <a href="http://ap.cs50.net/" class="bare">http://ap.cs50.net/</a>.</p>
 </div>
 <div class="paragraph">
 <p>Visit the course&#8217;s website to watch videos, to get help, to download handouts and software, and to follow links to other resources.</p>
@@ -625,7 +597,7 @@ span.line-numbers { border-right: 1px solid #E5E5E5; color: #999; display: inlin
 <p>No books are required for this course. However, you may want to supplement your preparation for or review of some lectures with self-assigned readings relevant to those lectures' content from either of the books below. The first is intended for those inexperienced in (or less comfortable with the idea of) programming. The second is intended for those experienced in (or more comfortable with the idea of) programming.</p>
 </div>
 <div class="sect2">
-<h3 id="for_those_less_comfortable"><a class="link" href="#for_those_less_comfortable">For Those Less Comfortable</a></h3>
+<h3 id="for-those-less-comfortable"><a class="link" href="#for-those-less-comfortable">For Those Less Comfortable</a></h3>
 <div class="paragraph">
 <p><em>C Programming Absolute Beginner&#8217;s Guide</em>, Third Edition<br>
 Greg Perry, Dean Miller<br>
@@ -634,7 +606,7 @@ ISBN 0-789-75198-4</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="for_those_more_comfortable"><a class="link" href="#for_those_more_comfortable">For Those More Comfortable</a></h3>
+<h3 id="for-those-more-comfortable"><a class="link" href="#for-those-more-comfortable">For Those More Comfortable</a></h3>
 <div class="paragraph">
 <p><em>Programming in C</em>, Fourth Edition<br>
 Stephen G. Kochan<br>
@@ -663,168 +635,75 @@ ISBN 0-321-84268-5</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="lectures"><a class="link" href="#lectures">Lectures</a></h2>
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A schedule of lectures, subject to change, appears below.</p>
+<p>Consistent with the AP Computer Science Principles curriculum framework, the course’s material is organized around seven so-called “big ideas” as well as six computational thinking practices. The seven big ideas are:1.	Creativity2.	Abstraction3.	Data and Information4.	Algorithms5.	Programming6.	The Internet7.	Global ImpactAnd the six computational thinking practices are:P1.	Connecting ComputingP2.	Creating Computational ArtifactsP3.	AbstractingP4.	Analyzing Problems and ArtifactsP5.	Communicating (both orally and in writing)P6.	Collaborating</p>
 </div>
 <div class="sect2">
-<h3 id="week_0"><a class="link" href="#week_0">Week 0</a></h3>
+<h3 id="chapter-0-computers-and-computing"><a class="link" href="#chapter-0-computers-and-computing">Chapter 0 - Computers and Computing</a></h3>
 <div class="paragraph">
-<p>Binary. ASCII. Algorithms. Pseudocode. Source code. Compiler. Object code. Scratch. Statements. Boolean expressions. Conditions. Loops. Variables. Functions. Arrays. Threads. Events.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="week_1"><a class="link" href="#week_1">Week 1</a></h3>
-<div class="paragraph">
-<p>Linux. C. Compiling. Libraries. Types. Standard output.</p>
+<p>Computers and Computing. How Computers Work. Bits and Bytes. Hardware. Memory. Binary. ASCII. Algorithms.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_2"><a class="link" href="#week_2">Week 2</a></h3>
+<h3 id="chapter-1-building-blocks-of-programming"><a class="link" href="#chapter-1-building-blocks-of-programming">Chapter 1 - Building Blocks of Programming</a></h3>
 <div class="paragraph">
-<p>Casting. Imprecision. Switches. Scope. Strings. Arrays. Cryptography.</p>
+<p>Pseudocode. Scratch. Syntax. Variables. Data Types. Operators. Boolean Expressions and Conditionals. Loops.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_3"><a class="link" href="#week_3">Week 3</a></h3>
+<h3 id="chapter-2-putting-the-blocks-together"><a class="link" href="#chapter-2-putting-the-blocks-together">Chapter 2 - Putting the Blocks Together</a></h3>
 <div class="paragraph">
-<p>Command-line arguments. Searching. Sorting. Bubble sort. Selection sort. Insertion sort. O. Ω .Θ. Recursion. Merge Sort.</p>
+<p>Compiling. Functions and Returning. Arrays and Strings. Command-Line Interaction. Exit Codes. Libraries. Typecasting. Bugs and Debugging.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_4"><a class="link" href="#week_4">Week 4</a></h3>
+<h3 id="chapter-3-thinking-computationally"><a class="link" href="#chapter-3-thinking-computationally">Chapter 3 - Thinking Computationally</a></h3>
 <div class="paragraph">
-<p>Stack. Debugging. File I/O. Hexadecimal. Strings. Pointers. Dynamic memory allocation.</p>
+<p>Linear Search. Bubble sort. Selection sort. Insertion sort. Binary Search. Time Complexity. Unsolvable Problems. Simulation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_5"><a class="link" href="#week_5">Week 5</a></h3>
+<h3 id="chapter-4-design-elegance-and-efficiency"><a class="link" href="#chapter-4-design-elegance-and-efficiency">Chapter 4 - Design, Elegance, and Efficiency</a></h3>
 <div class="paragraph">
-<p>Heap. Buffer overflow. Linked lists. Hash tables. Tries. Trees. Stacks. Queues.</p>
+<p>Principles of Good Design. Ncurses. Structures and Encapsulation. Recursion. Merge Sort. Hexadecimal. File I/O. Images. Version Control and Collaboration.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_6"><a class="link" href="#week_6">Week 6</a></h3>
+<h3 id="chapter-5-networking-and-the-internet"><a class="link" href="#chapter-5-networking-and-the-internet">Chapter 5 - Networking and the Internet</a></h3>
 <div class="paragraph">
-<p>TCP/IP. HTTP.</p>
+<p>Internet Basics. IP Addresses. DNS and DHCP. Routers. TCP and IP. HTTP. Trust Models. Cybersecurity. HTML. CSS.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_7"><a class="link" href="#week_7">Week 7</a></h3>
+<h3 id="chapter-6-problem-solving-in-an-interconnected-world"><a class="link" href="#chapter-6-problem-solving-in-an-interconnected-world">Chapter 6 - Problem Solving in an Interconnected World</a></h3>
 <div class="paragraph">
-<p>HTML. CSS. PHP.</p>
+<p>PHP. PHP for Web Programming. SQL. MVC. JavaScript. Ajax. Artificial Intelligence. Virtual and Augmented Reality.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="week_8"><a class="link" href="#week_8">Week 8</a></h3>
+<h3 id="optional-chapters"><a class="link" href="#optional-chapters">Optional Chapters</a></h3>
 <div class="paragraph">
-<p>MVC. SQL.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="week_9"><a class="link" href="#week_9">Week 9</a></h3>
-<div class="paragraph">
-<p>JavaScript. Ajax.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="week_10"><a class="link" href="#week_10">Week 10</a></h3>
-<div class="paragraph">
-<p>Security. Artificial intelligence.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="week_11"><a class="link" href="#week_11">Week 11</a></h3>
-<div class="paragraph">
-<p>Artificial intelligence, continued.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="week_12"><a class="link" href="#week_12">Week 12</a></h3>
-<div class="paragraph">
-<p>Exciting conclusion.</p>
+<p>Chapter A and B are optional and cover some of the more complex topics. Chapter A covers different ways to manage data and Chapter B is a toolbox of sorts for those interested in the development aspect. We recommend completing these chapters between Chapter 4 and 5.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="sections"><a class="link" href="#sections">Sections</a></h2>
+<h2 id="problem-sets"><a class="link" href="#problem-sets">Problem Sets</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Lectures are supplemented by weekly, 90-minute sections led by the teaching fellows. Sections provide you with opportunities to explore the course&#8217;s material in a more intimate environment.</p>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="postmortems"><a class="link" href="#postmortems">Postmortems</a></h2>
+<h2 id="explore-and-create-task"><a class="link" href="#explore-and-create-task">Explore and Create Task</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Available after problem sets' deadlines are "postmortems," videos via which the course&#8217;s staff explore actual solutions to problem sets. You are expected to watch postmortems for insights into how else you could have (or should have!) implemented your own solutions.</p>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="problem_sets"><a class="link" href="#problem_sets">Problem Sets</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Nine problem sets are assigned during the semester. Each is due by 31 December 2016.</p>
-</div>
-<div class="paragraph">
-<p>In order to accommodate students with different backgrounds, some problem sets are released in two editions: a standard edition intended for most students and a "Hacker Edition" intended for some students. Both editions essentially cover the same material. But the Hacker Edition typically presents that material from a more technical angle and poses more sophisticated questions. <strong>To receive a Verified Certificate from <a href="https://www.edx.org/school/harvardx">HarvardX</a>, you must submit the standard editions of problem sets. You are welcome to do the Hacker Editions for your own edification, but it is not possible to submit Hacker Editions for credit (or extra credit).</strong></p>
-</div>
-<div class="paragraph">
-<p>A schedule of problem sets appears below.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Problem Set 0: Scratch</p>
-</li>
-<li>
-<p>Problem Set 1: C</p>
-</li>
-<li>
-<p>Problem Set 2: Crypto</p>
-</li>
-<li>
-<p>Problem Set 3: Game of Fifteen</p>
-</li>
-<li>
-<p>Problem Set 4: Forensics</p>
-</li>
-<li>
-<p>Problem Set 5: Mispellings</p>
-</li>
-<li>
-<p>Problem Set 6: Web Server</p>
-</li>
-<li>
-<p>Problem Set 7: C$50 Finance</p>
-</li>
-<li>
-<p>Problem Set 8: Mashup</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="final_project"><a class="link" href="#final_project">Final Project</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The climax of this course is its final project. The final project is your opportunity to take your newfound savvy with programming out for a spin and develop your very own piece of software. So long as your project draws upon this course&#8217;s lessons, the nature of your project is entirely up to you. You may implement your project in any language(s), and you are welcome to utilize infrastructure other than the CS50 Appliance. All that we ask is that you build something of interest to you, that you solve an actual problem, or that you change the world. Strive to create something that outlives this course.</p>
-</div>
-<div class="paragraph">
-<p>Inasmuch as software development is rarely a one-person effort, you are allowed an opportunity to collaborate with one or two classmates for this final project. Needless to say, it is expected that every student in any such group contribute equally to the design and implementation of that group&#8217;s project. Moreover, it is expected that the scope of a two- or three-person group&#8217;s project be, respectively, twice or thrice that of a typical one-person project. A one-person project, mind you, should entail more time and effort than is required by each of the course&#8217;s problem sets. Although no more than three students may design and implement a given project, you are welcome to solicit advice from others, so long as you respect the course&#8217;s policy on academic honesty.</p>
-</div>
-<div class="paragraph">
-<p>See <a href="http://cdn.cs50.net/2016/x/project/project.html">http://cdn.cs50.net/2016/x/project/project.html</a> for details.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="academic_honesty"><a class="link" href="#academic_honesty">Academic Honesty</a></h2>
+<h2 id="academic-honesty"><a class="link" href="#academic-honesty">Academic Honesty</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This course&#8217;s philosophy on academic honesty is best stated as "be reasonable." The course recognizes that interactions with classmates and others can facilitate mastery of the course&#8217;s material. However, there remains a line between enlisting the help of another and submitting the work of another. This policy characterizes both sides of that line.</p>
@@ -873,7 +752,7 @@ ISBN 0-321-84268-5</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="not_reasonable"><a class="link" href="#not_reasonable">Not Reasonable</a></h3>
+<h3 id="not-reasonable"><a class="link" href="#not-reasonable">Not Reasonable</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -930,26 +809,5 @@ ISBN 0-321-84268-5</p>
 </div>
 </div>
         </div>
-        
-        
-
-        <div id="footer">
-            Copyright &#169; David J. Malan
-        </div>
-
-        <script>
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-8162502-43']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-
-        </script>
-
     </body>
 </html>
