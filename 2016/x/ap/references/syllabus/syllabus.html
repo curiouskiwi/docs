@@ -4,43 +4,6 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
-        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    displayMath: [["\\[", "\\]"]],
-                    ignoreClass: "nostem|nostem|nolatexmath",
-                    inlineMath: [["\\(", "\\)"]]
-                },
-                asciimath2jax: {
-                    delimiters: [["\\$", "\\$"]],
-                    ignoreClass: "nostem|nostem|noasciimath",
-                    processEnvironments: true
-                }
-            });
-        </script>
-        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <script>
-
-            $(function() {
-
-                // add start=0 to ordered lists
-                $('ol').each(function() {
-                    if (!$(this).attr('start')) {
-                        $(this).attr('start', '0');
-                    }
-                });
-
-                // responsive embed
-                // http://getbootstrap.com/components/#responsive-embed
-                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
-                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
-
-            });
-
-        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -435,30 +398,6 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <style>
-
-            /* don't wrap long code lines */
-            pre code {
-                white-space: pre;
-            }
-
-            /* match margin-bottom of div.paragraph */
-            div.stemblock div.content {
-                margin-bottom: 1.25em;
-            }
-
-            /* fill page */
-            table {
-                width: 100%;
-            }
-
-            /* allow captions to wrap */
-            .tableblock > caption {
-                max-width: inherit;
-                white-space: inherit;
-            }
-
-        </style>
         <title>Syllabus</title>
     </head>
     <body class="toc2 toc-left">
@@ -501,51 +440,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
             </div>
         </div>
         <div id="content">
-            <h1>Syllabus</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#instructor">Instructor</a></li>
-<li><a href="#description">Description</a></li>
-<li><a href="#expectations">Expectations</a></li>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#website">Website</a></li>
-<li><a href="#books">Books</a>
-<ul class="sectlevel2">
-<li><a href="#for-those-less-comfortable">For Those Less Comfortable</a></li>
-<li><a href="#for-those-more-comfortable">For Those More Comfortable</a></li>
-</ul>
-</li>
-<li><a href="#overview">Overview</a>
-<ul class="sectlevel2">
-<li><a href="#chapter-0-computers-and-computing">Chapter 0 - Computers and Computing</a></li>
-<li><a href="#chapter-1-building-blocks-of-programming">Chapter 1 - Building Blocks of Programming</a></li>
-<li><a href="#chapter-2-putting-the-blocks-together">Chapter 2 - Putting the Blocks Together</a></li>
-<li><a href="#chapter-3-thinking-computationally">Chapter 3 - Thinking Computationally</a></li>
-<li><a href="#chapter-4-design-elegance-and-efficiency">Chapter 4 - Design, Elegance, and Efficiency</a></li>
-<li><a href="#chapter-5-networking-and-the-internet">Chapter 5 - Networking and the Internet</a></li>
-<li><a href="#chapter-6-problem-solving-in-an-interconnected-world">Chapter 6 - Problem Solving in an Interconnected World</a></li>
-<li><a href="#optional-chapters">Optional Chapters</a></li>
-</ul>
-</li>
-<li><a href="#problem-sets">Problem Sets</a></li>
-<li><a href="#explore-and-create-task">Explore and Create Task</a></li>
-<li><a href="#academic-honesty">Academic Honesty</a>
-<ul class="sectlevel2">
-<li><a href="#reasonable">Reasonable</a></li>
-<li><a href="#not-reasonable">Not Reasonable</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>version 0</p>
-</div>
-</div>
-</div>
-<div class="sect1">
+            <div class="sect1">
 <h2 id="instructor"><a class="link" href="#instructor">Instructor</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -559,7 +454,13 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="description"><a class="link" href="#description">Description</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CS50 is Harvard University’s introduction to the intellectual enterprises of computer science and the art of programming for students with a diversity of technological background and experience. CS50 for AP Computer Science Principles is an adaptation of CS50 specifically tailored to align with the AP Computer Science Principles curriculum framework. The course’s assignments, materials, and resources are all identical to the version of the course taught at the college-level, albeit adapted to suit a secondary school audience.Among this course’s objectives is to supply you with a comprehensive introduction to the fundamentals of the discipline of computer science. We will do so using programming in several different languages as a vehicle to introduce these fundamentals, including such topics as algorithms, abstraction, data, global impact, and internet technologies. Though the course is programming-heavy, it should be stressed that this is not a “programming course”; rather, this course should be considered one of problem-solving, creativity, and exploration. By year’s end, you will have a richer understanding of the key principles of the discipline of computer science. You will be able to speak intelligently about how computers work and how they enable us to become better problem-solvers, and will hopefully be able to communicate that knowledge to others. Whether you elect to take no other computer science courses in your lifetime or consider this class the first step in a longer course of study, it is our sincere hope that you feel more comfortable with—and indeed sometimes skeptical of—the technologies that surround us each day.</p>
+<p>CS50 is Harvard University’s introduction to the intellectual enterprises of computer science and the art of programming for students with a diversity of technological background and experience. CS50 for AP Computer Science Principles is an adaptation of CS50 specifically tailored to align with the AP Computer Science Principles curriculum framework. The course’s assignments, materials, and resources are all identical to the version of the course taught at the college-level, albeit adapted to suit a secondary school audience.</p>
+</div>
+<div class="paragraph">
+<p>Among this course’s objectives is to supply you with a comprehensive introduction to the fundamentals of the discipline of computer science. We will do so using programming in several different languages as a vehicle to introduce these fundamentals, including such topics as algorithms, abstraction, data, global impact, and internet technologies. Though the course is programming-heavy, it should be stressed that this is not a “programming course”; rather, this course should be considered one of problem-solving, creativity, and exploration. By year’s end, you will have a richer understanding of the key principles of the discipline of computer science. You will be able to speak intelligently about how computers work and how they enable us to become better problem-solvers, and will hopefully be able to communicate that knowledge to others.</p>
+</div>
+<div class="paragraph">
+<p>Whether you elect to take no other computer science courses in your lifetime or consider this class the first step in a longer course of study, it is our sincere hope that you feel more comfortable with—and indeed sometimes skeptical of—the technologies that surround us each day.</p>
 </div>
 </div>
 </div>
@@ -638,7 +539,43 @@ ISBN 0-321-84268-5</p>
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Consistent with the AP Computer Science Principles curriculum framework, the course’s material is organized around seven so-called “big ideas” as well as six computational thinking practices. The seven big ideas are:1.	Creativity2.	Abstraction3.	Data and Information4.	Algorithms5.	Programming6.	The Internet7.	Global ImpactAnd the six computational thinking practices are:P1.	Connecting ComputingP2.	Creating Computational ArtifactsP3.	AbstractingP4.	Analyzing Problems and ArtifactsP5.	Communicating (both orally and in writing)P6.	Collaborating</p>
+<p>Consistent with the AP Computer Science Principles curriculum framework, the course’s material is organized around seven so-called “big ideas” as well as six computational thinking practices. The seven big ideas are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creativity</p>
+</li>
+<li>
+<p>Abstraction</p>
+</li>
+<li>
+<p>Data and Information</p>
+</li>
+<li>
+<p>Algorithms</p>
+</li>
+<li>
+<p>Programming</p>
+</li>
+<li>
+<p>The Internet</p>
+</li>
+<li>
+<p>Global Impact</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>And the six computational thinking practices are:</p>
+</div>
+<div class="paragraph">
+<p>P1.	Connecting Computing
+P2.	Creating Computational Artifacts
+P3.	Abstracting
+P4.	Analyzing Problems and Artifacts
+P5.	Communicating (both orally and in writing)
+P6.	Collaborating</p>
 </div>
 <div class="sect2">
 <h3 id="chapter-0-computers-and-computing"><a class="link" href="#chapter-0-computers-and-computing">Chapter 0 - Computers and Computing</a></h3>
