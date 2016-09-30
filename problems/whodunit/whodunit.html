@@ -729,6 +729,33 @@ Okay, stop! Don&#8217;t proceed further until you&#8217;re sure you understand w
 <div class="paragraph">
 <p>As this figure suggests, order does matter when it comes to <code>struct</code>s' members. Byte 57 is <code>rgbtBlue</code> (and not, say, <code>rgbtRed</code>), because <code>rgbtBlue</code> is defined first in <code>RGBTRIPLE</code>. Our use, incidentally, of the <code><em>attribute</em></code> called <code><em>packed</em></code> ensures that <code>clang</code> does not try to "word-align" members (whereby the address of each member&#8217;s first byte is a multiple of 4), lest we end up with "gaps" in our <code>struct</code>s that don&#8217;t actually exist on disk. No need to worry about that particular implementation detail, though.</p>
 </div>
+<div class="paragraph">
+<p>Lastly, you may have noticed in <code>copy.c</code> that, whenever we output an error message, we use <code>fprintf</code> (the first argument to which is <code>stderr</code>) instead of the more-familiar <code>printf</code>. It turns out that <code>printf</code> prints messages to "standard output" (aka <code>stdout</code>), the destination of which is typically a user&#8217;s terminal window. But "standard error (aka <code>stderr</code>) also exists, the destination of which is also typically (and perhaps confusingly!) a user&#8217;s terminal window. But via <code>stdout</code> and <code>stderr</code> can a programmer keep error messages separated from non-error messages so that, if the user wants, one or the other (or both) can be "redirected" (with <code>&gt;</code>) or "piped" (with <code>|</code>) somewhere other than the user&#8217;s terminal window.</p>
+</div>
+<div class="paragraph">
+<p>In other words,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;hello, world</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>is equivalent to</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">fprintf</span><span class="tok-p">(</span><span class="tok-n">stdout</span><span class="tok-p">,</span> <span class="tok-s">&quot;hello, world</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>but the former is more succinct. In order to print an error message to <code>stderr</code>, though, do use <code>fprintf</code> per the below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">fprintf</span><span class="tok-p">(</span><span class="tok-n">stderr</span><span class="tok-p">,</span> <span class="tok-s">&quot;Usage: ./whodunit infile outfile</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -913,6 +940,16 @@ $ <span class="underline">echo $?</span>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
+<li>
+<p>2016-09-30</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added explanation of <code>fprintf</code>.</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>2016-09-27</p>
 <div class="ulist">
