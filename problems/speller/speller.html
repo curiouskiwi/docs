@@ -917,11 +917,11 @@ TIME IN TOTAL:</code></pre>
 <h2 id="hints"><a class="link" href="#hints">Hints</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Be sure to <code>free</code> in <code>unload</code> any memory that you allocated in <code>load</code>! Recall that <code>valgrind</code> is your newest best friend. Know that <code>valgrind</code> watches for leaks while your program is actually running, so be sure to provide command-line arguments if you want <code>valgrind</code> to analyze <code>speller</code> while you use a particular <code>dictionary</code> and/or text, as in the below.</p>
+<p>Be sure to <code>free</code> in <code>unload</code> any memory that you allocated in <code>load</code>! Recall that <code>valgrind</code> is your newest best friend. Know that <code>valgrind</code> watches for leaks while your program is actually running, so be sure to provide command-line arguments if you want <code>valgrind</code> to analyze <code>speller</code> while you use a particular <code>dictionary</code> and/or text, as in the below. Best to use a small text, though, else <code>valgrind</code> could take quite a while to run.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>valgrind --leak-check=full ./speller texts/austinpowers.txt</code></pre>
+<pre class="pygments highlight"><code>valgrind --leak-check=full ./speller texts/ralph.txt</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -932,7 +932,7 @@ TIME IN TOTAL:</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>help50 valgrind --leak-check=full ./speller texts/austinpowers.txt</code></pre>
+<pre class="pygments highlight"><code>help50 valgrind --leak-check=full ./speller texts/ralph.txt</code></pre>
 </div>
 </div>
 </div>
