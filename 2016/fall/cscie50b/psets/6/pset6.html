@@ -448,11 +448,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#indexes-2">indexes</a></li>
 </ul>
 </li>
-<li><a href="#how-to-submit">How to Submit</a>
-<ul class="sectlevel2">
-<li><a href="#step-1-of-2">Step 1 of 2</a></li>
-</ul>
-</li>
+<li><a href="#how-to-submit">How to Submit</a></li>
 </ul>
             </div>
         </div>
@@ -710,7 +706,7 @@ sudo chmod a+x ~cs50/pset6/server</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Toward the top-right corner of CS50 IDE, meanwhile, you should see your workspace&#8217;s "fully qualified domain name," an address of the form <code>ide50-username.cs50.io</code>, where <code>username</code> is your own username. Visit <code>https://ide50-username.cs50.io/</code> (where <code>username</code> is your own username) in another tab. You should see a "directory listing" (i.e., an unordered list) of everything that&#8217;s in <code>public</code>, yes? And if you click <strong>cat.jpg</strong>, you should see a happy cat?? If not, do just reach out to classmates or staff for a hand!</p>
+<p>If you click on the <strong>Share</strong> button toward the top-right corner of CS50 IDE, meanwhile, you should see your workspace&#8217;s "fully qualified domain name," an address of the form <code>ide50-username.cs50.io</code>, where <code>username</code> is your own username, listed next to <strong>Application</strong> in the menu that pops up. Visit <code>https://ide50-username.cs50.io/</code> (where <code>username</code> is your own username) in another tab. You should see a "directory listing" (i.e., an unordered list) of everything that&#8217;s in <code>public</code>, yes? And if you click <strong>cat.jpg</strong>, you should see a happy cat?? If not, do just reach out to classmates or staff for a hand!</p>
 </div>
 <div class="paragraph">
 <p>Incidentally, even though <code>server</code> is running on port 8080, CS50 IDE is "port-forwarding" port 80 (which, recall, is browsers' default) to 8080 for you. That&#8217;s why you don&#8217;t need to specify <strong>8080</strong> in the URL you just visited.</p>
@@ -1238,14 +1234,33 @@ Content-type: text/html
 <div class="sect1">
 <h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="step-1-of-2"><a class="link" href="#step-1-of-2">Step 1 of 2</a></h3>
-<div class="paragraph">
-<p>Refresh this page on or after Fri 9/30!</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open up CS50 IDE.</p>
+</li>
+<li>
+<p>Navigate to your <code>~/workspace</code> directory, ensuring that <code>pset6</code> (and all of its contents) exists therein.</p>
+</li>
+<li>
+<p>In the file browser at left, right-click (or Ctrl-click, with a Mac) on <code>first_last.zip</code> if it already exists (from your Problem Set 5 submission), and delete it. We&#8217;ll be creating a new file with the same name for Problem Set 6&#8217;s submission in the next step.</p>
+</li>
+<li>
+<p>At the terminal, type <code>zip -r first_last.zip pset6</code>, replacing your own first and last name with <code>first</code> and <code>last</code> respectively. (So, for instance, <code>john_harvard.zip</code>)</p>
+</li>
+<li>
+<p>This should create a new file called <code>first_last.zip</code> in your <code>~/workspace</code> directory.</p>
+</li>
+<li>
+<p>In the file browser at left, right-click (or Ctrl-click, with a Mac) on the <code>first_last.zip</code> file, choosing <strong>Download</strong> from the context menu. This will save a local copy of <code>first_last.zip</code> on your machine.</p>
+</li>
+<li>
+<p>Head to <a href="https://www.dropbox.com/request/5FoxEKeTKECrTGHyU6He">this link</a> to upload your ZIP file containing your <code>pset6</code> submission!</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>This was Problem Set 6.</p>
-</div>
 </div>
 </div>
 </div>
