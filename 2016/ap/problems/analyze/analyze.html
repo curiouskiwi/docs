@@ -398,7 +398,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <title>RNG</title>
+        <title>Analyze This</title>
     </head>
     <body class="toc2 toc-left">
         <div id="header">
@@ -406,7 +406,6 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
                 <div id="toctitle">Table of Contents</div>
                 <ul class="sectlevel1">
 <li><a href="#objectives">Objectives</a></li>
-<li><a href="#recommended-reading">Recommended Reading</a></li>
 <li><a href="#academic-honesty">Academic Honesty</a>
 <ul class="sectlevel2">
 <li><a href="#reasonable">Reasonable</a></li>
@@ -414,17 +413,12 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </ul>
 </li>
 <li><a href="#assessment">Assessment</a></li>
-<li><a href="#getting-ready">Getting Ready</a></li>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#planting-a-seed">Planting a Seed</a></li>
-<li><a href="#the-greatest-generation">The Greatest Generation</a></li>
-<li><a href="#hmm-now-what">Hmm&#8230;&#8203; Now What?</a></li>
-<li><a href="#how-to-submit">How to Submit</a></li>
+<li><a href="#so-meta">So Meta</a></li>
 </ul>
             </div>
         </div>
         <div id="content">
-            <h1>Problem: RNG</h1>
+            <h1>Writing Problem: Analyze This</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -438,31 +432,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="ulist">
 <ul>
 <li>
-<p>Learn more about pseudorandom numbers.</p>
-</li>
-<li>
-<p>Begin to introduce you to larger programs and programs with multiple source files.</p>
-</li>
-<li>
-<p>Learn about rudimentary file input and output via redirection.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="recommended-reading"><a class="link" href="#recommended-reading">Recommended Reading</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Page 17 of <a href="http://www.howstuffworks.com/c.htm" class="bare">http://www.howstuffworks.com/c.htm</a>.</p>
-</li>
-<li>
-<p>Chapters 20 and 23 of <em>Absolute Beginner&#8217;s Guide to C</em>.</p>
-</li>
-<li>
-<p>Chapters 13, 15, and 18 of <em>Programming in C</em>.</p>
+<p>Reflect on your experience</p>
 </li>
 </ul>
 </div>
@@ -575,25 +545,21 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="assessment"><a class="link" href="#assessment">Assessment</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Your work on this problem set will be evaluated along four axes primarily.</p>
+<p>Your work on this writing problem will be evaluated along three axes primarily.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Scope</dt>
 <dd>
-<p>To what extent does your code implement the features required by our specification?</p>
+<p>To what extent does your submission align with the requirements of the specification?</p>
 </dd>
 <dt class="hdlist1">Correctness</dt>
 <dd>
-<p>To what extent is your code consistent with our specifications and free of bugs?</p>
-</dd>
-<dt class="hdlist1">Design</dt>
-<dd>
-<p>To what extent is your code written well (i.e., clearly, efficiently, elegantly, and/or logically)?</p>
+<p>To what extent is your submission correct and free of factual errors?</p>
 </dd>
 <dt class="hdlist1">Style</dt>
 <dd>
-<p>To what extent is your code readable (i.e., commented and indented with variables aptly named)?</p>
+<p>To what extent is your submission readable (i.e., thoughtfully organized, coherent, words properly spelled)?</p>
 </dd>
 </dl>
 </div>
@@ -603,206 +569,58 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 <div class="sect1">
-<h2 id="getting-ready"><a class="link" href="#getting-ready">Getting Ready</a></h2>
+<h2 id="so-meta"><a class="link" href="#so-meta">So Meta</a></h2>
 <div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>First, say hello to Tommy, who&#8217;s here to teach you a bit about some basic file input and output techniques using the command line.</p>
+<p>The acquisition of expertise (a) takes a long time to develop, (b) takes intense, focused effort on the part of the individual, and (c) resists direct tuition. Ten years of exposure to a field appears to be a necessary, but not sufficient condition for the development of expertise. The number of years of experience is a weak predictor of performance. Practice alone is sufficient to develop a certain level of competence, but, for most people, will not result in true excellence. Deliberate practice, defined as practice in order to improve, has been suggested as the key to increasing competence. In many studies, the critical variable was not the amount of time engaged in the activity, rather it was practice with the intent of figuring out how to get better.</p>
 </div>
-<div class="videoblock">
-<div class="content">
-<iframe width="960" height="540" src="https://www.youtube.com/embed/L1c4oSI6RAE?rel=0" frameborder="0" allowfullscreen></iframe>
+</blockquote>
+<div class="attribution">
+&#8212; Upchurch & Sims-Knight<br>
+<cite>Reflective Essays in Software Engineering (1999)</cite>
 </div>
-</div>
-<div class="paragraph">
-<p>Next, read up on two functions you&#8217;ll probably want to know a thing or two about for this problem: <code><a href="https://reference.cs50.net/stdlib.h/srand48">srand48</a></code> and <code><a href="https://reference.cs50.net/stdlib.h/drand48">drand48</a></code>. <code>srand48</code> and <code>drand48</code> are similar in spirit to <code>srand</code> and <code>rand</code>, which you may recall using in <a href="http://docs.cs50.net/2016/x/ap/2016/problems/skittles/skittles.html">Skittles</a>, but perform their calculations using 48-bit arithmetic. Suffice it to say, given identical seeds, <code>rand</code> and <code>drand48</code> will generate different sets of pseudorandom numbers.</p>
 </div>
 <div class="paragraph">
-<p>Before moving on, be sure you&#8217;re comfortable answering the following questions:</p>
+<p>Odds are, particularly if you find yourself among those less comfortable and this is your first course in computer science, you&#8217;ve made a remarkable amount of progress as a programmer, perhaps much moreso than you predicted. But as the above quote illlustrates, merely knowing how to write code does not a good programmer make. Many members of the CS50 staff have been programming for upwards of ten years, and as any of them will quickly tell you, their learning never ceases. There is always an opportunity for growth and improvement, and often times the largest amounts of growth and improvement come from taking the time for some self-reflection.</p>
+</div>
+<div class="paragraph">
+<p>In this writing problem, we want to provide you with a structured opportunity to perform some of this self-reflection. There are no wrong or right answers to any portion of this problem; rather, the most important thing is that you analyze your own experiences in CS50 AP over the last several weeks or months with a critical eye.</p>
+</div>
+<div class="paragraph">
+<p>In 500-1,000 words, prepare an essay on your experience, expectations, growths, triumphs, and struggles up through this point in the course. You can spend as much time as you feel is appropriate on each of these questions, but over the course of your writing you should touch on at least the following topics:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>What is a "seed" to a random number generator (RNG)?</p>
+<p>Discuss your initial expectations of this course, and about how the course has either aligned with or deviated from these expectations.</p>
 </li>
 <li>
-<p>Why do we describe the numbers generated by an RNG as <em>pseudorandom</em> and not truly "random"?</p>
+<p>Write about at least one programming problem and at least one writing problem that you enjoyed or did not enjoy. What specifically about that problem did you enjoy or not enjoy, and why do you feel that way?</p>
 </li>
 <li>
-<p>At the command line, what do <code>&lt;</code> and <code>&gt;</code> do, respectively?</p>
+<p>Explain how your habits as a computer scientist have evolved. How do you do things differently at this point in the course from how you did the same things in Unit 1? For instance, has your debugging strategy changed? Do you find yourself more intuitively counting from 0 instead of 1? Do you find that some of what you&#8217;ve learned in this course has extended to other domains of interest to you? How?</p>
 </li>
 <li>
-<p>At the command line, what does <code>|</code> do?</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="getting-started"><a class="link" href="#getting-started">Getting Started</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Enough reading and watching. Time for some coding! Log into your CS50 IDE at <a href="https://cs50.io/">cs50.io</a> and execute</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash">update50</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>within a terminal window to make sure your workspace is up-to-date.</p>
-</div>
-<div class="paragraph">
-<p>If you somehow closed your terminal window (and can&#8217;t find it!), make sure that <strong>Console</strong> is checked under the <strong>View</strong> menu, then click the green, circled plus (+) in CS50 IDE&#8217;s bottom half, then select <strong>New Terminal</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Next, execute</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">cd</span> ~/workspace</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>at your prompt to ensure that you&#8217;re inside of <code>workspace</code> (which is inside of your home directory). Then execute</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash">mkdir chapter3</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>to create a new <code>chapter3</code> directory instead of your workspace. As we&#8217;ll soon see in this chapter, our programs are going to get a bit more complex and if continue to organize our programs in the same manner we did in Chapters 1 and 2, our directory will rapidly become cluttered. To that end, we&#8217;re going to add an additional level to our directory&#8217;s hierarchy so as to help us keep things a bit more organized. So, navigate inside of your <code>chapter3</code> directory, as with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">cd </span>chapter3</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And then, once inside, create <strong>another</strong> directory inside of that one:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash">mkdir rng</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then navigate into that folder (remember how?) and create a new file therein (remember how?) called <code>rng.c</code>. You&#8217;re now ready to write a (pseudo)random number generator!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="planting-a-seed"><a class="link" href="#planting-a-seed">Planting a Seed</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In this program, you&#8217;ll be implementing a program that allows the user to specify how many numbers they would like generated, each of which is capped at some maximum value, with the user optionally able to seed the generator with a seed of their choosing, otherwise relying on some other seed that is always changing, the canonical example being the current time. The user will be providing all of this information to you at the command line.</p>
-</div>
-<div class="paragraph">
-<p>Notice the important keyword in the above paragraph: <em>optionally</em>. This program, unlike those you&#8217;ve written so far, can accept a variable number of command line arguments, and depending on how many command line arguments the user provides, you&#8217;ll either seed the random number generator with the user-specified seed or with the current time.</p>
-</div>
-<div class="paragraph">
-<p>In particular, this should be the correct use case of your program, and if the user does not adhere to this usage, you should exit the program (returning <code>1</code>) after informing the user of the correct usage.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash">Usage: rng n max <span class="tok-o">[</span>s<span class="tok-o">]</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In general, we&#8217;re going to take a hands-off approach here, as we&#8217;d like you to start muddling through some documentation to determine the correct way to use some built-in functions. But we will point out two things your program needs to do to conform to our specifications.</p>
-</div>
-<div class="paragraph">
-<p>First, in order to use the <code>srand48</code> and <code>drand48</code> functions, you not only need to include the library specified in their manual pages, you also need to place the following line of code near the very top of your <code>rng.c</code> file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#define _XOPEN_SOURCE</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>It turns out that sometimes it is not quite enough to <code>#include</code> a file to incorporate certain functions therein. Some functions, such as <code>srand48</code> and <code>drand48</code>, require you to also place in your program a so-called <strong>feature test macro</strong>. In CS50 AP, we don&#8217;t particularly care what that means and won&#8217;t elaborate on it (though you are welcome and encouraged to explore on your own!) The important takeaway here though is that we learned as much by perusing the manual pages for those functions and saw therein that we were required to <code>#define _XOPEN_SOURCE</code> (or <code>#define _SVID_SOURCE</code>, but conventionally in this course when we encounter the choice we will default to <code>_XOPEN_SOURCE</code>).</p>
-</div>
-<div class="paragraph">
-<p>The other thing we would like you to do is to</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#define LIMIT 65536</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>for reasons that have absolutely no relevance now, but rather is a setup for something in the future. Read to the end of the spec for more info! You should, however, exit your program (returning <code>1</code>), if <code>max</code> (provided by the user at the command line) exceeds the defined constant <code>LIMIT</code>, and of course should inform the user as to why your program has terminated.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="the-greatest-generation"><a class="link" href="#the-greatest-generation">The Greatest Generation</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As this program&#8217;s usage suggests, this program expects two or three command-line arguments.  The first, <code>n</code>, is required; it indicates how many pseudorandom numbers you&#8217;d like to generate.  The second, <code>max</code>, is also required; it indicates the maximum possible value a number that is generated by your program can be (in other words, an "upper bound". The third argument <code>s</code>, is optional, as the brackets are meant to imply; if supplied, it represents the value that the pseudorandom-number generator should use as its "seed."  A seed is simply an input to a pseudorandom-number generator that influences its outputs.</p>
-</div>
-<div class="paragraph">
-<p>For instance, if you seed <code>drand48</code> by first calling <code>srand48</code> with an argument of, say, <code>1</code>, and then call <code>drand48</code> itself three times, <code>drand48</code> might return <code>0.041630</code>, then <code>0.454492</code>, then <code>0.834817</code>. But if you instead seed <code>drand48</code> by first calling <code>srand48</code> with an argument of, say, <code>2</code>, and then call <code>drand48</code> itself three times, <code>drand48</code> might instead return <code>0.912433</code>, then <code>0.159083</code>, then <code>0.573263</code>.</p>
-</div>
-<div class="paragraph">
-<p>But if you re-seed <code>drand48</code> by calling <code>srand48</code> again with an argument of <code>1</code>, the next three times you call <code>drand48</code>, you&#8217;ll again get <code>0.041630</code>, then <code>0.454492</code>, then <code>0.834817</code>! See, not so random.</p>
-</div>
-<div class="paragraph">
-<p>When compiled, <code>rng</code> should print out the numbers it generates, one per line, to the terminal window. But what if we wanted to save that list of numbers for whatever reason? We&#8217;ll learn about some more rich techniques for "file I/O" in the coming chapter, but fortunately Linux has a very simple way of writing information more permanently to files. You can "redirect" `rng&#8217;s terminal output to a file with a command like the below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash">./rng <span class="tok-m">1000</span> <span class="tok-m">60000</span> &gt; numbers.txt</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>We&#8217;ll be using this feature soon enough!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="hmm-now-what"><a class="link" href="#hmm-now-what">Hmm&#8230;&#8203; Now What?</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Incidentally, this program isn&#8217;t terribly interesting. In fact, you&#8217;re probably thinking that we&#8217;ve asked you to write more complex programs in Chapter 2 than what you&#8217;ve just written. Well, you&#8217;d be right. But this won&#8217;t be the last time we see <code>rng</code>. Later on in this chapter, you&#8217;ll be using the work you&#8217;ve done on this problem to help test out your solution to another problem. But more on that soon.</p>
-</div>
-<div class="paragraph">
-<p>When ready to check the correctness of your program officially with <code>check50</code>&#8230;&#8203; well, you can&#8217;t. Reason being that the way the staff solution generates random numbers might in fact be different from your own, even though both do properly generate sets of random numbers. It&#8217;s up to you to determine that your program produces:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the correct number of pseudorandomly generated numbers,</p>
+<p>Do you feel you learn the most from watching videos, reading excerpts, reviewing slides, hearing audio, or some amalgam of these? Why do you think that is?</p>
 </li>
 <li>
-<p>each of which is greater than or equal to 0 and also less than (and not equal to) <code>max</code>, and</p>
+<p>Explain how you expect your habits as a computer scientist and programmer to evolve further as you proceed through the course.</p>
 </li>
 <li>
-<p>that if your program is run with the same seed value multiple times, the list of numbers it generates is identical from run to run.</p>
+<p>Touch on an "a-ha!" moment that you encountered in the course; a moment when suddenly a concept that you struggled with made sense. If you have yet to encounter or experience such a moment, discuss why.</p>
+</li>
+<li>
+<p>Talk about each of these with a classmate, and compare notes. How have your experiences differed and how have they aligned?</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Not having access to <code>check50</code> for this problem is actually a good thing. It&#8217;s a bad idea to get into the habit of testing your code with <code>check50</code> before testing it yourself.  (And definitely don&#8217;t get into an even worse habit of <strong>only</strong> testing your code with <code>check50</code>!)  Suffice it to say <code>check50</code> doesn&#8217;t exist in the real world, so running your code with your own sample inputs, comparing actual output against expected output, is the best habit to get into sooner rather than later.</p>
+<p>This metacognitive assessment is but one step in not necessarily becoming a better programmer or a better computer scientist, but really becoming a better learner. The better you understand your thought process, the easier it becomes to determine how to best understand something that may initially confound you. Once you&#8217;ve figured that out, your horizons can expand infinitely.</p>
 </div>
 <div class="paragraph">
-<p>Truly, don&#8217;t do yourself a long-term disservice!</p>
-</div>
-<div class="paragraph">
-<p>Anyhow, if you&#8217;d like to play with the staff&#8217;s own implementation of <code>rng</code> (which may generate a different set of numbers than your own implementation even given identical inputs, and that&#8217;s okay!), you may execute the below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="bash">~cs50/chapter3/rng</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This was RNG.</p>
+<p>This was Analyze This.</p>
 </div>
 </div>
 </div>

@@ -398,7 +398,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <title>RNG</title>
+        <title>Seek</title>
     </head>
     <body class="toc2 toc-left">
         <div id="header">
@@ -415,16 +415,28 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </li>
 <li><a href="#assessment">Assessment</a></li>
 <li><a href="#getting-ready">Getting Ready</a></li>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#planting-a-seed">Planting a Seed</a></li>
-<li><a href="#the-greatest-generation">The Greatest Generation</a></li>
-<li><a href="#hmm-now-what">Hmm&#8230;&#8203; Now What?</a></li>
-<li><a href="#how-to-submit">How to Submit</a></li>
+<li><a href="#getting-started">Getting Started</a>
+<ul class="sectlevel2">
+<li><a href="#option-1-use-the-staff-s-prng">Option 1: Use the Staff&#8217;s PRNG</a></li>
+<li><a href="#option-2-use-your-own-prng">Option 2: Use Your Own PRNG</a></li>
+</ul>
+</li>
+<li><a href="#seek-and-find">Seek and Find</a>
+<ul class="sectlevel2">
+<li><a href="#search-1">search (1)</a></li>
+</ul>
+</li>
+<li><a href="#sorting">Sorting</a>
+<ul class="sectlevel2">
+<li><a href="#sort">sort</a></li>
+<li><a href="#search-2">search (2)</a></li>
+</ul>
+</li>
 </ul>
             </div>
         </div>
         <div id="content">
-            <h1>Problem: RNG</h1>
+            <h1>Problem: Seek</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -438,13 +450,13 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="ulist">
 <ul>
 <li>
-<p>Learn more about pseudorandom numbers.</p>
+<p>Explore Makefiles.</p>
 </li>
 <li>
-<p>Begin to introduce you to larger programs and programs with multiple source files.</p>
+<p>Reuse and repurpose previously written code.</p>
 </li>
 <li>
-<p>Learn about rudimentary file input and output via redirection.</p>
+<p>Learn about and implement linear and binary search.</p>
 </li>
 </ul>
 </div>
@@ -606,34 +618,38 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="getting-ready"><a class="link" href="#getting-ready">Getting Ready</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>First, say hello to Tommy, who&#8217;s here to teach you a bit about some basic file input and output techniques using the command line.</p>
+<p>Lots of recommended videos for you for this problem, although a few of them you&#8217;ve seen before and should feel free to skip over. Chances are at least a few of these will come in handy.</p>
+</div>
+<div class="paragraph">
+<p>First up, sorting algorithms with Jackson and Tommy:</p>
 </div>
 <div class="videoblock">
 <div class="content">
-<iframe width="960" height="540" src="https://www.youtube.com/embed/L1c4oSI6RAE?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/8Kp-8OGwphY?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/f8hXR_Hvybo?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/DFG-XuyPYUQ?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 <div class="paragraph">
-<p>Next, read up on two functions you&#8217;ll probably want to know a thing or two about for this problem: <code><a href="https://reference.cs50.net/stdlib.h/srand48">srand48</a></code> and <code><a href="https://reference.cs50.net/stdlib.h/drand48">drand48</a></code>. <code>srand48</code> and <code>drand48</code> are similar in spirit to <code>srand</code> and <code>rand</code>, which you may recall using in <a href="http://docs.cs50.net/2016/x/ap/2016/problems/skittles/skittles.html">Skittles</a>, but perform their calculations using 48-bit arithmetic. Suffice it to say, given identical seeds, <code>rand</code> and <code>drand48</code> will generate different sets of pseudorandom numbers.</p>
+<p>And then a discussion of linear and binary search with Patrick (don&#8217;t worry too much about when Patrick turns the discussion toward <em>binary search trees</em> in the second half of the binary search video&#8230;&#8203; we&#8217;ll get there soon enough, though!):</p>
 </div>
-<div class="paragraph">
-<p>Before moving on, be sure you&#8217;re comfortable answering the following questions:</p>
+<div class="videoblock">
+<div class="content">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/CX2CYIJLwfg?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>What is a "seed" to a random number generator (RNG)?</p>
-</li>
-<li>
-<p>Why do we describe the numbers generated by an RNG as <em>pseudorandom</em> and not truly "random"?</p>
-</li>
-<li>
-<p>At the command line, what do <code>&lt;</code> and <code>&gt;</code> do, respectively?</p>
-</li>
-<li>
-<p>At the command line, what does <code>|</code> do?</p>
-</li>
-</ul>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/D5SrAga1pno?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -641,7 +657,10 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="getting-started"><a class="link" href="#getting-started">Getting Started</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enough reading and watching. Time for some coding! Log into your CS50 IDE at <a href="https://cs50.io/">cs50.io</a> and execute</p>
+<p>Below are two options for getting started with this problem. The first option is for those who wish to start with a staff-provided pseudorandom number generator. The second option is for those who wish to use their own pseudorandom number generator from <a href="http://docs.cs50.net/2016/ap/problems/rng/rng.html">RNG</a></p>
+</div>
+<div class="paragraph">
+<p>But first, log into <a href="https://cs50.io/">cs50.io</a> and execute</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -652,158 +671,394 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <p>within a terminal window to make sure your workspace is up-to-date.</p>
 </div>
 <div class="paragraph">
-<p>If you somehow closed your terminal window (and can&#8217;t find it!), make sure that <strong>Console</strong> is checked under the <strong>View</strong> menu, then click the green, circled plus (+) in CS50 IDE&#8217;s bottom half, then select <strong>New Terminal</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Next, execute</p>
+<p>Then, execute</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">cd</span> ~/workspace</code></pre>
+<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">cd</span> ~/workspace/chapter3</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>at your prompt to ensure that you&#8217;re inside of <code>workspace</code> (which is inside of your home directory). Then execute</p>
+<p>at your prompt to ensure that you&#8217;re inside of <code>chapter3</code> (which is inside of <code>workspace</code> which is inside of your home directory). Then execute</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">mkdir chapter3</code></pre>
+<pre class="pygments highlight"><code data-lang="bash">wget http://docs.cs50.net/2016/ap/problems/seek/seek.zip</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>to create a new <code>chapter3</code> directory instead of your workspace. As we&#8217;ll soon see in this chapter, our programs are going to get a bit more complex and if continue to organize our programs in the same manner we did in Chapters 1 and 2, our directory will rapidly become cluttered. To that end, we&#8217;re going to add an additional level to our directory&#8217;s hierarchy so as to help us keep things a bit more organized. So, navigate inside of your <code>chapter3</code> directory, as with:</p>
+<p>to download a ZIP of this problem&#8217;s distro into your workspace (with a command-line program called <code>wget</code>). You should see a bunch of output followed by:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">cd </span>chapter3</code></pre>
+<pre class="pygments highlight"><code data-lang="bash"><span class="tok-s1">&#39;seek.zip&#39;</span> saved</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And then, once inside, create <strong>another</strong> directory inside of that one:</p>
+<p>Confirm that you&#8217;ve indeed downloaded <code>seek.zip</code> by executing</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">mkdir rng</code></pre>
+<pre class="pygments highlight"><code data-lang="bash">ls</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Then navigate into that folder (remember how?) and create a new file therein (remember how?) called <code>rng.c</code>. You&#8217;re now ready to write a (pseudo)random number generator!</p>
+<p>and then run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">unzip seek.zip</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to unzip the file.  If you then run <code>ls</code> again, you should see that you have a newly unzipped directory called <code>seek</code> as well. You can now delete the ZIP, with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">rm seek.zip</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>confirming your intent to delete that file, then proceed to execute</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">cd </span>seek</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>followed by</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">ls</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should see that the directory contains five files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">Makefile  generate.c  helpers.c  helpers.h  seek.c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Only choose one of the below two options.</strong></p>
+</div>
+<div class="paragraph">
+<p>Then, after having chosen your option and followed all the steps therein, pick up at "Seek and Find".</p>
+</div>
+<div class="sect2">
+<h3 id="option-1-use-the-staff-s-prng"><a class="link" href="#option-1-use-the-staff-s-prng">Option 1: Use the Staff&#8217;s PRNG</a></h3>
+<div class="paragraph">
+<p>You&#8217;re pretty much done getting set up at this point, actually. Except you should probably peruse <code>generate.c</code>; you&#8217;ll notice that we&#8217;ve left several comments just reading <code>TODO</code>. Take a few minutes to complete those comments, just to ensure you understand what&#8217;s happening in that file.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="option-2-use-your-own-prng"><a class="link" href="#option-2-use-your-own-prng">Option 2: Use Your Own PRNG</a></h3>
+<div class="paragraph">
+<p>The staff&#8217;s PRNG can be found in <code>generate.c</code>, but you can fairly easily replace it with your own. Let&#8217;s first delete the staff&#8217;s PRNG with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">rm -f generate.c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, let&#8217;s copy over the PRNG that you wrote a few problems back. Assuming you followed our directory hierarchy conventions, that file should be called <code>rng.c</code> and should live inside of a directory called <code>rng</code> inside of your <code>chapter3</code> directory, inside of your <code>workspace</code>, all of which is inside of your home (<code>~</code>) directory. Sounds like a mouthful. But knowing that, we don&#8217;t even need to move from where we currently are to get that file. That&#8217;s kind of cool. Before doing anything, ensure that you currently are inside of your <code>seek</code> subdirectory. The Linux command <code>pwd</code> (for "present working directory") will tell you where you currently are. Type</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">pwd</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should get the following output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">/home/ubuntu/workspace/chapter3/seek</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If so, great! If not, make sure to navigate there with <code>cd</code>. Then, type the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">cp ~/workspace/chapter3/rng/rng.c .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The space and the <code>.</code> are deliberate! What this command basically does is tell the computer to copy the first argument (which is the <em>absolute path</em> to the <code>rng.c</code> file you&#8217;ve previously written) to the second. But what the heck is <code>.</code>? Well, it turns out that&#8217;s the shorthand way of saying "where I currently am." So, you&#8217;ve just told the computer to place a copy of <code>rng.c</code> inside of your present working directory. Confirm as much with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">ls</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and you should see <code>rng.c</code> among your files. If not, odds are you made a small mistake a few steps back. Retrace your steps and try again.</p>
+</div>
+<div class="paragraph">
+<p>Now, we could open up the <code>Makefile</code> and edit it so it creates an executable called <code>rng</code>, but that would require quite a bit of work. Why not instead just rename our file to <code>generate.c</code>? It&#8217;s pretty easy, just:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">mv rng.c generate.c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And now if you</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">ls</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>one final time, no longer should you see <code>rng.c</code> among your files, but rather <code>generate.c</code>.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="planting-a-seed"><a class="link" href="#planting-a-seed">Planting a Seed</a></h2>
+<h2 id="seek-and-find"><a class="link" href="#seek-and-find">Seek and Find</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this program, you&#8217;ll be implementing a program that allows the user to specify how many numbers they would like generated, each of which is capped at some maximum value, with the user optionally able to seed the generator with a seed of their choosing, otherwise relying on some other seed that is always changing, the canonical example being the current time. The user will be providing all of this information to you at the command line.</p>
+<p>You&#8217;ll be writing your code in <code>helpers.c</code> and <code>helpers.h</code> only in this problem. <code>seek.c</code> can be left alone, as can <code>generate.c</code> (with the exception that if you are using the staff&#8217;s PRNG you should comment that file!)</p>
 </div>
 <div class="paragraph">
-<p>Notice the important keyword in the above paragraph: <em>optionally</em>. This program, unlike those you&#8217;ve written so far, can accept a variable number of command line arguments, and depending on how many command line arguments the user provides, you&#8217;ll either seed the random number generator with the user-specified seed or with the current time.</p>
-</div>
-<div class="paragraph">
-<p>In particular, this should be the correct use case of your program, and if the user does not adhere to this usage, you should exit the program (returning <code>1</code>) after informing the user of the correct usage.</p>
+<p>To begin, simply type</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">Usage: rng n max <span class="tok-o">[</span>s<span class="tok-o">]</span></code></pre>
+<pre class="pygments highlight"><code data-lang="bash">make</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In general, we&#8217;re going to take a hands-off approach here, as we&#8217;d like you to start muddling through some documentation to determine the correct way to use some built-in functions. But we will point out two things your program needs to do to conform to our specifications.</p>
+<p>which will create not one but <strong>two</strong> executables: <code>seek</code> and <code>generate</code> (open up <code>Makefile</code> to see why!).</p>
 </div>
 <div class="paragraph">
-<p>First, in order to use the <code>srand48</code> and <code>drand48</code> functions, you not only need to include the library specified in their manual pages, you also need to place the following line of code near the very top of your <code>rng.c</code> file:</p>
+<p>Now take a look at <code>seek.c</code>.  Notice that this program expects a single command-line argument: a "needle" to search for in a "haystack" of values.</p>
+</div>
+<div class="paragraph">
+<p>Go ahead and run this program by executing, say, the below.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#define _XOPEN_SOURCE</span></code></pre>
+<pre class="pygments highlight"><code data-lang="bash">./seek 13</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>It turns out that sometimes it is not quite enough to <code>#include</code> a file to incorporate certain functions therein. Some functions, such as <code>srand48</code> and <code>drand48</code>, require you to also place in your program a so-called <strong>feature test macro</strong>. In CS50 AP, we don&#8217;t particularly care what that means and won&#8217;t elaborate on it (though you are welcome and encouraged to explore on your own!) The important takeaway here though is that we learned as much by perusing the manual pages for those functions and saw therein that we were required to <code>#define _XOPEN_SOURCE</code> (or <code>#define _SVID_SOURCE</code>, but conventionally in this course when we encounter the choice we will default to <code>_XOPEN_SOURCE</code>).</p>
+<p>You&#8217;ll be prompted to provide some hay (i.e., some integers), one "straw" at a time.  As soon as you tire of providing integers, hit ctrl-d to send the program an <code>EOF</code> (end-of-file) character.  That character will compel <code>GetInt</code> from the CS50 Library to return <code>INT_MAX</code>, a constant that, per <code>seek.c</code>, will compel <code>seek</code> to stop prompting for hay.  The program will then look for that needle in the hay you provided, ultimately reporting whether the former was found in the latter.  In short, this program searches an array for some value.  At least, it should, but it won&#8217;t find anything yet! That&#8217;s where you come in.  More on your role in a bit.</p>
 </div>
 <div class="paragraph">
-<p>The other thing we would like you to do is to</p>
+<p>In turns out you can automate this process of providing hay, though, by "piping" the output of <code>generate</code> into <code>seek</code> as input.  For instance, the command below<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup> passes 1,000 pseudorandom numbers to <code>seek</code>, which then searches those values for <code>42</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#define LIMIT 65536</span></code></pre>
+<pre class="pygments highlight"><code data-lang="bash">./generate <span class="tok-m">1000</span> <span class="tok-p">|</span> ./seek 42</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>for reasons that have absolutely no relevance now, but rather is a setup for something in the future. Read to the end of the spec for more info! You should, however, exit your program (returning <code>1</code>), if <code>max</code> (provided by the user at the command line) exceeds the defined constant <code>LIMIT</code>, and of course should inform the user as to why your program has terminated.</p>
+<p>Note that, when piping output from <code>generate</code> into <code>seek</code> in this manner, you won&#8217;t actually see <code>generate</code>'s numbers, but you will see <code>seek</code>'s prompts.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can "redirect" <code>generate</code>'s output to a file with a command like the below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">./generate <span class="tok-m">1000</span> &gt; numbers.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then redirect that file&#8217;s contents as input to <code>seek</code> with the command below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">./seek <span class="tok-m">42</span> &lt; numbers.txt</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-1"><a class="link" href="#search-1">search (1)</a></h3>
+<div class="paragraph">
+<p>And now the fun begins!  Notice that <code>seek.c</code> calls <code>search</code>, a function declared in <code>helpers.h</code>.  Unfortunately, we forgot to implement that function fully in <code>helpers.c</code>!  (To be sure, we could have put the contents of <code>helpers.h</code> and <code>helpers.c</code> in <code>seek.c</code> itself.  But it&#8217;s sometimes better to organize programs into multiple files, especially when some functions are essentially utility functions that might later prove useful to other programs as well, much like those in the CS50 Library.)  Take a peek at <code>helpers.c</code> with, and you&#8217;ll see that <code>search</code> always returns <code>false</code>, whether or not <code>value</code> is in <code>values</code>.  Re-write <code>search</code> in such a way that it uses <strong>linear search</strong>, returning <code>true</code> if <code>value</code> is in <code>values</code> and <code>false</code> if <code>value</code> is not in <code>values</code>.  Take care to return <code>false</code> right away if <code>n</code> isn&#8217;t even positive.</p>
+</div>
+<div class="paragraph">
+<p>When ready to check the correctness of your program, try running the command below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">./generate <span class="tok-m">1000</span> <span class="tok-m">50</span> <span class="tok-p">|</span> ./seek 127</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because one of the numbers<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup> outputted by <code>generate</code>, when seeded with <code>50</code>, is <code>127</code>, your code should find that "needle"!  By contrast, try running the command below as well.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">./generate <span class="tok-m">1000</span> <span class="tok-m">50</span> <span class="tok-p">|</span> ./seek 128</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because <code>128</code> is not among the numbers outputted by <code>generate</code>, when seeded with <code>50</code>, your code shouldn&#8217;t find that needle.  Best to try some other tests as well, as by running <code>generate</code> with some seed, taking a look at its output, then piping that same output to <code>seek</code>, looking for a "needle" you know to be among the "hay".</p>
+</div>
+<div class="paragraph">
+<p>Incidentally, note that <code>main</code> in <code>seek.c</code> is written in such a way that <code>seek</code> returns <code>0</code> if the needle is found, else it returns <code>1</code>.  You can check the so-called "exit code" with which <code>main</code> returns by executing</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span class="tok-nb">echo</span> <span class="tok-nv">$?</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>after running some other command.  For instance, assuming your implementation of <code>search</code> is correct, if you run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">./generate <span class="tok-m">1000</span> <span class="tok-m">50</span> <span class="tok-p">|</span> ./seek 127
+<span class="tok-nb">echo</span> <span class="tok-nv">$?</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you should see <code>0</code>, since <code>127</code> is, again, among the 1,000 numbers outputted by <code>generate</code> when seeded with <code>50</code>, and so <code>search</code> (written by you) should return <code>true</code>, in which case <code>main</code> (written by us) should return (i.e., exit with) <code>0</code>.  By contrast, assuming your implementation of <code>search</code> is correct, if you run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">./generate <span class="tok-m">1000</span> <span class="tok-m">50</span> <span class="tok-p">|</span> ./seek 128
+<span class="tok-nb">echo</span> <span class="tok-nv">$?</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you should see <code>1</code>, since <code>128</code> is, again, not among the 1,000 numbers outputted by <code>generate</code> when seeded with <code>50</code>, and so <code>search</code> (written by you) should return <code>false</code>, in which case <code>main</code> (written by us) should return (i.e., exit with) <code>1</code>.  Make sense?</p>
+</div>
+<div class="paragraph">
+<p>When ready to check the correctness of your program officially with <code>check50</code>, you may execute the below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">check50 1617.chapter3.seek helpers.c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Anyhow, if you&#8217;d like to play with the staff&#8217;s own implementation of <code>seek</code>, you may execute the below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">~cs50/chapter3/seek</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="the-greatest-generation"><a class="link" href="#the-greatest-generation">The Greatest Generation</a></h2>
+<h2 id="sorting"><a class="link" href="#sorting">Sorting</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As this program&#8217;s usage suggests, this program expects two or three command-line arguments.  The first, <code>n</code>, is required; it indicates how many pseudorandom numbers you&#8217;d like to generate.  The second, <code>max</code>, is also required; it indicates the maximum possible value a number that is generated by your program can be (in other words, an "upper bound". The third argument <code>s</code>, is optional, as the brackets are meant to imply; if supplied, it represents the value that the pseudorandom-number generator should use as its "seed."  A seed is simply an input to a pseudorandom-number generator that influences its outputs.</p>
+<p>Alright, linear search is pretty meh.  Recall from Week 0 that we can do better, but first we&#8217;d best sort that hay.</p>
+</div>
+<div class="sect2">
+<h3 id="sort"><a class="link" href="#sort">sort</a></h3>
+<div class="paragraph">
+<p>Notice that <code>seek.c</code> calls <code>sort</code>, a function declared in <code>helpers.h</code>.  Unfortunately, we forgot to implement that function fully too in <code>helpers.c</code>!  Take a peek at <code>helpers.c</code>, and you&#8217;ll see that <code>sort</code> returns immediately, even though <code>seek</code>'s <code>main</code> function does pass it an actual array.</p>
 </div>
 <div class="paragraph">
-<p>For instance, if you seed <code>drand48</code> by first calling <code>srand48</code> with an argument of, say, <code>1</code>, and then call <code>drand48</code> itself three times, <code>drand48</code> might return <code>0.041630</code>, then <code>0.454492</code>, then <code>0.834817</code>. But if you instead seed <code>drand48</code> by first calling <code>srand48</code> with an argument of, say, <code>2</code>, and then call <code>drand48</code> itself three times, <code>drand48</code> might instead return <code>0.912433</code>, then <code>0.159083</code>, then <code>0.573263</code>.</p>
-</div>
-<div class="paragraph">
-<p>But if you re-seed <code>drand48</code> by calling <code>srand48</code> again with an argument of <code>1</code>, the next three times you call <code>drand48</code>, you&#8217;ll again get <code>0.041630</code>, then <code>0.454492</code>, then <code>0.834817</code>! See, not so random.</p>
-</div>
-<div class="paragraph">
-<p>When compiled, <code>rng</code> should print out the numbers it generates, one per line, to the terminal window. But what if we wanted to save that list of numbers for whatever reason? We&#8217;ll learn about some more rich techniques for "file I/O" in the coming chapter, but fortunately Linux has a very simple way of writing information more permanently to files. You can "redirect" `rng&#8217;s terminal output to a file with a command like the below.</p>
+<p>Now, recall the syntax for declaring an array.  Not only do you specify the array&#8217;s type, you also specify its size between brackets, just as we do for <code>haystack</code> in <code>seek.c</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">./rng <span class="tok-m">1000</span> <span class="tok-m">60000</span> &gt; numbers.txt</code></pre>
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-kt">int</span> <span class="tok-n">haystack</span><span class="tok-p">[</span><span class="tok-n">MAX</span><span class="tok-p">];</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll be using this feature soon enough!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="hmm-now-what"><a class="link" href="#hmm-now-what">Hmm&#8230;&#8203; Now What?</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Incidentally, this program isn&#8217;t terribly interesting. In fact, you&#8217;re probably thinking that we&#8217;ve asked you to write more complex programs in Chapter 2 than what you&#8217;ve just written. Well, you&#8217;d be right. But this won&#8217;t be the last time we see <code>rng</code>. Later on in this chapter, you&#8217;ll be using the work you&#8217;ve done on this problem to help test out your solution to another problem. But more on that soon.</p>
-</div>
-<div class="paragraph">
-<p>When ready to check the correctness of your program officially with <code>check50</code>&#8230;&#8203; well, you can&#8217;t. Reason being that the way the staff solution generates random numbers might in fact be different from your own, even though both do properly generate sets of random numbers. It&#8217;s up to you to determine that your program produces:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the correct number of pseudorandomly generated numbers,</p>
-</li>
-<li>
-<p>each of which is greater than or equal to 0 and also less than (and not equal to) <code>max</code>, and</p>
-</li>
-<li>
-<p>that if your program is run with the same seed value multiple times, the list of numbers it generates is identical from run to run.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Not having access to <code>check50</code> for this problem is actually a good thing. It&#8217;s a bad idea to get into the habit of testing your code with <code>check50</code> before testing it yourself.  (And definitely don&#8217;t get into an even worse habit of <strong>only</strong> testing your code with <code>check50</code>!)  Suffice it to say <code>check50</code> doesn&#8217;t exist in the real world, so running your code with your own sample inputs, comparing actual output against expected output, is the best habit to get into sooner rather than later.</p>
-</div>
-<div class="paragraph">
-<p>Truly, don&#8217;t do yourself a long-term disservice!</p>
-</div>
-<div class="paragraph">
-<p>Anyhow, if you&#8217;d like to play with the staff&#8217;s own implementation of <code>rng</code> (which may generate a different set of numbers than your own implementation even given identical inputs, and that&#8217;s okay!), you may execute the below.</p>
+<p>But when passing an array, you only specify its name, just as we do when passing <code>haystack</code> to <code>sort</code> in <code>seek.c</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">~cs50/chapter3/rng</code></pre>
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">sort</span><span class="tok-p">(</span><span class="tok-n">haystack</span><span class="tok-p">,</span> <span class="tok-n">size</span><span class="tok-p">);</span></code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>This was RNG.</p>
+<p>(Why do you think we pass in the size of that array separately?)</p>
 </div>
+<div class="paragraph">
+<p>When declaring a function that takes a one-dimensional array as an argument, though, you don&#8217;t need to specify the array&#8217;s size, just as we don&#8217;t when declaring <code>sort</code> in <code>helpers.h</code> (and <code>helpers.c</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-kt">void</span> <span class="tok-nf">sort</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">values</span><span class="tok-p">[],</span> <span class="tok-kt">int</span> <span class="tok-n">n</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go ahead and implement <code>sort</code> so that the function actually sorts, from smallest to largest, the array of numbers that it&#8217;s passed, in such a way that its running time is in <em>O</em>(<em>n</em><sup>2</sup>), where <em>n</em> is the array&#8217;s size.  Odds are you&#8217;ll want to implement bubble sort, selection sort, or insertion sort, since you&#8217;ve already done so in <a href="http://cdn.cs50.net/ap/1516/problems/3/4/3-4.html">the Sort Race</a>. Just realize that there&#8217;s no one "right" way to implement any of those algorithms; variations abound.  In fact, you&#8217;re welcome to improve upon them as you see fit, so long as your implementation remains in <em>O</em>(<em>n</em><sup>2</sup>).  However, take care not to alter our declaration of <code>sort</code>.  Its prototype must remain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-kt">void</span> <span class="tok-nf">sort</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">values</span><span class="tok-p">[],</span> <span class="tok-kt">int</span> <span class="tok-n">n</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As this return type of <code>void</code> implies, this function must not return a sorted array; it must instead "destructively" sort the actual array that it&#8217;s passed by moving around the values therein.</p>
+</div>
+<div class="paragraph">
+<p>Although you may not alter our declaration of <code>sort</code>, you&#8217;re welcome to define your own function(s) in <code>helpers.c</code> that <code>sort</code> itself may then call.</p>
+</div>
+<div class="paragraph">
+<p>We leave it to you to determine how best to test your implementation of <code>sort</code>.  But don&#8217;t forget that <code>printf</code> and GDB are your friends.  And don&#8217;t forget that you can generate the same sequence of pseudorandom numbers again and again by explicitly specifying <code>generate</code>'s seed.  Before you ultimately submit, though, be sure to remove any such calls to <code>printf</code>, as we like our programs' outputs just they way they are!</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s Zamyla with some tips:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/U8k-0StE1Ik?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="paragraph">
+<p>And if you&#8217;d like to play with the staff&#8217;s own implementation of <code>seek</code>, you may execute the below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">~cs50/chapter3/seek</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-2"><a class="link" href="#search-2">search (2)</a></h3>
+<div class="paragraph">
+<p>Now that <code>sort</code> (presumably) works, it&#8217;s time to improve upon <code>search</code>, the other function that lives in <code>helpers.c</code>.  Recall that your first version implemented linear search.  Rip out the lines that you wrote earlier.</p>
+</div>
+<iframe scrolling="no" allowtransparency="true" src="spongebob.gif" width="480" height="268" frameBorder="0" allowFullScreen></iframe>
+<div class="paragraph">
+<p>Cruel, we know.</p>
+</div>
+<div class="paragraph">
+<p>Anyway, re-implement <code>search</code> as binary search, that divide-and-conquer strategy we&#8217;ve seen employed. You are welcome to take an iterative approach (as with a loop) or, if feeling like jumping ahead a bit, a recursive approach (wherein a function calls itself). If you pursue the latter, though, know that you may not change our declaration of <code>search</code>, but you may write a new, recursive function (that perhaps takes different parameters) that <code>search</code> itself calls.</p>
+</div>
+<div class="paragraph">
+<p>When it comes time to submit your work, it suffices to submit this new-and-improved version of <code>search</code> only; you needn&#8217;t submit your original version that used linear search.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s Zamyla again:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/7DSRJj7qfP8?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="paragraph">
+<p>This was Seek.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. This command and all subsequent references to the <code>generate</code> program assume use of the staff-provided PRNG. If you use your own PRNG you either have to change the command-line arguments you provide, since the PRNG you wrote took 2 or 3 command line arguments (not 1 or 2, like the staff&#8217;s), or modify your copy of <code>generate.c</code> to no longer take the <code>max</code> parameter. Your choice!
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. Again, assuming you&#8217;re using the staff-provided PRNG!
 </div>
 </div>
         </div>
