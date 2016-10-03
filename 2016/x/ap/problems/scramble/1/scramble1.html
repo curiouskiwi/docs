@@ -4,43 +4,6 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
-        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    displayMath: [["\\[", "\\]"]],
-                    ignoreClass: "nostem|nostem|nolatexmath",
-                    inlineMath: [["\\(", "\\)"]]
-                },
-                asciimath2jax: {
-                    delimiters: [["\\$", "\\$"]],
-                    ignoreClass: "nostem|nostem|noasciimath",
-                    processEnvironments: true
-                }
-            });
-        </script>
-        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <script>
-
-            $(function() {
-
-                // add start=0 to ordered lists
-                $('ol').each(function() {
-                    if (!$(this).attr('start')) {
-                        $(this).attr('start', '0');
-                    }
-                });
-
-                // responsive embed
-                // http://getbootstrap.com/components/#responsive-embed
-                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
-                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
-
-            });
-
-        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -435,31 +398,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <style>
-
-            /* don't wrap long code lines */
-            pre code {
-                white-space: pre;
-            }
-
-            /* match margin-bottom of div.paragraph */
-            div.stemblock div.content {
-                margin-bottom: 1.25em;
-            }
-
-            /* fill page */
-            table {
-                width: 100%;
-            }
-
-            /* allow captions to wrap */
-            .tableblock > caption {
-                max-width: inherit;
-                white-space: inherit;
-            }
-
-        </style>
-        <title>Problem: Scramble (Part 1)</title>
+        <title>Scramble (Part 1)</title>
     </head>
     <body class="toc2 toc-left">
         <div id="header">
@@ -479,6 +418,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#scramblin">Scramblin'</a></li>
 <li><a href="#perusin">Perusin'</a></li>
 <li><a href="#codin">Codin'</a></li>
+<li><a href="#how-to-submit">How to Submit</a></li>
 </ul>
             </div>
         </div>
@@ -688,11 +628,11 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">wget http://cdn.cs50.net/ap/1617/problems/scramble/1/scramble.zip</code></pre>
+<pre class="pygments highlight"><code data-lang="bash">wget http://docs.cs50.net/2016/x/ap/problems/scramble/1/scramble.zip</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>to download this problem&#8217;s distro. Unzip the ZIP file (remember how?) and then delete the ZIP file from your <code>unit3</code> directory. Navigate into your newly-created <code>scramble</code> directory (remember how?) and type:</p>
+<p>to download this problem&#8217;s distro. Unzip the ZIP file (remember how?) and then delete the ZIP file from your <code>chapter3</code> directory. Navigate into your newly-created <code>scramble</code> directory (remember how?) and type:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -847,6 +787,11 @@ type <code>FOO</code> or <code>foo</code> (or even <code>FoO</code> or any other
 <div class="paragraph">
 <p>Now you can play (well, maybe after some debugging) your own version of <code>scramble</code>!</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>This was Scramble (Part 1).</p>
 </div>

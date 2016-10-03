@@ -4,43 +4,6 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
-        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    displayMath: [["\\[", "\\]"]],
-                    ignoreClass: "nostem|nostem|nolatexmath",
-                    inlineMath: [["\\(", "\\)"]]
-                },
-                asciimath2jax: {
-                    delimiters: [["\\$", "\\$"]],
-                    ignoreClass: "nostem|nostem|noasciimath",
-                    processEnvironments: true
-                }
-            });
-        </script>
-        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <script>
-
-            $(function() {
-
-                // add start=0 to ordered lists
-                $('ol').each(function() {
-                    if (!$(this).attr('start')) {
-                        $(this).attr('start', '0');
-                    }
-                });
-
-                // responsive embed
-                // http://getbootstrap.com/components/#responsive-embed
-                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
-                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
-
-            });
-
-        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -435,31 +398,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <style>
-
-            /* don't wrap long code lines */
-            pre code {
-                white-space: pre;
-            }
-
-            /* match margin-bottom of div.paragraph */
-            div.stemblock div.content {
-                margin-bottom: 1.25em;
-            }
-
-            /* fill page */
-            table {
-                width: 100%;
-            }
-
-            /* allow captions to wrap */
-            .tableblock > caption {
-                max-width: inherit;
-                white-space: inherit;
-            }
-
-        </style>
-        <title>Problem: Breakout</title>
+        <title>Breakout</title>
     </head>
     <body class="toc2 toc-left">
         <div id="header">
@@ -698,7 +637,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">wget http://cdn.cs50.net/ap/1617/problems/breakout/breakout.zip</code></pre>
+<pre class="pygments highlight"><code data-lang="bash">wget http://docs.cs50.net/2016/x/ap/problems/breakout/breakout.zip</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1059,7 +998,7 @@ rm -f src4m.zip
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Try out the staff&#8217;s solution again (via <code>~cs50/pset3/breakout/breakout</code>) to remind yourself how our implementation behaves.  Yours doesn&#8217;t need to be identical.  In fact, all the better if you personalize yours.  But playing with our implementation should help guide you toward yours.</p>
+<p>Try out the staff&#8217;s solution again (via <code>~cs50/chapter3/breakout/breakout</code>) to remind yourself how our implementation behaves.  Yours doesn&#8217;t need to be identical.  In fact, all the better if you personalize yours.  But playing with our implementation should help guide you toward yours.</p>
 </li>
 <li>
 <p>Implement <code>initPaddle</code>.  Per the function&#8217;s return value, your paddle should be implemented as a <code>GRect</code>.  Odds are you&#8217;ll first want to decide on a width and height for your paddle, perhaps declaring them both atop <code>breakout.c</code> with constants.  Then calculate coordinates (<em>x</em> and <em>y</em>) for your paddle, keeping in mind that it should be initially aligned in the bottom-middle of your game&#8217;s window.  We leave it to you to decide exactly where.  Odds are some arithmetic involving the window&#8217;s width and height and the paddle&#8217;s width and height will help you center it.  Keep in mind that <em>x</em> and <em>y</em> refer to a <code>GRect</code>'s top-left corner, not its own middle.  Your paddle&#8217;s size and location doesn&#8217;t need to match the staff&#8217;s precisely, but it should be perfectly centered, near the window&#8217;s bottom.  You&#8217;re welcome to choose a color for it too, for which <code>setColor</code> and <code>setFilled</code> might be of interest.  Finally, instantiate your paddle with <code>newGRect</code>.  (Take note of that function&#8217;s prototype at <a href="http://cdn.cs50.net/2014/fall/psets/3/pset3/spl/doc/gobjects.html" class="bare">http://cdn.cs50.net/2014/fall/psets/3/pset3/spl/doc/gobjects.html</a>.)  Then return the <code>GRect</code> returned by <code>newGRect</code> (rather than <code>NULL</code>, which the distribution code returns only so that the program will compile without <code>initPaddle</code> fully implemented).</p>
@@ -1154,7 +1093,7 @@ rm -f src4m.zip
 </div>
 </div>
 <div class="paragraph">
-<p>If you type <code>ls</code> thereafter, you should see that you have a new file called <code>breakout.zip</code> in <code>~/Dropbox</code>. Your instructor will provide further instructions for how to submit this ZIP file containing your solution to this problem!</p>
+<p>If you type <code>ls</code> thereafter, you should see that you have a new file called <code>breakout.zip</code> in <code>~/Dropbox</code>.</p>
 </div>
 <div class="paragraph">
 <p>This was Breakout.</p>
