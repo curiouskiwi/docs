@@ -911,6 +911,26 @@ TIME IN TOTAL:</code></pre>
 <iframe src="https://www.youtube.com/embed/u9-1U1Rgo1o?rel=0&amp;playlist=0x9rSfV85g8,hsruECgJJVQ,O3tErLhuEmY" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
+<div class="paragraph">
+<p><strong>In the walkthrough for <code>load</code>, at <a href="https://www.youtube.com/watch?time_continue=373&amp;v=0x9rSfV85g8">00:06:13</a>, note that:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node1</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-s">&quot;Hello&quot;</span><span class="tok-p">);</span>
+<span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node2</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-s">&quot;Wello&quot;</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>should be:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node1</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span><span class="tok-p">,</span> <span class="tok-s">&quot;Hello&quot;</span><span class="tok-p">);</span>
+<span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node2</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span><span class="tok-p">,</span> <span class="tok-s">&quot;Wello&quot;</span><span class="tok-p">);</span>
+
+<span class="tok-o">**</span><span class="tok-n">Video</span> <span class="tok-n">will</span> <span class="tok-n">be</span> <span class="tok-n">fixed</span> <span class="tok-n">shortly</span><span class="tok-o">!**</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1056,26 +1076,11 @@ Farbissina                                                      Farbissina</code
 <div class="ulist">
 <ul>
 <li>
-<p>2016-10-07</p>
+<p>2016-10-08</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Corrected walkthrough for <code>load</code>, wherein sample code had</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">node1</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-s">&quot;Hello&quot;</span><span class="tok-p">;</span>
-<span class="tok-n">node2</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-s">&quot;World&quot;</span><span class="tok-p">;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>instead of</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node1</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span><span class="tok-p">,</span> <span class="tok-s">&quot;Hello&quot;</span><span class="tok-p">);</span>
-<span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node2</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span><span class="tok-p">,</span> <span class="tok-s">&quot;World&quot;</span><span class="tok-p">);</span></code></pre>
-</div>
-</div>
+<p>Added boldfaced comment about error in walkthrough for <code>load</code>.</p>
 </li>
 </ul>
 </div>
