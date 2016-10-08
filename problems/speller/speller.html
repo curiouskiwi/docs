@@ -908,7 +908,7 @@ TIME IN TOTAL:</code></pre>
 <div class="sectionbody">
 <div class="videoblock">
 <div class="content">
-<iframe src="https://www.youtube.com/embed/u9-1U1Rgo1o?rel=0&amp;playlist=0x9rSfV85g8,hsruECgJJVQ,O3tErLhuEmY" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/u9-1U1Rgo1o?rel=0&amp;playlist=CJXaXcXzu4g,hsruECgJJVQ,O3tErLhuEmY" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 <div class="paragraph">
@@ -1081,7 +1081,22 @@ Farbissina                                                      Farbissina</code
 <div class="ulist">
 <ul>
 <li>
-<p>Added boldfaced comment about error in walkthrough for <code>load</code>.</p>
+<p>Corrected walkthrough for <code>load</code>, wherein sample code had</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">node1</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-s">&quot;Hello&quot;</span><span class="tok-p">;</span>
+<span class="tok-n">node2</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span> <span class="tok-o">=</span> <span class="tok-s">&quot;World&quot;</span><span class="tok-p">;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>instead of</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node1</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span><span class="tok-p">,</span> <span class="tok-s">&quot;Hello&quot;</span><span class="tok-p">);</span>
+<span class="tok-n">strcpy</span><span class="tok-p">(</span><span class="tok-n">node2</span><span class="tok-o">-&gt;</span><span class="tok-n">word</span><span class="tok-p">,</span> <span class="tok-s">&quot;World&quot;</span><span class="tok-p">);</span></code></pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
