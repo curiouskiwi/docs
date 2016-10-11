@@ -644,11 +644,14 @@ wget http://cdn.cs50.net/2015/fall/psets/7/pset7/pset7.sql</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>chmod a+x ~/workspace/pset7/public</code></pre>
+<pre class="pygments highlight"><code>chmod a+x ~/workspace/pset7
+cd ~/workspace/pset7
+chmod -R a+x .
+chmod -R a+r .</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>so that CS50 IDE&#8217;s web server (Apache) and you (from a browser) will be able to access your work.  Then, navigate your way to <code>~/workspace/pset7/public</code> by executing the below.</p>
+<p>Don&#8217;t omit those periods at the end of the third and fourth commands above, so that CS50 IDE&#8217;s web server (Apache) and you (from a browser) will be able to access your work.  Then, navigate your way to <code>~/workspace/pset7/public</code> by executing the below.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -664,26 +667,7 @@ wget http://cdn.cs50.net/2015/fall/psets/7/pset7/pset7.sql</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>you should see that <code>public</code> contains four subdirectories and three files.  Ensure that the former are world-executable by executing the below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>chmod a+x css fonts img js</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And ensure that the files within those directories are world-readable by executing the below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>chmod a+r css/* fonts/* img/* js/*</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If unfamiliar, <code>*</code> is a "wildcard character," so <code>css/*</code>, for instance, simply means "all files within the <code>css</code> directory."</p>
-</div>
-<div class="paragraph">
-<p>For security&#8217;s sake, don&#8217;t make <code>~/workspace/pset7/includes</code> or <code>~/workspace/pset7/views</code> world-executable (or their contents world-readable), as they shouldn&#8217;t be (potentially) accessible to the whole world (only to your PHP code, as you&#8217;ll soon see).</p>
+<p>you should see that <code>public</code> contains four subdirectories and three files.</p>
 </div>
 <div class="paragraph">
 <p>Okay, let&#8217;s now configure CS50 IDE&#8217;s web server (aka Apache) to use <code>~/workspace/pset7/public</code> as its root. First ensure that Problem Set 6&#8217;s <code>server</code> isn&#8217;t still running (e.g., in another tab) by executing the below.</p>
