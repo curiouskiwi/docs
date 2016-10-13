@@ -563,10 +563,10 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </ol>
 </div>
 <div class="paragraph">
-<p>Patrick wants to know how his sales are doing, and the above array actually represents his sales figures from this past week. That is, if you add together all of the <code>sales[0][j]</code>, where <code>0 &#8656; j &#8656; 3</code>, you get the total number of items Patrick sold on Sunday. If you add together all of the <code>sales[1][j]</code>, where <code>0 &#8656; j &#8656; 3</code>, you get the total number of items he sold on Monday, and so on.</p>
+<p>Patrick wants to know how his sales are doing, and the above array actually represents his sales figures from this past week. That is, if you add together all of the <code>sales[0][j]</code>, where <code>0 <= j <= 3</code>, you get the total number of items Patrick sold on Sunday. If you add together all of the <code>sales[1][j]</code>, where <code>0 <= j <= 3</code>, you get the total number of items he sold on Monday, and so on.</p>
 </div>
 <div class="paragraph">
-<p>Furthermore, if you add together all of the <code>sales[i][0]</code>, where <code>0 &#8656; i &#8656; 6</code>, you get the total number of blue t-shirts he sold this week. If you add together all of the <code>sales[i][1]</code>, where <code>0 &#8656; i &#8656; 6</code>, you get the total number of stuffed bulldogs he sold this week, and so on.</p>
+<p>Furthermore, if you add together all of the <code>sales[i][0]</code>, where <code>0 <= i <= 6</code>, you get the total number of blue t-shirts he sold this week. If you add together all of the <code>sales[i][1]</code>, where <code>0 <= i <= 6</code>, you get the total number of stuffed bulldogs he sold this week, and so on.</p>
 </div>
 <div class="paragraph">
 <p>Complete the implementation of <code>sales.c</code> below, such that when compiled it results in a program that adheres to the following specifications:</p>
