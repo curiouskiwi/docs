@@ -4,6 +4,43 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    displayMath: [["\\[", "\\]"]],
+                    ignoreClass: "nostem|nostem|nolatexmath",
+                    inlineMath: [["\\(", "\\)"]]
+                },
+                asciimath2jax: {
+                    delimiters: [["\\$", "\\$"]],
+                    ignoreClass: "nostem|nostem|noasciimath",
+                    processEnvironments: true
+                }
+            });
+        </script>
+        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script>
+
+            $(function() {
+
+                // add start=0 to ordered lists
+                $('ol').each(function() {
+                    if (!$(this).attr('start')) {
+                        $(this).attr('start', '0');
+                    }
+                });
+
+                // responsive embed
+                // http://getbootstrap.com/components/#responsive-embed
+                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
+                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
+
+            });
+
+        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -398,85 +435,217 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <title>About Test</title>
+        <style>
+
+            /* don't wrap long code lines */
+            pre code {
+                white-space: pre;
+            }
+
+            /* match margin-bottom of div.paragraph */
+            div.stemblock div.content {
+                margin-bottom: 1.25em;
+            }
+
+            /* fill page */
+            table {
+                width: 100%;
+            }
+
+            /* allow captions to wrap */
+            .tableblock > caption {
+                max-width: inherit;
+                white-space: inherit;
+            }
+
+        </style>
+        <title></title>
     </head>
     <body class="toc2 toc-left">
         <div id="header">
             <div class="toc2" id="toc">
                 <div id="toctitle">Table of Contents</div>
                 <ul class="sectlevel1">
-<li><a href="#how-to-prepare">How to Prepare</a></li>
-<li><a href="#practice-exercises">Practice Exercises</a></li>
+<li><a href="#sales-force">Sales Force</a></li>
 </ul>
             </div>
         </div>
         <div id="content">
-            <h1>About Test</h1>
-<div id="preamble">
+            <div class="sect1">
+<h2 id="sales-force"><a class="link" href="#sales-force">Sales Force</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Due by noon on Mon 10/17 is a take-home test that will cover Weeks 0 through 5 (and Problem Sets 0 through 5). The test is open-book: you may use any and all non-human resources during the test, but the only humans to whom you may turn for help or from whom you may receive help are the course’s heads.</p>
+<p>Spreadsheets are awesome! You may think we&#8217;re crazy for saying it, but if that&#8217;s the case then crazy we be. They provide an incredibly efficient way to store data:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Look how efficient that is! Twenty-eight pieces of information consolidated down to a single 7x4 grid. Technology! Spreadsheets are particularly helpful to sales managers when they are trying to organize a perhaps massive amount of information about what&#8217;s going on in their store.</p>
 </div>
 <div class="paragraph">
-<p>The test will be released via the course&#8217;s website at noon on Fri 10/14 and will be submitted via <code>submit50</code> (anytime before noon on Mon 10/17). You should expect to spend several (but not 72!) hours on the test.</p>
+<p>For example, a common type of spreadsheet might be one where rows represent days of the week, and each column represents the quantity of one particular stock item sold in a store that day. Then we could add up an entire row (e.g., 7 + 5 + 26 + 2) to figure out how many items total the store sold on a particular day. Or we could add up an entire column (e.g., 7 + 8 + 6 + 5 + 6 + 8 + 9) to figure out how many of a given item the store sold over that seven-day period.</p>
 </div>
 <div class="paragraph">
-<p>Sections on Mon 10/10 and Tue 10/11 will be opportunities to review content and prepare for the test. Office hours on Wed 10/12 and Thu 10/13 will be additional opportunities for Q&amp;A. Also, a course-wide review session on Wed 10/12 from 1:00pm until 2:30pm will be streamed live at <a href="https://live.cs50.net/">live.cs50.net</a> and be available on demand immediately afterward at <a href="https://cs50.yale.edu/">cs50.yale.edu</a>.</p>
+<p>The above 7x4 spreadsheet looks conceptually similar to the Game of Fifteen in its representation: a two-dimensional array, with an integer stored at each location. We could perhaps have stored this spreadsheet in a two-dimensional array in C, declaring it as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-kt">int</span> <span class="tok-n">sales</span><span class="tok-p">[</span><span class="tok-mi">7</span><span class="tok-p">][</span><span class="tok-mi">4</span><span class="tok-p">];</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Among the test&#8217;s aims is to assess your newfound comfort with the course&#8217;s material and your ability to apply the course&#8217;s lessons to familiar and unfamiliar problems. Unlike past years' quizzes, the test will not have multiple-choice or true-false questions. But it will have short-answer questions as well as longer-answer questions. Some questions may involve code (for which you&#8217;re welcome to use CS50 IDE).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="how-to-prepare"><a class="link" href="#how-to-prepare">How to Prepare</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ultimately, how best to prepare depends on how you learn best. But allow us to recommend that you prioritize your studies per the ordering below.</p>
+<p>Anyway, why all this talk about spreadsheets? Well it turns out that Patrick runs a store called the Four Store at Yale, where he sells exactly four items:</p>
 </div>
 <div class="olist arabic">
-<ol class="arabic">
+<ol class="arabic" start="0">
 <li>
-<p>Consult the latest version of the <strong>syllabus</strong> for a (non-exhaustive) list of topics covered in lectures in weeks 0 through 5. Keep in mind that topics that appeared in one week might have reappeared in subsequent weeks.</p>
+<p>Blue T-shirts (for $19.95 apiece)</p>
 </li>
 <li>
-<p>Review each lecture&#8217;s <strong>notes</strong>.</p>
+<p>Stuffed bulldogs (for $14.95 apiece)</p>
 </li>
 <li>
-<p>Review each lecture&#8217;s <strong>source code</strong>, if any.</p>
+<p>Floppy disks (for $1.49 apiece)</p>
 </li>
 <li>
-<p>Review each lecture&#8217;s <strong>slides</strong>.</p>
-</li>
-<li>
-<p>Review each lecture&#8217;s <strong>video</strong>.</p>
-</li>
-<li>
-<p>Take past <strong>quizzes</strong>. Realize, though, that some topics covered in past terms might not have been covered in this term. Rely on this year&#8217;s syllabus, lectures, and problem sets as the official sources for this year&#8217;s topics.</p>
-</li>
-<li>
-<p>Review problem sets' <strong>specifications</strong>, <strong>postmortems</strong>, and <strong>distribution code</strong>, if any.</p>
+<p>Football trophies<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup> (for $65.59 apiece)</p>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="practice-exercises"><a class="link" href="#practice-exercises">Practice Exercises</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>The following two questions are representative of the type of question you may see on this year&#8217;s Test, given the new format:</p>
+<p>Patrick wants to know how his sales are doing, and the above array actually represents his sales figures from this past week. That is, if you add together all of the <code>sales[0][j]</code>, where <code>0 &#8656; j &#8656; 3</code>, you get the total number of items Patrick sold on Sunday. If you add together all of the <code>sales[1][j]</code>, where <code>0 &#8656; j &#8656; 3</code>, you get the total number of items he sold on Monday, and so on.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, if you add together all of the <code>sales[i][0]</code>, where <code>0 &#8656; i &#8656; 6</code>, you get the total number of blue t-shirts he sold this week. If you add together all of the <code>sales[i][1]</code>, where <code>0 &#8656; i &#8656; 6</code>, you get the total number of stuffed bulldogs he sold this week, and so on.</p>
+</div>
+<div class="paragraph">
+<p>Complete the implementation of <code>sales.c</code> below, such that when compiled it results in a program that adheres to the following specifications:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="practice/help50/help50.adoc">Human <code>help50</code></a></p>
+<p>When run, it first prints out the total dollar value of all goods sold that week.</p>
 </li>
 <li>
-<p><a href="practice/sales/sales.adoc">Sales Force</a></p>
+<p>Then it prints a blank line.</p>
+</li>
+<li>
+<p>Then it prints seven lines, each one representing the total dollar value of all goods sold on a particular day, from Sunday through Saturday.</p>
+</li>
+<li>
+<p>Then it prints a blank line.</p>
+</li>
+<li>
+<p>Then it prints four lines, each one representing the total dollar value of each type of good sold that week, from blue t-shirts through football trophies.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Patrick will likely want to change <code>sales</code> each week so he can use this program indefinitely, but we&#8217;ve pre-populated the current week&#8217;s sales figures into <code>sales.c</code> to get you started. We&#8217;ve declared it, as well as the array of <code>prices</code> (which are also subject to change) globally in case you want to write any helper functions, so you don&#8217;t have to pass the array as a parameter to any of them. You&#8217;re welcome to declare any additional constants or functions you need, as well as to include any additional header files that may be of help to you.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-c1">// constants</span>
+<span class="tok-cp">#define ITEMS 4</span>
+<span class="tok-cp">#define DAYS 7</span>
+
+<span class="tok-c1">// includes</span>
+<span class="tok-cp">#include &lt;stdio.h&gt;</span>
+
+<span class="tok-c1">// global arrays</span>
+<span class="tok-kt">int</span> <span class="tok-n">sales</span><span class="tok-p">[</span><span class="tok-n">DAYS</span><span class="tok-p">][</span><span class="tok-n">ITEMS</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">{{</span><span class="tok-mi">7</span><span class="tok-p">,</span> <span class="tok-mi">5</span><span class="tok-p">,</span> <span class="tok-mi">26</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">8</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">13</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">6</span><span class="tok-p">,</span> <span class="tok-mi">4</span><span class="tok-p">,</span> <span class="tok-mi">22</span><span class="tok-p">,</span> <span class="tok-mi">0</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">5</span><span class="tok-p">,</span> <span class="tok-mi">7</span><span class="tok-p">,</span> <span class="tok-mi">19</span><span class="tok-p">,</span> <span class="tok-mi">0</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">6</span><span class="tok-p">,</span> <span class="tok-mi">5</span><span class="tok-p">,</span>  <span class="tok-mi">8</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">8</span><span class="tok-p">,</span> <span class="tok-mi">4</span><span class="tok-p">,</span> <span class="tok-mi">24</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">9</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">43</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">}};</span>
+
+<span class="tok-kt">float</span> <span class="tok-n">prices</span><span class="tok-p">[</span><span class="tok-n">ITEMS</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">{</span><span class="tok-mf">19.95</span><span class="tok-p">,</span> <span class="tok-mf">14.95</span><span class="tok-p">,</span> <span class="tok-mf">1.49</span><span class="tok-p">,</span> <span class="tok-mf">65.59</span><span class="tok-p">};</span>
+
+<span class="tok-kt">int</span> <span class="tok-nf">main</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">)</span>
+<span class="tok-p">{</span>
+    <span class="tok-c1">// TODO</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As a sanity check as you work on this problem, the sample output for this program, based on the specification above and the current values of <code>sales</code> and <code>prices</code>, would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>2166.77
+
+384.32
+274.46
+212.28
+232.71
+271.96
+451.93
+339.11
+
+977.55
+433.55
+230.95
+524.72</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. Ohhh&#8230;&#8203; that explains why that fourth column has such low numbers!
 </div>
 </div>
         </div>

@@ -4,6 +4,43 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    displayMath: [["\\[", "\\]"]],
+                    ignoreClass: "nostem|nostem|nolatexmath",
+                    inlineMath: [["\\(", "\\)"]]
+                },
+                asciimath2jax: {
+                    delimiters: [["\\$", "\\$"]],
+                    ignoreClass: "nostem|nostem|noasciimath",
+                    processEnvironments: true
+                }
+            });
+        </script>
+        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script>
+
+            $(function() {
+
+                // add start=0 to ordered lists
+                $('ol').each(function() {
+                    if (!$(this).attr('start')) {
+                        $(this).attr('start', '0');
+                    }
+                });
+
+                // responsive embed
+                // http://getbootstrap.com/components/#responsive-embed
+                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
+                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
+
+            });
+
+        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -398,85 +435,151 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <title>About Test</title>
+        <style>
+
+            /* don't wrap long code lines */
+            pre code {
+                white-space: pre;
+            }
+
+            /* match margin-bottom of div.paragraph */
+            div.stemblock div.content {
+                margin-bottom: 1.25em;
+            }
+
+            /* fill page */
+            table {
+                width: 100%;
+            }
+
+            /* allow captions to wrap */
+            .tableblock > caption {
+                max-width: inherit;
+                white-space: inherit;
+            }
+
+        </style>
+        <title></title>
     </head>
     <body class="toc2 toc-left">
         <div id="header">
             <div class="toc2" id="toc">
                 <div id="toctitle">Table of Contents</div>
-                <ul class="sectlevel1">
-<li><a href="#how-to-prepare">How to Prepare</a></li>
-<li><a href="#practice-exercises">Practice Exercises</a></li>
+                <ul class="sectlevel2">
+<li><a href="#human-code-help50-code">Human <code>help50</code></a></li>
 </ul>
             </div>
         </div>
         <div id="content">
-            <h1>About Test</h1>
-<div id="preamble">
-<div class="sectionbody">
+            <div class="sect2">
+<h3 id="human-code-help50-code"><a class="link" href="#human-code-help50-code">Human <code>help50</code></a></h3>
 <div class="paragraph">
-<p>Due by noon on Mon 10/17 is a take-home test that will cover Weeks 0 through 5 (and Problem Sets 0 through 5). The test is open-book: you may use any and all non-human resources during the test, but the only humans to whom you may turn for help or from whom you may receive help are the course’s heads.</p>
-</div>
-<div class="paragraph">
-<p>The test will be released via the course&#8217;s website at noon on Fri 10/14 and will be submitted via <code>submit50</code> (anytime before noon on Mon 10/17). You should expect to spend several (but not 72!) hours on the test.</p>
+<p>If not yet familiar, <code>help50</code> is a command line tool included with CS50 IDE that makes an effort to translate some of the more arcane error messages that other tools, such as <code>clang</code> or <code>valgrind</code>, sometimes spit out. In this way, it serves as a "virtual TF" of sorts, hopefully helping nudge students in the right direction, so that they needn&#8217;t wait for a staff member at office hours when a little bit of translation of the error message is really all that&#8217;s needed to move on.</p>
 </div>
 <div class="paragraph">
-<p>Sections on Mon 10/10 and Tue 10/11 will be opportunities to review content and prepare for the test. Office hours on Wed 10/12 and Thu 10/13 will be additional opportunities for Q&amp;A. Also, a course-wide review session on Wed 10/12 from 1:00pm until 2:30pm will be streamed live at <a href="https://live.cs50.net/">live.cs50.net</a> and be available on demand immediately afterward at <a href="https://cs50.yale.edu/">cs50.yale.edu</a>.</p>
+<p>If you aren&#8217;t familiar with <code>help50</code> just yet, now is the time! Here&#8217;s an example of a simple broken C file, <code>rocket.c</code>, which is supposed to count down from <code>10</code> and then print <code>blastoff!</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#include &lt;stdio.h&gt;</span>
+
+<span class="tok-kt">int</span> <span class="tok-nf">main</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">)</span>
+<span class="tok-p">{</span>
+    <span class="tok-kt">int</span> <span class="tok-n">i</span><span class="tok-p">;</span>
+    <span class="tok-k">for</span><span class="tok-p">(</span><span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">10</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">--</span><span class="tok-p">);</span>
+    <span class="tok-p">{</span>
+        <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;%i... &quot;</span><span class="tok-p">,</span> <span class="tok-n">i</span><span class="tok-p">);</span>
+    <span class="tok-p">}</span>
+    <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;blastoff!</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span>
+<span class="tok-p">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Among the test&#8217;s aims is to assess your newfound comfort with the course&#8217;s material and your ability to apply the course&#8217;s lessons to familiar and unfamiliar problems. Unlike past years' quizzes, the test will not have multiple-choice or true-false questions. But it will have short-answer questions as well as longer-answer questions. Some questions may involve code (for which you&#8217;re welcome to use CS50 IDE).</p>
+<p>Copy this code <strong>exactly</strong> into your IDE (even if you&#8217;ve already spotted the problem) and try to compile this program with <code>make rocket</code>. You should receive the following output from <code>clang</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>rocket.c:6:28: error: for loop has empty body [-Werror,-Wempty-body]
+    for(int i = 10; i &gt; 0; i--);</code></pre>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="how-to-prepare"><a class="link" href="#how-to-prepare">How to Prepare</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Ultimately, how best to prepare depends on how you learn best. But allow us to recommend that you prioritize your studies per the ordering below.</p>
+<p>Hmm&#8230;&#8203; that <code>for</code> loop&#8217;s body looks awfully populated to me; maybe <code>help50</code> can make some sense of it? Let&#8217;s attempt to recompile <code>rocket</code>, but this time prepend the command with <code>help50</code>. Perhaps this error message sheds more light onto the problem:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Consult the latest version of the <strong>syllabus</strong> for a (non-exhaustive) list of topics covered in lectures in weeks 0 through 5. Keep in mind that topics that appeared in one week might have reappeared in subsequent weeks.</p>
-</li>
-<li>
-<p>Review each lecture&#8217;s <strong>notes</strong>.</p>
-</li>
-<li>
-<p>Review each lecture&#8217;s <strong>source code</strong>, if any.</p>
-</li>
-<li>
-<p>Review each lecture&#8217;s <strong>slides</strong>.</p>
-</li>
-<li>
-<p>Review each lecture&#8217;s <strong>video</strong>.</p>
-</li>
-<li>
-<p>Take past <strong>quizzes</strong>. Realize, though, that some topics covered in past terms might not have been covered in this term. Rely on this year&#8217;s syllabus, lectures, and problem sets as the official sources for this year&#8217;s topics.</p>
-</li>
-<li>
-<p>Review problem sets' <strong>specifications</strong>, <strong>postmortems</strong>, and <strong>distribution code</strong>, if any.</p>
-</li>
-</ol>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>Helping with...
+
+rocket.c:6:28: error: for loop has empty body [-Werror,-Wempty-body]
+
+Try removing the semicolon directly after the closing parentheses of the for loop on line 6 of rocket.c.</code></pre>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="practice-exercises"><a class="link" href="#practice-exercises">Practice Exercises</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>The following two questions are representative of the type of question you may see on this year&#8217;s Test, given the new format:</p>
+<p>Ahh, that helps! If you remove the semicolon and attempt to recompile, everything works as expected.</p>
+</div>
+<div class="paragraph">
+<p><code>help50</code> works because the staff has written a series of "matchers" for different errors into its source code. Basically, we&#8217;ve written code that looks for certain types of error messages that <code>clang</code> or <code>valgrind</code> might output, and when one of those matchers, well, <em>matches</em> what we&#8217;re looking for, it outputs a more human-friendly translation of that message. Unfortunately, it seems the number of errors these programs can spit out is quite large, and <code>help50</code> doesn&#8217;t yet have so-called "matchers" for all types of errors. In those cases, it&#8217;ll just tell you that it doesn&#8217;t know what to say.</p>
+</div>
+<div class="paragraph">
+<p>Put yourself in the shoes of a TF or CA at office hours. If you see errors like the five below (which you or your classmates have actually experienced this semester!), how would you advise <code>help50</code> to respond? A friendly one- or two-sentence note for each should suffice!</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="practice/help50/help50.adoc">Human <code>help50</code></a></p>
+<p>Problem Set 1:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>mario.c:19:27: error: invalid conversion specifier '
+' [-Werror,-Wformat-invalid-specifier]
+                printf("%#\n", i);
+                        ~~^</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p><a href="practice/sales/sales.adoc">Sales Force</a></p>
+<p>Problem Set 2:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>initials.c:13:10: error: definition of variable with array type needs an explicit size or an initializer
+    char initials[];
+         ^</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Problem Set 3:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>find.c:53:16: error: non-object type 'bool (int, int *, int)' is not assignable
+    if (search = true)
+        ~~~~~~ ^</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Problem Set 4:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>recover.c:22:10: error: variable 'blockptr' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]
+     if (cardptr == NULL)
+         ^~~~~~~~~~~~~~~</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Problem Set 5:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>dictionary.c:146:36: error: passing 'const char *' to parameter of type
+      'char *' discards qualifiers
+      [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    int hash_value = hash_function(word);
+                                    ^~~~</code></pre>
+</div>
+</div>
 </li>
 </ul>
-</div>
 </div>
 </div>
         </div>
