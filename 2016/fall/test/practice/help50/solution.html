@@ -466,137 +466,88 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
             <div id="header">
                 <div class="toc2" id="toc">
                     <div id="toctitle">Table of Contents</div>
-                    <ul class="sectlevel1">
-<li><a href="#human-code-help50-code">Human <code>help50</code></a>
-<ul class="sectlevel2">
-<li><a href="#problem">Problem</a></li>
-<li><a href="#sample-solution">Sample Solution</a></li>
-</ul>
-</li>
+                    <ul class="sectlevel2">
+<li><a href="#human-code-help50-code-sample-solution">Human <code>help50</code> (sample solution)</a></li>
 </ul>
                 </div>
             </div>
             <div id="content">
-                <div class="sect1">
-<h2 id="human-code-help50-code"><a class="link" href="#human-code-help50-code">Human <code>help50</code></a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="problem"><a class="link" href="#problem">Problem</a></h3>
+                <div class="sect2">
+<h3 id="human-code-help50-code-sample-solution"><a class="link" href="#human-code-help50-code-sample-solution">Human <code>help50</code> (sample solution)</a></h3>
 <div class="paragraph">
-<p>If not yet familiar, <code>help50</code> is a command line tool included with CS50 IDE that makes an effort to translate some of the more arcane error messages that other tools, such as <code>clang</code> or <code>valgrind</code>, sometimes spit out. In this way, it serves as a "virtual TF" of sorts, hopefully helping nudge students in the right direction, so that they needn&#8217;t wait for a staff member at office hours when a little bit of translation of the error message is really all that&#8217;s needed to move on.</p>
-</div>
-<div class="paragraph">
-<p>If you aren&#8217;t familiar with <code>help50</code> just yet, now is the time! Here&#8217;s an example of a simple broken C file, <code>rocket.c</code>, which is supposed to count down from <code>10</code> and then print <code>blastoff!</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#include &lt;stdio.h&gt;</span>
-
-<span class="tok-kt">int</span> <span class="tok-nf">main</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">)</span>
-<span class="tok-p">{</span>
-    <span class="tok-kt">int</span> <span class="tok-n">i</span><span class="tok-p">;</span>
-    <span class="tok-k">for</span><span class="tok-p">(</span><span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">10</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">--</span><span class="tok-p">);</span>
-    <span class="tok-p">{</span>
-        <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;%i... &quot;</span><span class="tok-p">,</span> <span class="tok-n">i</span><span class="tok-p">);</span>
-    <span class="tok-p">}</span>
-    <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;blastoff!</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span>
-<span class="tok-p">}</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Copy this code <strong>exactly</strong> into your IDE (even if you&#8217;ve already spotted the problem) and try to compile this program with <code>make rocket</code>. You should receive the following output from <code>clang</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>rocket.c:6:28: error: for loop has empty body [-Werror,-Wempty-body]
-    for(int i = 10; i &gt; 0; i--);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Hmm&#8230;&#8203; that <code>for</code> loop&#8217;s body looks awfully populated to me; maybe <code>help50</code> can make some sense of it? Let&#8217;s attempt to recompile <code>rocket</code>, but this time prepend the command with <code>help50</code>. Perhaps this error message sheds more light onto the problem:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>Helping with...
-
-rocket.c:6:28: error: for loop has empty body [-Werror,-Wempty-body]
-
-Try removing the semicolon directly after the closing parentheses of the for loop on line 6 of rocket.c.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ahh, that helps! If you remove the semicolon and attempt to recompile, everything works as expected.</p>
-</div>
-<div class="paragraph">
-<p><code>help50</code> works because the staff has written a series of "matchers" for different errors into its source code. Basically, we&#8217;ve written code that looks for certain types of error messages that <code>clang</code> or <code>valgrind</code> might output, and when one of those matchers, well, <em>matches</em> what we&#8217;re looking for, it outputs a more human-friendly translation of that message. Unfortunately, it seems the number of errors these programs can spit out is quite large, and <code>help50</code> doesn&#8217;t yet have so-called "matchers" for all types of errors. In those cases, it&#8217;ll just tell you that it doesn&#8217;t know what to say.</p>
-</div>
-<div class="paragraph">
-<p>Put yourself in the shoes of a TF or CA at office hours. If you see errors like the five below (which you or your classmates have actually experienced this semester!), how would you advise <code>help50</code> to respond? A friendly one- or two-sentence note for each should suffice!</p>
+<p>Other answers are possible.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Problem Set 1:</p>
+<p>Problem Set 1</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>mario.c:19:27: error: invalid conversion specifier '
-' [-Werror,-Wformat-invalid-specifier]
-                printf("%#\n", i);
-                        ~~^</code></pre>
+<pre class="pygments highlight"><code>Helping with...
+
+mario.c:19:27: error: invalid conversion specifier '
+
+It looks like you're trying to use '%#' as a format specifier in `printf`, but `printf` doesn't support that specifier like it does with `%s` or `%i`. If you want to print `#`, try just printing it directly!</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Problem Set 2:</p>
+<p>Problem Set 2</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>initials.c:13:10: error: definition of variable with array type needs an explicit size or an initializer
-    char initials[];
-         ^</code></pre>
+<pre class="pygments highlight"><code>Helping with...
+
+initials.c:13:10: error: definition of variable with array type needs an explicit size or an initializer
+
+It looks like you've declared an array on line 13 of initials.c without giving it a size. When you declare an array, you either need to provide its size explicitly, or initialize its contents at the same time as when you declare it.</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Problem Set 3:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>find.c:53:16: error: non-object type 'bool (int, int *, int)' is not assignable
-    if (search = true)
-        ~~~~~~ ^</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Problem Set 4:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>recover.c:22:10: error: variable 'blockptr' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]
-     if (cardptr == NULL)
-         ^~~~~~~~~~~~~~~</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Problem Set 5:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>dictionary.c:146:36: error: passing 'const char *' to parameter of type
-      'char *' discards qualifiers
-      [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
-    int hash_value = hash_function(word);
-                                    ^~~~</code></pre>
-</div>
+<p>Problem Set 3</p>
+<div class="paragraph">
+<p>+</p>
 </div>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre>Helping with...
+
+find.c:53:16: error: non-object type 'bool (int, int *, int)' is not assignable
+
+It looks like you're trying to assign a boolean value (`true` or `false`) to a variable that is not of type `bool`!</pre>
 </div>
-<div class="sect2">
-<h3 id="sample-solution"><a class="link" href="#sample-solution">Sample Solution</a></h3>
-<div class="paragraph">
-<p><a href="solution.html">Human <code>help50</code> - Sample Solution</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Problem Set 4</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>Helping with...
+
+recover.c:22:10: error: variable 'blockptr' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]
+
+It looks like in your program you seem to be declaring `blockptr`, and only assigning it a value if the condition on line 22 of recover.c is true. Make sure that a value is assigned to `blockptr` regardless, before it could possibly be used later on.</code></pre>
 </div>
 </div>
+</li>
+<li>
+<p>Problem Set 5</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>Helping with...
+
+dictionary.c:146:36: error: passing 'const char *' to parameter of type
+      'char *' discards qualifiers
+
+It looks like you're trying to pass a variable of type `const char *` as a parameter to a function that only accepts `char *`. That would allow a variable with the `const` qualifier to be modified, which isn't allowed!</code></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
             </div>

@@ -466,136 +466,85 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
             <div id="header">
                 <div class="toc2" id="toc">
                     <div id="toctitle">Table of Contents</div>
-                    <ul class="sectlevel1">
-<li><a href="#human-code-help50-code">Human <code>help50</code></a>
-<ul class="sectlevel2">
-<li><a href="#problem">Problem</a></li>
-<li><a href="#sample-solution">Sample Solution</a></li>
-</ul>
-</li>
+                    <ul class="sectlevel2">
+<li><a href="#sales-force-sample-solution">Sales Force (sample solution)</a></li>
 </ul>
                 </div>
             </div>
             <div id="content">
-                <div class="sect1">
-<h2 id="human-code-help50-code"><a class="link" href="#human-code-help50-code">Human <code>help50</code></a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="problem"><a class="link" href="#problem">Problem</a></h3>
+                <div class="sect2">
+<h3 id="sales-force-sample-solution"><a class="link" href="#sales-force-sample-solution">Sales Force (sample solution)</a></h3>
 <div class="paragraph">
-<p>If not yet familiar, <code>help50</code> is a command line tool included with CS50 IDE that makes an effort to translate some of the more arcane error messages that other tools, such as <code>clang</code> or <code>valgrind</code>, sometimes spit out. In this way, it serves as a "virtual TF" of sorts, hopefully helping nudge students in the right direction, so that they needn&#8217;t wait for a staff member at office hours when a little bit of translation of the error message is really all that&#8217;s needed to move on.</p>
-</div>
-<div class="paragraph">
-<p>If you aren&#8217;t familiar with <code>help50</code> just yet, now is the time! Here&#8217;s an example of a simple broken C file, <code>rocket.c</code>, which is supposed to count down from <code>10</code> and then print <code>blastoff!</code>:</p>
+<p>Other answers are possible.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="c"><span class="tok-cp">#include &lt;stdio.h&gt;</span>
+<pre class="pygments highlight"><code data-lang="c"><span class="tok-c1">// constants</span>
+<span class="tok-cp">#define ITEMS 4</span>
+<span class="tok-cp">#define DAYS 7</span>
+
+<span class="tok-c1">// includes</span>
+<span class="tok-cp">#include &lt;stdio.h&gt;</span>
+
+<span class="tok-c1">// global arrays</span>
+<span class="tok-kt">int</span> <span class="tok-n">sales</span><span class="tok-p">[</span><span class="tok-n">DAYS</span><span class="tok-p">][</span><span class="tok-n">ITEMS</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">{{</span><span class="tok-mi">7</span><span class="tok-p">,</span> <span class="tok-mi">5</span><span class="tok-p">,</span> <span class="tok-mi">26</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">8</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">13</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">6</span><span class="tok-p">,</span> <span class="tok-mi">4</span><span class="tok-p">,</span> <span class="tok-mi">22</span><span class="tok-p">,</span> <span class="tok-mi">0</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">5</span><span class="tok-p">,</span> <span class="tok-mi">7</span><span class="tok-p">,</span> <span class="tok-mi">19</span><span class="tok-p">,</span> <span class="tok-mi">0</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">6</span><span class="tok-p">,</span> <span class="tok-mi">5</span><span class="tok-p">,</span>  <span class="tok-mi">8</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">8</span><span class="tok-p">,</span> <span class="tok-mi">4</span><span class="tok-p">,</span> <span class="tok-mi">24</span><span class="tok-p">,</span> <span class="tok-mi">3</span><span class="tok-p">},</span>
+                          <span class="tok-p">{</span><span class="tok-mi">9</span><span class="tok-p">,</span> <span class="tok-mi">2</span><span class="tok-p">,</span> <span class="tok-mi">43</span><span class="tok-p">,</span> <span class="tok-mi">1</span><span class="tok-p">}};</span>
+
+<span class="tok-kt">float</span> <span class="tok-n">prices</span><span class="tok-p">[</span><span class="tok-n">ITEMS</span><span class="tok-p">]</span> <span class="tok-o">=</span> <span class="tok-p">{</span><span class="tok-mf">19.95</span><span class="tok-p">,</span> <span class="tok-mf">14.95</span><span class="tok-p">,</span> <span class="tok-mf">1.49</span><span class="tok-p">,</span> <span class="tok-mf">65.59</span><span class="tok-p">};</span>
 
 <span class="tok-kt">int</span> <span class="tok-nf">main</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">)</span>
 <span class="tok-p">{</span>
-    <span class="tok-kt">int</span> <span class="tok-n">i</span><span class="tok-p">;</span>
-    <span class="tok-k">for</span><span class="tok-p">(</span><span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">10</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">--</span><span class="tok-p">);</span>
+    <span class="tok-c1">// initial sales start as zero</span>
+    <span class="tok-kt">float</span> <span class="tok-n">weekly_total</span> <span class="tok-o">=</span> <span class="tok-mf">0.00</span><span class="tok-p">;</span>
+
+    <span class="tok-c1">// arrays to hold daily and item totals</span>
+    <span class="tok-kt">float</span> <span class="tok-n">daily_totals</span><span class="tok-p">[</span><span class="tok-n">DAYS</span><span class="tok-p">];</span>
+    <span class="tok-kt">float</span> <span class="tok-n">item_totals</span><span class="tok-p">[</span><span class="tok-n">ITEMS</span><span class="tok-p">];</span>
+
+    <span class="tok-c1">// iterate over every items in sales</span>
+    <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">DAYS</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">++</span><span class="tok-p">)</span>
     <span class="tok-p">{</span>
-        <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;%i... &quot;</span><span class="tok-p">,</span> <span class="tok-n">i</span><span class="tok-p">);</span>
+        <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">j</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">j</span> <span class="tok-o">&lt;</span> <span class="tok-n">ITEMS</span><span class="tok-p">;</span> <span class="tok-n">j</span><span class="tok-o">++</span><span class="tok-p">)</span>
+        <span class="tok-p">{</span>
+            <span class="tok-c1">// calculate the daily sales amount</span>
+            <span class="tok-kt">float</span> <span class="tok-n">daily</span> <span class="tok-o">=</span> <span class="tok-n">sales</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">][</span><span class="tok-n">j</span><span class="tok-p">]</span> <span class="tok-o">*</span> <span class="tok-n">prices</span><span class="tok-p">[</span><span class="tok-n">j</span><span class="tok-p">];</span>
+
+            <span class="tok-c1">// add that amount to each set of totals, as appropriate</span>
+            <span class="tok-n">daily_totals</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]</span> <span class="tok-o">+=</span> <span class="tok-n">daily</span><span class="tok-p">;</span>
+            <span class="tok-n">weekly_total</span> <span class="tok-o">+=</span> <span class="tok-n">daily</span><span class="tok-p">;</span>
+            <span class="tok-n">item_totals</span><span class="tok-p">[</span><span class="tok-n">j</span><span class="tok-p">]</span> <span class="tok-o">+=</span> <span class="tok-n">daily</span><span class="tok-p">;</span>
+        <span class="tok-p">}</span>
     <span class="tok-p">}</span>
-    <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;blastoff!</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span>
+
+    <span class="tok-c1">// print the weekly total</span>
+    <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;%.2f</span><span class="tok-se">\n\n</span><span class="tok-s">&quot;</span><span class="tok-p">,</span> <span class="tok-n">weekly_total</span><span class="tok-p">);</span>
+
+    <span class="tok-c1">// print the seven daily totals</span>
+    <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">DAYS</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">++</span><span class="tok-p">)</span>
+    <span class="tok-p">{</span>
+        <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;%.2f</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">,</span> <span class="tok-n">daily_totals</span><span class="tok-p">[</span><span class="tok-n">i</span><span class="tok-p">]);</span>
+
+        <span class="tok-c1">// print an extra new line after the final daily</span>
+        <span class="tok-k">if</span><span class="tok-p">(</span><span class="tok-n">i</span> <span class="tok-o">==</span> <span class="tok-n">DAYS</span> <span class="tok-o">-</span> <span class="tok-mi">1</span><span class="tok-p">)</span>
+        <span class="tok-p">{</span>
+            <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">);</span>
+        <span class="tok-p">}</span>
+    <span class="tok-p">}</span>
+
+    <span class="tok-c1">// print the four item totals</span>
+    <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">j</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span> <span class="tok-n">j</span> <span class="tok-o">&lt;</span> <span class="tok-n">ITEMS</span><span class="tok-p">;</span> <span class="tok-n">j</span><span class="tok-o">++</span><span class="tok-p">)</span>
+    <span class="tok-p">{</span>
+        <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;%.2f</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">,</span> <span class="tok-n">item_totals</span><span class="tok-p">[</span><span class="tok-n">j</span><span class="tok-p">]);</span>
+    <span class="tok-p">}</span>
+
+    <span class="tok-c1">// all done!</span>
+    <span class="tok-k">return</span> <span class="tok-mi">0</span><span class="tok-p">;</span>
 <span class="tok-p">}</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Copy this code <strong>exactly</strong> into your IDE (even if you&#8217;ve already spotted the problem) and try to compile this program with <code>make rocket</code>. You should receive the following output from <code>clang</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>rocket.c:6:28: error: for loop has empty body [-Werror,-Wempty-body]
-    for(int i = 10; i &gt; 0; i--);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Hmm&#8230;&#8203; that <code>for</code> loop&#8217;s body looks awfully populated to me; maybe <code>help50</code> can make some sense of it? Let&#8217;s attempt to recompile <code>rocket</code>, but this time prepend the command with <code>help50</code>. Perhaps this error message sheds more light onto the problem:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>Helping with...
-
-rocket.c:6:28: error: for loop has empty body [-Werror,-Wempty-body]
-
-Try removing the semicolon directly after the closing parentheses of the for loop on line 6 of rocket.c.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ahh, that helps! If you remove the semicolon and attempt to recompile, everything works as expected.</p>
-</div>
-<div class="paragraph">
-<p><code>help50</code> works because the staff has written a series of "matchers" for different errors into its source code. Basically, we&#8217;ve written code that looks for certain types of error messages that <code>clang</code> or <code>valgrind</code> might output, and when one of those matchers, well, <em>matches</em> what we&#8217;re looking for, it outputs a more human-friendly translation of that message. Unfortunately, it seems the number of errors these programs can spit out is quite large, and <code>help50</code> doesn&#8217;t yet have so-called "matchers" for all types of errors. In those cases, it&#8217;ll just tell you that it doesn&#8217;t know what to say.</p>
-</div>
-<div class="paragraph">
-<p>Put yourself in the shoes of a TF or CA at office hours. If you see errors like the five below (which you or your classmates have actually experienced this semester!), how would you advise <code>help50</code> to respond? A friendly one- or two-sentence note for each should suffice!</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Problem Set 1:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>mario.c:19:27: error: invalid conversion specifier '
-' [-Werror,-Wformat-invalid-specifier]
-                printf("%#\n", i);
-                        ~~^</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Problem Set 2:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>initials.c:13:10: error: definition of variable with array type needs an explicit size or an initializer
-    char initials[];
-         ^</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Problem Set 3:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>find.c:53:16: error: non-object type 'bool (int, int *, int)' is not assignable
-    if (search = true)
-        ~~~~~~ ^</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Problem Set 4:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>recover.c:22:10: error: variable 'blockptr' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]
-     if (cardptr == NULL)
-         ^~~~~~~~~~~~~~~</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Problem Set 5:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>dictionary.c:146:36: error: passing 'const char *' to parameter of type
-      'char *' discards qualifiers
-      [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
-    int hash_value = hash_function(word);
-                                    ^~~~</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sample-solution"><a class="link" href="#sample-solution">Sample Solution</a></h3>
-<div class="paragraph">
-<p><a href="solution.html">Human <code>help50</code> - Sample Solution</a></p>
-</div>
 </div>
 </div>
 </div>
