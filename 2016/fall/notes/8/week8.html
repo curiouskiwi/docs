@@ -1829,13 +1829,13 @@ def cart():
 <div class="ulist">
 <ul>
 <li>
-<p><code>shhh</code> is just some secret value that we use to keep our session, or shopping cart, secure. (Though it should be longer!)</p>
+<p><code>shhh</code> is just some secret value that we use to keep our session, or shopping cart, secure. (Though it should be longer, and harder for someone to guess!)</p>
 </li>
 <li>
-<p>In the <code>store</code> method, if the request was a <code>POST</code>, meaning a user submitted the form, then we&#8217;ll add the quantity indicated in the form for each item into <code>session</code>, or increment that quantity if it&#8217;s in there already. And <code>session</code> is just an object, like a shopping cart, that we can save information about each user connected to our web server.</p>
+<p>In the <code>store</code> method, we first check if the request was a <code>POST</code>. If so, meaning a user submitted the form, then we&#8217;ll add the quantity indicated in the form for each <code>item</code> into <code>session</code>, if it&#8217;s not in that object already, or increment its quantity if it is. And <code>session</code> is an object we get from the framework, that acts like a shopping cart, where we can save information for each user connected to our web server.</p>
 </li>
 <li>
-<p>The <code>cart</code> method creates an empty list, and uses the session to append a dictionary for each item, that contains its name and quantity. Then we pass that into <code>render_template</code> so we can use it to build <code>cart.html</code> which we already saw.</p>
+<p>The <code>cart</code> method creates an empty list, and stores a dictionary for each item with its name and quantity, using the session to get that value. Then we pass that into <code>render_template</code> as an argument, so we can use it to build <code>cart.html</code>, which we saw above.</p>
 </li>
 </ul>
 </div>
