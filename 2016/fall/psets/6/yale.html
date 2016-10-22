@@ -4,36 +4,6 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
-        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    displayMath: [["\\[", "\\]"]],
-                    ignoreClass: "nostem|nostem|nolatexmath",
-                    inlineMath: [["\\(", "\\)"]]
-                },
-                asciimath2jax: {
-                    delimiters: [["\\$", "\\$"]],
-                    ignoreClass: "nostem|nostem|noasciimath",
-                    processEnvironments: true
-                }
-            });
-        </script>
-        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <script>
-
-            $(function() {
-
-                // responsive embed
-                // http://getbootstrap.com/components/#responsive-embed
-                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
-                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
-
-            });
-
-        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -428,192 +398,251 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <style>
-
-            /* don't wrap long code lines */
-            pre code {
-                white-space: pre;
-            }
-
-            /* match margin-bottom of div.paragraph */
-            div.stemblock div.content {
-                margin-bottom: 1.25em;
-            }
-
-            /* fill page */
-            table {
-                width: 100%;
-            }
-
-            /* allow captions to wrap */
-            .tableblock > caption {
-                max-width: inherit;
-                white-space: inherit;
-            }
-
-        </style>
-        <title>Initials</title>
+        <title></title>
     </head>
-    
-        <body class="toc2 toc-left">
-            <div id="header">
-                <div class="toc2" id="toc">
-                    <div id="toctitle">Table of Contents</div>
-                    <ul class="sectlevel1">
+    <body class="toc2 toc-left">
+        <div id="header">
+            <div class="toc2" id="toc">
+                <div id="toctitle">Table of Contents</div>
+                <ul class="sectlevel1">
 <li><a href="#tl-dr">tl;dr</a></li>
-<li><a href="#specification">Specification</a></li>
-<li><a href="#walkthrough">Walkthrough</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#testing">Testing</a>
+<li><a href="#help">Help</a></li>
+<li><a href="#academic-honesty">Academic Honesty</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#problems">Problems</a></li>
+<li><a href="#hints">Hints</a></li>
+<li><a href="#how-to-submit">How to Submit</a>
 <ul class="sectlevel2">
-<li><a href="#code-check50-code"><code>check50</code></a></li>
+<li><a href="#step-1-of-2">Step 1 of 2</a></li>
+<li><a href="#step-2-of-2">Step 2 of 2</a></li>
 </ul>
 </li>
-<li><a href="#staff-s-solution">Staff&#8217;s Solution</a></li>
-<li><a href="#faqs">FAQs</a></li>
-<li><a href="#changelog">Changelog</a></li>
 </ul>
-                </div>
             </div>
-            <div id="content">
-                <h1>Initials</h1>
+        </div>
+        <div id="content">
+            <h1>Problem Set 6: Sentimental</h1>
 <div class="sect1">
 <h2 id="tl-dr"><a class="link" href="#tl-dr">tl;dr</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Implement a program that, given a person&#8217;s name, prints a person&#8217;s initials, per the below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>$ ./initials
-Regulus Arcturus Black
-RAB</code></pre>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Watch <a href="https://video.cs50.net/2016/fall/lectures/8">Week 8&#8217;s lecture</a> (and <a href="https://video.cs50.net/2016/fall/lectures/6">Week 6&#8217;s</a> and <a href="https://video.cs50.net/2016/fall/lectures/7">Week 7&#8217;s</a>, if you haven&#8217;t already).</p>
+</li>
+<li>
+<p>Port some programs from C to Python.</p>
+</li>
+<li>
+<p>Analyze some sentiments.</p>
+</li>
+<li>
+<p>Submit a form.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="specification"><a class="link" href="#specification">Specification</a></h2>
+<h2 id="help"><a class="link" href="#help">Help</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Design and implement a program, <code>initials</code>, that, given a person&#8217;s name, prints a person&#8217;s initials.</p>
+<p>For help with Weeks 6 – 8 and Problem Set 8:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Implement your program in a file called <code>initials.c</code> in a directory called <code>initials</code>.</p>
+<p>Attend a walkthrough (of Sentiments) on Thu 10/26, 4pm – 5:15pm, in SSS 114.</p>
 </li>
 <li>
-<p>Your program should prompt a user for their name using <code>get_string</code> to obtain their name as a <code>string</code>.</p>
+<p>Watch David&#8217;s walkthroughs (of Sentiments) herein (coming Mon 10/24 eve).</p>
 </li>
 <li>
-<p>You may assume that the user&#8217;s input will contain only letters (uppercase and/or lowercase) plus single spaces between words. You don&#8217;t need to worry about names like <code>Joseph Gordon-Levitt</code>, <code>Conan O&#8217;Brien</code>, or <code>David J. Malan</code>!</p>
+<p>Attend your TA&#8217;s section (or another if you have a conflict).</p>
 </li>
 <li>
-<p>Your program should print the user&#8217;s initials (i.e., the first letter of each word in their name) with no spaces or periods, followed by a newline (<code>\n</code>).</p>
+<p>Post questions and search answers in <a href="https://cs50.yale.edu/discuss">CS50 Discuss</a>.</p>
+</li>
+<li>
+<p>Attend <a href="https://cs50.yale.edu/hours">office hours</a>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="walkthrough"><a class="link" href="#walkthrough">Walkthrough</a></h2>
-<div class="sectionbody">
-<div class="videoblock">
-<div class="content">
-<iframe src="https://www.youtube.com/embed/UItYCp0Ivqg?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="usage"><a class="link" href="#usage">Usage</a></h2>
+<h2 id="academic-honesty"><a class="link" href="#academic-honesty">Academic Honesty</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Your program should behave per the examples below. Assumed that the underlined text is what some user has typed.</p>
+<p>Do keep in mind the course&#8217;s policy on <a href="http://docs.cs50.net/2016/fall/syllabus/cs50.html#academic-honesty">academic honesty</a>, particularly its "regret clause."</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="link" href="#getting-started">Getting Started</a></h2>
+<div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>$ <span class="underline">./initials</span>
-<span class="underline">Zamyla Chan</span>
-ZC</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>$ <span class="underline">./initials</span>
-<span class="underline">robert thomas bowden</span>
-RTB</code></pre>
+<pre class="pygments highlight"><code>update50
+cd ~/workspace/
+wget http://cdn.cs50.net/2016/fall/psets/6/pset6.zip
+unzip pset6.zip
+rm pset6.zip</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
+<h2 id="problems"><a class="link" href="#problems">Problems</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Implement either of the below exactly as specified but in Python:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.cs50.net/problems/mario/less/mario.html">Mario</a>, less comfortable, in a file called <code>mario.py</code> in <code>pset6/</code>.</p>
+</li>
+<li>
+<p><a href="http://docs.cs50.net/problems/mario/more/mario.html">Mario</a>, more comfortable, in a file called <code>mario.py</code> in <code>pset6/</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Implement either of the below exactly as specified but in Python:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.cs50.net/problems/greedy/greedy.html">Greedy</a>, less comfortable, in a file called <code>greedy.py</code> in <code>pset6/</code>.</p>
+</li>
+<li>
+<p><a href="http://docs.cs50.net/problems/credit/credit.html">Credit</a>, more comfortable, in a file called <code>credit.py</code> in <code>pset6/</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Implement any (one) of the below exactly as specified but in Python:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.cs50.net/problems/caesar/caesar.html">Caesar</a>, less comfortable, in a file called <code>caesar.py</code> in <code>pset6/</code>.</p>
+</li>
+<li>
+<p><a href="http://docs.cs50.net/problems/vigenere/vigenere.html">Vigenère</a>, less comfortable, in a file called <code>vigenere.py</code> in <code>pset6/</code>.</p>
+</li>
+<li>
+<p><a href="http://docs.cs50.net/problems/crack/crack.html">Crack</a>, more comfortable, in a file called <code>crack.py</code> in <code>pset6/</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Implement <a href="http://docs.cs50.net/problems/sentiments/sentiments.html">Sentiments</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>No <code>check50</code> for these!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hints"><a class="link" href="#hints">Hints</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Be sure to use Python 3, not Python 2.</p>
+</li>
+<li>
+<p>If a program is in a file called, say, <code>foo.py</code>, you can run that program with <code>python foo.py</code>.</p>
+</li>
+<li>
+<p>For Mario, Greedy, Credit, Caesar, Vigenère, and Crack, it is <strong>reasonable</strong> to look at your own implementations thereof in C and others' implementations thereof in C, including the staff&#8217;s implementations thereof (and postmortems) in C. It is <strong>not reasonable</strong> to look at others' implementations of the same in Python. It is <strong>not reasonable</strong> to look at others' implementations of Sentiments.</p>
+</li>
+<li>
+<p>Insofar as a goal of this problem set is to teach you how to teach yourself a new language, keep in mind that these acts are not only <strong>reasonable</strong>, per the syllabus, but encouraged toward that end:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Incorporating a few lines of code that you find online or elsewhere into your own code, provided that those lines are not themselves solutions to assigned problems and that you cite the lines' origins.</p>
+</li>
+<li>
+<p>Turning to the web or elsewhere for instruction beyond the course&#8217;s own, for references, and for solutions to technical difficulties, but not for outright solutions to problem set&#8217;s problems or your own final project.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You&#8217;re welcome to use the CS50 Library for Python, which includes <code>get_float</code>, <code>get_int</code>, and <code>get_string</code>. Just remember to include</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>import cs50</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>atop your code. Or you can use <a href="https://docs.python.org/3/library/functions.html#input"><code>input</code></a> and validate users' input yourself.</p>
+</div>
+</li>
+<li>
+<p>You might find these references of interest:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.python.org/3/reference/index.html">The Python Language Reference</a></p>
+</li>
+<li>
+<p><a href="https://docs.python.org/3/library/">The Python Standard Library</a></p>
+</li>
+<li>
+<p><a href="https://docs.python.org/3/tutorial/index.html">The Python Tutorial</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="code-check50-code"><a class="link" href="#code-check50-code"><code>check50</code></a></h3>
+<h3 id="step-1-of-2"><a class="link" href="#step-1-of-2">Step 1 of 2</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code>check50 2016.initials.less initials.c</code></pre>
+<pre class="pygments highlight"><code>update50
+cd ~/workspace/pset6/
+submit50 pset6</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="step-2-of-2"><a class="link" href="#step-2-of-2">Step 2 of 2</a></h3>
+<div class="paragraph">
+<p>Submit <a href="https://forms.cs50.net/2016/fall/psets/6" class="bare">https://forms.cs50.net/2016/fall/psets/6</a>!</p>
+</div>
+<div class="paragraph">
+<p>This was Problem Set 6.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="staff-s-solution"><a class="link" href="#staff-s-solution">Staff&#8217;s Solution</a></h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>~cs50/pset2/initials</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Might the user&#8217;s input start or end with spaces?</dt>
-<dd>
-<p>No, you may assume that the only spaces in the user&#8217;s input will be single spaces between words. A previous version of this problem&#8217;s walkthrough incorrectly stated that there might be spaces at the start or end of the user&#8217;s input, but the video has since been fixed! Apologies for any confusion!</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="changelog"><a class="link" href="#changelog">Changelog</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>2016-09-14</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Corrected walkthrough, added FAQ about spaces at input&#8217;s start and end.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>2016-09-09</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Initial release.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-            </div>
-        </body>
-    
+        </div>
+    </body>
 </html>
