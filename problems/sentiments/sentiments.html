@@ -599,29 +599,29 @@ application.py  negative-words.txt  requirements.txt    templates/</code></pre>
 <p>Open up <code>helpers.py</code>. You should see two functions: <code>chart</code> and <code>get_user_timeline</code>. Given three values (<code>positive</code>, <code>negative</code>, and <code>neutral</code>, each an <code>int</code> or a <code>float</code>), <code>chart</code> generates HTML (as a <code>str</code>) for a pie chart depicting those values. Given a screen name, meanwhile, <code>get_user_timeline</code> returns a <code>list of tweets (each as a `str</code>). That function uses <a href="https://twython.readthedocs.io/">Twython</a> (har har), a library for Python, to retrieve those tweets via <a href="https://dev.twitter.com/overview/api">Twitter&#8217;s API</a> (application programming interface), a free service that can be queried programmatically for tweets. Notice how the function expects two "environment variables" to exist. Environment variables exist within your terminal window, key/value pairs that programs (like <code>tweets</code>) can access programmatically. We&#8217;ll soon use two, <code>API_KEY</code> and <code>API_SECRET</code> to store credentials for Twitter.</p>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="code-application-py-code"><a class="link" href="#code-application-py-code"><code>application.py</code></a></h3>
+<div class="sect3">
+<h4 id="code-application-py-code"><a class="link" href="#code-application-py-code"><code>application.py</code></a></h4>
 <div class="paragraph">
 <p>Open up <code>application.py</code>. In this file is a "controller" for a Flask-based web app with two endpoints: <code>/</code> and <code>/search</code>. The first displays the simplest of forms via which you can search for a user on Twitter by screen name. The second displays one of those pie charts categorizing that user&#8217;s tweets. Notice, though, how 100% of those tweets are (temporarily) assumed to be neutral.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="code-templates-index-html-code"><a class="link" href="#code-templates-index-html-code"><code>templates/index.html</code></a></h3>
+<div class="sect3">
+<h4 id="code-templates-index-html-code"><a class="link" href="#code-templates-index-html-code"><code>templates/index.html</code></a></h4>
 <div class="paragraph">
 <p>Open up <code>templates/index.html</code>. In there is that simplest of forms. Notice how it figures out via <code>url_for</code>, a function that comes with Flask, to what URL the form should be submitted.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="code-templates-search-html-code"><a class="link" href="#code-templates-search-html-code"><code>templates/search.html</code></a></h3>
+<div class="sect3">
+<h4 id="code-templates-search-html-code"><a class="link" href="#code-templates-search-html-code"><code>templates/search.html</code></a></h4>
 <div class="paragraph">
 <p>Open up <code>templates/search.html</code>. Notice how this template renders a user&#8217;s screen name as well as that pie chart.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="code-templates-layout-html-code"><a class="link" href="#code-templates-layout-html-code"><code>templates/layout.html</code></a></h3>
+<div class="sect3">
+<h4 id="code-templates-layout-html-code"><a class="link" href="#code-templates-layout-html-code"><code>templates/layout.html</code></a></h4>
 <div class="paragraph">
 <p>Open up <code>templates/layout.html</code>. In here is a layout on which <code>index.html</code> and <code>search.html</code> depend. It leverages <a href="http://getbootstrap.com/">Bootstrap</a> to override browsers' default aesthetics.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="code-requirements-txt-code"><a class="link" href="#code-requirements-txt-code"><code>requirements.txt</code></a></h4>
