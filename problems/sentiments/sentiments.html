@@ -596,7 +596,7 @@ application.py  negative-words.txt  requirements.txt    templates/</code></pre>
 <div class="sect3">
 <h4 id="code-helpers-py-code"><a class="link" href="#code-helpers-py-code"><code>helpers.py</code></a></h4>
 <div class="paragraph">
-<p>Open up <code>helpers.py</code>. You should see two functions: <code>chart</code> and <code>get_user_timeline</code>. Given three values (<code>positive</code>, <code>negative</code>, and <code>neutral</code>, each an <code>int</code> or a <code>float</code>), <code>chart</code> generates HTML (as a <code>str</code>) for a pie chart depicting those values. Given a screen name, meanwhile, <code>get_user_timeline</code> returns a <code>list</code> of tweets (each as a <code>str</code>). That function uses <a href="https://twython.readthedocs.io/">Twython</a> (har har), a library for Python, to retrieve those tweets via <a href="https://dev.twitter.com/overview/api">Twitter&#8217;s API</a> (application programming interface), a free service that can be queried programmatically for tweets. Notice how the function expects two "environment variables" to exist. Environment variables exist within your terminal window, key/value pairs that programs (like <code>tweets</code>) can access programmatically. We&#8217;ll soon use two, <code>API_KEY</code> and <code>API_SECRET</code> to store credentials for Twitter.</p>
+<p>Open up <code>helpers.py</code>. You should see two functions: <code>chart</code> and <code>get_user_timeline</code>. Given three values (<code>positive</code>, <code>negative</code>, and <code>neutral</code>, each an <code>int</code> or a <code>float</code>), <code>chart</code> generates HTML (as a <code>str</code>) for a pie chart depicting those values. Given a screen name, meanwhile, <code>get_user_timeline</code> returns a <code>list</code> of tweets (each as a <code>str</code>). That function uses <a href="https://twython.readthedocs.io/">Twython</a> (har har), a library for Python, to retrieve those tweets via <a href="https://dev.twitter.com/overview/api">Twitter&#8217;s API</a> (application programming interface), a free service that can be queried programmatically for tweets. Notice how the function expects two "environment variables" to exist. Environment variables exist within your terminal window, key/value pairs that programs (like <code>tweets</code>) can access programmatically. We&#8217;ll soon use two, <code>API_KEY</code> and <code>API_SECRET</code>, to store credentials for Twitter.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1015,8 +1015,11 @@ $ <span class="underline">./tweets @cs50</span>
 <div class="sect1">
 <h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="could-not-build-url-for-endpoint"><a class="link" href="#could-not-build-url-for-endpoint">Could not build url for endpoint '/'</a></h3>
 <div class="paragraph">
-<p><em>None so far! Reload this page periodically to check if any arise!</em></p>
+<p>If you find that when you try to search in your Flask app without typing anything into the text field, you get a <code>Could not build url for endpoint '/'.</code>, change the line in <code>application.py</code> that reads <code>redirect(url_for("/"))</code> to <code>return redirect(url_for("index"))</code>.</p>
+</div>
 </div>
 </div>
 </div>
