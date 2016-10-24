@@ -415,7 +415,15 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#assessment">Assessment</a></li>
 <li><a href="#buggin-out">Buggin’ Out</a></li>
 <li><a href="#debug50">debug50</a></li>
-<li><a href="#debugging-buggy">Debugging Buggy</a></li>
+<li><a href="#debugging-buggy">Debugging Buggy</a>
+<ul class="sectlevel2">
+<li><a href="#buggy1">Buggy1</a></li>
+<li><a href="#buggy2">Buggy2</a></li>
+<li><a href="#buggy3">Buggy3</a></li>
+<li><a href="#buggy4">Buggy4</a></li>
+<li><a href="#buggy5">Buggy5</a></li>
+</ul>
+</li>
 </ul>
             </div>
         </div>
@@ -584,7 +592,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="buggin-out"><a class="link" href="#buggin-out">Buggin’ Out</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Tell me if this sounds familiar, you’ve written some code and maybe used help50 and your program compiles. Then you run your program with some sample inputs (so long as you know what the output should be) and you get some unexpected results. This is what is referred to as a bug. Fear not, there are many tools specifically designed to help us find and fix these bugs. But more on those later.</p>
+<p>Tell me if this sounds familiar, you’ve written some code and maybe used help50, and your program compiles. Then you run your program with some sample inputs (so long as you know what the output should be) and you get some unexpected results. This is what is referred to as a bug. Fear not, there are many tools specifically designed to help us find and fix these bugs. But more on those later.</p>
 </div>
 <div class="paragraph">
 <p>You&#8217;ll be downloading some "distribution code" (otherwise known as a "distro"), written by us, and make modifications to it. You&#8217;re welcome of course to use all the CS50 tools and resources to help you debug.
@@ -619,7 +627,7 @@ Start off by opening up CS50 IDE and then type</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">wget http://docs.cs50.net/2016/ap/problems/buggy/buggy.zip</code></pre>
+<pre class="pygments highlight"><code data-lang="bash">wget http://docs.cs50.net/2016/fall/cscie50a/problems/buggy/buggy.zip</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -688,8 +696,107 @@ Start off by opening up CS50 IDE and then type</p>
 <div class="sect1">
 <h2 id="debugging-buggy"><a class="link" href="#debugging-buggy">Debugging Buggy</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="buggy1"><a class="link" href="#buggy1">Buggy1</a></h3>
+<div class="paragraph">
+<p>We’ve written five programs that seem to act a bit buggy. Let’s go through each one to see what needs to be done. The first program, buggy1, is meant to print:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">*#*#*#*#*#*#*#*#*#*#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>but instead prints:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">***********#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Seems easy enough to fix (indeed this should be rather trivial).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buggy2"><a class="link" href="#buggy2">Buggy2</a></h3>
+<div class="paragraph">
+<p>Buggy2 is a program that is supposed to print out a string, entered by the user, character by character. The program should exit if the string contains a character that is not a letter in the alphabet.</p>
+</div>
+<div class="paragraph">
+<p>However the program seems to print out the string regardless of if there are symbols or numbers. When Zamyla1 is entered, the program should exit, instead it prints:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">Z
+a
+m
+y
+l
+a
+1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(hint: take a look at <a href="https://reference.cs50.net" class="bare">https://reference.cs50.net</a>)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buggy3"><a class="link" href="#buggy3">Buggy3</a></h3>
+<div class="paragraph">
+<p>Buggy3 should bring back memories of high school (Ah, the nostalgia). If the pythagorean theorem doesn’t ring a bell, it is the formula that two legs of a right triangle (a, b) are related the hypotenuse (c) in the following way, a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>.</p>
+</div>
+<div class="paragraph">
+<p>You may have also learned about pythagorean triples (not to worry if you didn’t). These are lengths of right triangles that are strictly integers, ex. 3, 4, 5. Since 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
+</div>
+<div class="paragraph">
+<p>In buggy3.c, the same logic was attempted. Looks like part of the function is defined in main and some of it is defined in the function. It also looks like when 3 and 4 are entered as legs of the triangle, 25 is printed. So this is a two step problem, first clean up this program by abstracting out all aspects of the pythagorean theorem into the function <code>pythag</code> and change your parameters accordingly, then fix the logic aspect so that 5 would be printed if 3 and 4 are entered. Your program should take in two legs of a triangle and print the hypotenuse.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buggy4"><a class="link" href="#buggy4">Buggy4</a></h3>
+<div class="paragraph">
+<p>This is a long one. Take some time to read through it carefully. This program takes in four parameters: min1, min2_10, min11, and s. The first, min1, represents the cost of a phone call (in cents) for the first minute. Likewise, min2_10, represents the cost of minutes 2-10 (inclusive) and as you might have guessed, min11 represents the cost per minute thereafter. Lastly, s, represents how much change the user has. So if I input [3, 1, 2, 4] respectively, the program should print:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">The longest phone call that can be made is <span class="tok-m">2</span> minutes long.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is because the first minute costs 3 cents and the second minute costs 1 cent.</p>
+</div>
+<div class="paragraph">
+<p>Be sure to check corner cases here. Try to intentionally put in strange cases to make sure you get the expected output. One such case is that when s = 0, the program should always return:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">The longest phone call that can be made is <span class="tok-m">0</span> minutes long.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>regardless of the other inputs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="buggy5"><a class="link" href="#buggy5">Buggy5</a></h3>
+<div class="paragraph">
+<p>This last program takes two integers from the user. The first of which, n, represents the number of children present and the second, m, represents the pieces of candy that the children are going to split amongst themselves. In order to be fair (which we know is usually not the case), each child has to have the same amount of pieces of candy.</p>
+</div>
+<div class="paragraph">
+<p>For example if <code>n = 3</code> and <code>m = 2</code>, buggy5.c should output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash">The children ate <span class="tok-m">0</span> pieces of candy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since there weren’t enough pieces of candy to go around. Similar if <code>n = 3</code> and <code>m = 10</code>, buggy5.c should output 9, since each child could eat 3 pieces and there are 3 children. Again be sure to check corner cases here as well, to make sure your fixes work in all cases.</p>
+</div>
 <div class="paragraph">
 <p>This was Buggy.</p>
+</div>
 </div>
 </div>
 </div>
