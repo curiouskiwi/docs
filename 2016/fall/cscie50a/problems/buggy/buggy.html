@@ -414,7 +414,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </li>
 <li><a href="#assessment">Assessment</a></li>
 <li><a href="#buggin-out">Buggin’ Out</a></li>
-<li><a href="#code-debug50-code"><code>debug50</code></a></li>
+<li><a href="#code-debug50-code-and-code-eprintf-code"><code>debug50</code> and <code>eprintf</code></a></li>
 <li><a href="#stop-bugging-me">Stop Bugging Me!</a>
 <ul class="sectlevel2">
 <li><a href="#code-buggy1-code"><code>buggy1</code></a></li>
@@ -696,7 +696,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 <div class="sect1">
-<h2 id="code-debug50-code"><a class="link" href="#code-debug50-code"><code>debug50</code></a></h2>
+<h2 id="code-debug50-code-and-code-eprintf-code"><a class="link" href="#code-debug50-code-and-code-eprintf-code"><code>debug50</code> and <code>eprintf</code></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>As mentioned earlier, you are not on your own when it comes to debugging these programs. Here’s David with some information about a tool, <code>debug50</code>, that might help you as you debug these programs.</p>
@@ -707,7 +707,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 <div class="paragraph">
-<p>One more tool you may also find useful is a function called <code>eprintf</code>. Be sure to <code>#inlcude &lt;cs50.h&gt;</code> so you can access it in your code. Here’s David with how you could use it to debug a program:</p>
+<p>One more tool you may also find useful is a function called <code>eprintf</code>. Be sure to <code>#include &lt;cs50.h&gt;</code> so you can access it in your code. Here’s David with how you could use it to debug a program:</p>
 </div>
 <div class="videoblock">
 <div class="content">
@@ -830,7 +830,7 @@ a
 <p>This last program takes two integers from the user. The first of which, <code>n</code>, represents the number of children present and the second, <code>m</code>, represents the pieces of candy that the children are going to split amongst themselves. In order to be fair (which we know is usually not the case!), each child has to have the same amount of pieces of candy.</p>
 </div>
 <div class="paragraph">
-<p>For example if <code>n = 3</code> and <code>m = 2</code>, <code>buggy5</code> should output:</p>
+<p>For example if <code>n == 3</code> and <code>m == 2</code>, <code>buggy5</code> should output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -838,13 +838,13 @@ a
 </div>
 </div>
 <div class="paragraph">
-<p>Since there weren’t enough pieces of candy to go around. Similar if <code>n = 3</code> and <code>m = 10</code>, buggy5.c should output 9, since each child could eat 3 pieces and there are 3 children. Again be sure to check corner cases here as well, to make sure your fixes work in all cases.</p>
+<p>Since there weren’t enough pieces of candy to go around. Similarly if <code>n == 3</code> and <code>m == 10</code>, the program should output 9, since each child could eat 3 pieces and there are 3 children. Again be sure to check corner cases here as well, to make sure your fixes work in all cases.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="write-up"><a class="link" href="#write-up">Write-Up</a></h3>
 <div class="paragraph">
-<p>Now that you’ve fixed all the bugs its time to reflect on the types of bugs you encountered. For each of the buggy programs you fixed, you will need to write a few sentences explaining what the bug(s) were for that program as well as a short paragraph on how you remedied it. Be sure to consider the things you tried that did not work and tools you used as these will be helpful looking ahead to recognize how to fix similar bugs in the future.</p>
+<p>Now that you’ve fixed all the bugs its time to reflect on the types of bugs you encountered. For each of the buggy programs you fixed, you will need to write a few sentences explaining what the bug(s) were for that program as well as a few sentences on how you remedied it. Some <code>TODO</code>s await you in <code>buggy.txt</code> for exactly this purpose! Be sure to consider the things you tried that did not work and tools you used, as these will be helpful looking ahead to recognize how to fix similar bugs in the future!</p>
 </div>
 </div>
 <div class="sect2">
@@ -875,7 +875,7 @@ a
 </ol>
 </div>
 <div class="paragraph">
-<p>This was Buggy.</p>
+<p>This was Buggy. (But hopefully not anymore!)</p>
 </div>
 </div>
 </div>
