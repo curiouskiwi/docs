@@ -675,11 +675,11 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 <div class="paragraph">
-<p>and you should indeed see five buggy programs!</p>
+<p>and you should indeed see five buggy programs and a text file!</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash">buggy1.c  buggy2.c  buggy3.c  buggy4.c  buggy5.c</code></pre>
+<pre class="pygments highlight"><code data-lang="bash">buggy.txt  buggy1.c  buggy2.c  buggy3.c  buggy4.c  buggy5.c</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -715,7 +715,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="stop-bugging-me"><a class="link" href="#stop-bugging-me">Stop Bugging Me!</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These five programs seem to act a bit buggy. Let’s go through each one to see what needs to be done.</p>
+<p>These five programs seem to act a bit buggy. Let’s go through each one to see what needs to be done. Be sure to take a quick look at buggy.txt just to see what you should be keeping in mind as you debug these programs.</p>
 </div>
 <div class="sect2">
 <h3 id="code-buggy1-code"><a class="link" href="#code-buggy1-code"><code>buggy1</code></a></h3>
@@ -768,13 +768,13 @@ a
 <p>Fond memories of high school should be flooding back (ah, the nostalgia). If the Pythagorean theorem doesn’t ring a bell, it is the formula that two legs of a right triangle (<code>a</code>, <code>b</code>) are related the hypotenuse (<code>c</code>) in the following way:</p>
 </div>
 <div class="paragraph">
-<p>\($a^2 + b^2 = c^2$\)</p>
+<p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
 </div>
 <div class="paragraph">
 <p>You may have also learned about Pythagorean triples (not to worry if you didn’t). These are lengths of right triangles that are strictly integers, ex. 3, 4, 5. Since</p>
 </div>
 <div class="paragraph">
-<p>\($3^2 + 4^2 = 9 + 16 = 25 = 5^2$\)</p>
+<p>3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup></p>
 </div>
 <div class="paragraph">
 <p>then (3, 4, 5) is indeed a Pythagorean triple!</p>
@@ -825,7 +825,7 @@ a
 <p>This last program takes two integers from the user. The first of which, <code>n</code>, represents the number of children present and the second, <code>m</code>, represents the pieces of candy that the children are going to split amongst themselves. In order to be fair (which we know is usually not the case!), each child has to have the same amount of pieces of candy.</p>
 </div>
 <div class="paragraph">
-<p>For example if <code>n == 3</code> and <code>m == 2</code>, <code>buggy5</code> should output:</p>
+<p>For example if <code>n = 3</code> and <code>m = 2</code>, <code>buggy5</code> should output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -839,7 +839,7 @@ a
 <div class="sect2">
 <h3 id="write-up"><a class="link" href="#write-up">Write-Up</a></h3>
 <div class="paragraph">
-<p>Require them to do the write up in a file called <code>buggy.txt</code> in their <code>buggy</code> directory, Erin!</p>
+<p>Now that you’ve fixed all the bugs its time to reflect on the types of bugs you encountered. For each of the buggy programs you fixed, you will need to write a few sentences explaining what the bug(s) were for that program as well as a short paragraph on how you remedied it. Be sure to consider the things you tried that did not work and tools you used as these will be helpful looking ahead to recognize how to fix similar bugs in the future.</p>
 </div>
 </div>
 <div class="sect2">
@@ -853,13 +853,13 @@ a
 <p>Open up CS50 IDE.</p>
 </li>
 <li>
-<p>Navigate to your <code>~/workspace/week8</code> directory, ensuring that the <code>buggy</code> directory containing all of your bugfixes and your <code>buggy.txt</code> file exists therein.</p>
+<p>Navigate to your <code>~/workspace/chapter2</code> directory, ensuring that the <code>buggy</code> directory containing all of your bugfixes and your <code>buggy.txt</code> file exists therein.</p>
 </li>
 <li>
 <p>At the terminal, type <code>zip -r first_last.zip buggy</code>, replacing your own first and last name with <code>first</code> and <code>last</code> respectively. (So, for instance, <code>john_harvard.zip</code>)</p>
 </li>
 <li>
-<p>This should create a new file called <code>first_last.zip</code> in your <code>week8</code> directory.</p>
+<p>This should create a new file called <code>first_last.zip</code> in your <code>chapter2</code> directory.</p>
 </li>
 <li>
 <p>In the file browser at left, right-click (or Ctrl-click, with a Mac) on the <code>first_last.zip</code> file, choosing <strong>Download</strong> from the context menu. This will save a local copy of <code>first_last.zip</code> on your machine.</p>
