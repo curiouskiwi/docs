@@ -581,7 +581,7 @@ application.py  negative-words.txt  requirements.txt    templates/</code></pre>
 <p>Open up <code>anlyzer.py</code> in <code>sentiments/</code>. Not much going on in there (yet)! Notice, though, that it imports the <a href="http://www.nltk.org/">Natural Language Toolkit</a>, among whose features is a <a href="http://www.nltk.org/api/nltk.tokenize.html">tokenizer</a> that you can use to split a tweet (which is maximally a 140-character <code>str</code> object) into a <code>list</code> of words (i.e., shorter <code>str</code> objects).</p>
 </div>
 <div class="paragraph">
-<p>In there is our definition of that <code>Analyzer</code> class, which has two methods: <code>__init__</code>, which is called whenever <code>Analyzer</code> is instantiated; and <code>analyze</code>, which can be called to analyze some <code>text</code>. That first method takes two arguments in addition to <code>self</code>: <code>positives</code>, whose value is the path to a text file containing positive words; and <code>negatives</code>, whose value is the path to a text file containing negative words. Notice how both "named parameters" have default values so that a caller (e.g., <code>smile</code>) doesn&#8217;t need to provide them. Meanwhile, <code>analyze</code> takes one argument in addition to <code>self</code>: a word to be analyzed for sentiment. Though that function is (temporarily) hardcoded to return <code>0</code> no matter what.</p>
+<p>In there is our definition of that <code>Analyzer</code> class, which has two methods: <code>__init__</code>, which is called whenever <code>Analyzer</code> is instantiated; and <code>analyze</code>, which can be called to analyze some <code>text</code>. That first method takes two arguments in addition to <code>self</code>: <code>positives</code>, whose value is the path to a text file containing positive words; and <code>negatives</code>, whose value is the path to a text file containing negative words. Notice how both "named parameters" have default values so that a caller (e.g., <code>smile</code>) doesn&#8217;t need to provide them. Meanwhile, <code>analyze</code> takes one argument in addition to <code>self</code>: a <code>str</code> to be analyzed for sentiment. Though that function is (temporarily) hardcoded to return <code>0</code> no matter what.</p>
 </div>
 <div class="paragraph">
 <p>Recall that methods are automatically passed that first reference to <code>self</code> so that they have a way of referring to objects' "instance variables."</p>
@@ -1039,6 +1039,16 @@ $ <span class="underline">./tweets @cs50</span>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
+<li>
+<p>2016-10-26</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Clarified that <code>analyze</code> takes a (potentially multi-word) <code>str</code> as an argument, not just a word.</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>2016-10-21</p>
 <div class="ulist">
