@@ -993,6 +993,9 @@ $ <span class="underline">./tweets @cs50</span>
 <p>Odds are you&#8217;ll find <a href="https://docs.python.org/3/library/stdtypes.html#str.lower"><code>str.lower</code></a> of interest.</p>
 </li>
 <li>
+<p>Note that <code>get_user_timeline</code> returns <code>None</code> in cases of error, as might happen if a screen name doesn&#8217;t exist or a screen name&#8217;s tweets are private.</p>
+</li>
+<li>
 <p>And here&#8217;s the <a href="https://wiki.python.org/moin/TimeComplexity">time-complexity (aka "Big O" or "Big Oh") of various operations in current CPython</a>, the implementation of Python we&#8217;re using (which is an interpreter called <code>python</code>, or really <code>python3</code>, which itself is actually written in C).</p>
 </li>
 </ul>
@@ -1032,6 +1035,12 @@ $ <span class="underline">./tweets @cs50</span>
 <p>If you find that when you try to search in your Flask app without typing anything into the text field, you get a <code>Could not build url for endpoint '/'.</code>, change the line in <code>application.py</code> that reads <code>redirect(url_for("/"))</code> to <code>return redirect(url_for("index"))</code>.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="typeerror-nonetype-object-is-not-iterable"><a class="link" href="#typeerror-nonetype-object-is-not-iterable">TypeError: 'NoneType' object is not iterable</a></h3>
+<div class="paragraph">
+<p>If seeing this in a <code>for</code> loop, be sure you&#8217;re indeed iterating over a <code>list</code> and not, e.g., <code>None</code>. In particular, be sure you&#8217;re checking the return value of <code>get_user_timeline</code>, which, per its implementation, can return <code>None</code> in cases of error.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1043,6 +1052,9 @@ $ <span class="underline">./tweets @cs50</span>
 <p>2016-10-26</p>
 <div class="ulist">
 <ul>
+<li>
+<p>Added hint and FAQ about how <code>get_user_timeline</code> can return <code>None</code>.</p>
+</li>
 <li>
 <p>Clarified that <code>analyze</code> takes a (potentially multi-word) <code>str</code> as an argument, not just a word.</p>
 </li>
