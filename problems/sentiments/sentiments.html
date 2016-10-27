@@ -1036,6 +1036,20 @@ $ <span class="underline">./tweets @cs50</span>
 </div>
 </div>
 <div class="sect2">
+<h3 id="importerror-no-module-named-sqlalchemy"><a class="link" href="#importerror-no-module-named-sqlalchemy">ImportError: No module named 'sqlalchemy'</a></h3>
+<div class="paragraph">
+<p>If seeing this error, execute</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>pip install --user sqlalchemy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to resolve!</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="typeerror-nonetype-object-is-not-iterable"><a class="link" href="#typeerror-nonetype-object-is-not-iterable">TypeError: 'NoneType' object is not iterable</a></h3>
 <div class="paragraph">
 <p>If seeing this in a <code>for</code> loop, be sure you&#8217;re indeed iterating over a <code>list</code> and not, e.g., <code>None</code>. In particular, be sure you&#8217;re checking the return value of <code>get_user_timeline</code>, which, per its implementation, can return <code>None</code> in cases of error.</p>

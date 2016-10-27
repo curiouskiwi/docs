@@ -472,6 +472,12 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#problem-4">Problem 4</a></li>
 </ul>
 </li>
+<li><a href="#faqs">FAQs</a>
+<ul class="sectlevel2">
+<li><a href="#attributeerror-module-object-has-no-attribute-code-get_-code">AttributeError: 'module' object has no attribute <code>get_</code></a></li>
+<li><a href="#importerror-no-module-named-sqlalchemy">ImportError: No module named 'sqlalchemy'</a></li>
+</ul>
+</li>
 <li><a href="#how-to-submit">How to Submit</a>
 <ul class="sectlevel2">
 <li><a href="#step-1-of-2">Step 1 of 2</a></li>
@@ -707,6 +713,37 @@ cd ~/workspace/pset6/</code></pre>
 <h3 id="problem-4"><a class="link" href="#problem-4">Problem 4</a></h3>
 <div class="paragraph">
 <p>See <a href="../../../../problems/sentiments/sentiments.html#walkthrough">Sentiments</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="attributeerror-module-object-has-no-attribute-code-get_-code"><a class="link" href="#attributeerror-module-object-has-no-attribute-code-get_-code">AttributeError: 'module' object has no attribute <code>get_</code></a></h3>
+<div class="paragraph">
+<p>If seeing this error (for <code>cs50.get_char</code>, <code>cs50.get_float</code>, <code>cs50.get_int</code>, or <code>cs50.get_string</code>), try executing the below (which fixes a bug in an earlier version of the CS50 Library for Python):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>sudo chmod -R a+rX /usr/lib/python2.7/dist-packages/cs50
+sudo chmod -R a+rX /usr/lib/python3/dist-packages/cs50</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importerror-no-module-named-sqlalchemy"><a class="link" href="#importerror-no-module-named-sqlalchemy">ImportError: No module named 'sqlalchemy'</a></h3>
+<div class="paragraph">
+<p>If seeing this error, execute</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>pip install --user sqlalchemy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to resolve!</p>
 </div>
 </div>
 </div>
