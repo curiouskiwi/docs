@@ -1050,9 +1050,15 @@ $ <span class="underline">./tweets @cs50</span>
 </div>
 </div>
 <div class="sect2">
+<h3 id="twython-exceptions-twythonerror-twitter-api-returned-a-404-not-found-sorry-that-page-does-not-exist"><a class="link" href="#twython-exceptions-twythonerror-twitter-api-returned-a-404-not-found-sorry-that-page-does-not-exist">twython.exceptions.TwythonError: Twitter API returned a 404 (Not Found), Sorry, that page does not exist</a></h3>
+<div class="paragraph">
+<p>If seeing this error, odds are you&#8217;re trying to get tweets for a screen name that doesn&#8217;t exist or that&#8217;s private!</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="typeerror-nonetype-object-is-not-iterable"><a class="link" href="#typeerror-nonetype-object-is-not-iterable">TypeError: 'NoneType' object is not iterable</a></h3>
 <div class="paragraph">
-<p>If seeing this in a <code>for</code> loop, be sure you&#8217;re indeed iterating over a <code>list</code> and not, e.g., <code>None</code>. In particular, be sure you&#8217;re checking the return value of <code>get_user_timeline</code>, which, per its implementation, can return <code>None</code> in cases of error.</p>
+<p>If seeing this error in a <code>for</code> loop, be sure you&#8217;re indeed iterating over a <code>list</code> and not, e.g., <code>None</code>. In particular, be sure you&#8217;re checking the return value of <code>get_user_timeline</code>, which, per its implementation, can return <code>None</code> in cases of error.</p>
 </div>
 </div>
 </div>
