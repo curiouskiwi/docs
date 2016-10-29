@@ -912,7 +912,7 @@ finance.db      requirements.txt  templates</code></pre>
 <div class="sect2">
 <h3 id="oserror-errno-98-address-already-in-use"><a class="link" href="#oserror-errno-98-address-already-in-use">OSError: [Errno 98] Address already in use</a></h3>
 <div class="paragraph">
-<p>If, upon running <code>flask</code>, you see this error, odds are you (still) have <code>flask</code> running in another tab. Be sure to kill that other process, as with ctrl-c, before starting <code>flask</code> again.</p>
+<p>If, upon running <code>flask</code>, you see this error, odds are you (still) have <code>flask</code> running in another tab. Be sure to kill that other process, as with ctrl-c, before starting <code>flask</code> again. If you haven&#8217;t any such other tab, execute <code>fuser -k 8080/tcp</code> to kill any processes that are (still) listening on TCP port 8080.</p>
 </div>
 </div>
 </div>
