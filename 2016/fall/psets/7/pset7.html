@@ -466,18 +466,6 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#problems">Problems</a></li>
 <li><a href="#hints">Hints</a></li>
-<li><a href="#walkthrough">Walkthrough</a>
-<ul class="sectlevel2">
-<li><a href="#problems-1-3">Problems 1 – 3</a></li>
-<li><a href="#problem-4">Problem 4</a></li>
-</ul>
-</li>
-<li><a href="#faqs">FAQs</a>
-<ul class="sectlevel2">
-<li><a href="#attributeerror-module-object-has-no-attribute-code-get_-code">AttributeError: 'module' object has no attribute <code>get_</code></a></li>
-<li><a href="#importerror-no-module-named-sqlalchemy">ImportError: No module named 'sqlalchemy'</a></li>
-</ul>
-</li>
 <li><a href="#how-to-submit">How to Submit</a>
 <ul class="sectlevel2">
 <li><a href="#step-1-of-2">Step 1 of 2</a></li>
@@ -488,20 +476,17 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
                 </div>
             </div>
             <div id="content">
-                <h1>Problem Set 6: Sentimental</h1>
+                <h1>Problem Set 7: C$50 Finance</h1>
 <div class="sect1">
 <h2 id="tl-dr"><a class="link" href="#tl-dr">tl;dr</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Watch <a href="https://video.cs50.net/2016/fall/lectures/8">Week 8&#8217;s lecture</a> (and <a href="https://video.cs50.net/2016/fall/lectures/6">Week 6&#8217;s</a> and <a href="https://video.cs50.net/2016/fall/lectures/7">Week 7&#8217;s</a>, if you haven&#8217;t already).</p>
+<p>Watch <a href="https://video.cs50.net/2016/fall/lectures/9?t=8m42s">Week 9&#8217;s lecture</a>.</p>
 </li>
 <li>
-<p>Port some programs from C to Python.</p>
-</li>
-<li>
-<p>Analyze some sentiments.</p>
+<p>Implement a stock-trading website.</p>
 </li>
 <li>
 <p>Submit a form.</p>
@@ -514,15 +499,15 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <h2 id="help"><a class="link" href="#help">Help</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For help with Weeks 6 – 8 and Problem Set 6:</p>
+<p>For help with Week 9 and Problem Set 7:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Attend David&#8217;s walkthrough on Mon 10/24, 1pm – 2:30pm, in Sanders Theatre.</p>
+<p>Attend David&#8217;s walkthrough on Mon 10/31, 1pm – 2:30pm, in Sanders Theatre.</p>
 </li>
 <li>
-<p>Watch David&#8217;s walkthrough (of Sentiments) herein (coming Mon 10/24 eve).</p>
+<p>Watch David&#8217;s walkthrough herein (coming Mon 10/31 eve).</p>
 </li>
 <li>
 <p>Attend your TF&#8217;s section (or another if you have a conflict).</p>
@@ -554,8 +539,8 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code>update50
-mkdir ~/workspace/pset6/
-cd ~/workspace/pset6/</code></pre>
+mkdir ~/workspace/pset7/
+cd ~/workspace/pset7/</code></pre>
 </div>
 </div>
 </div>
@@ -564,71 +549,10 @@ cd ~/workspace/pset6/</code></pre>
 <h2 id="problems"><a class="link" href="#problems">Problems</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All code that you write should be consistent with <a href="https://www.python.org/dev/peps/pep-0008/">Style Guide for Python Code</a>, otherwise known as PEP 8.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Implement either of the below exactly as specified but in Python:</p>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../../../../problems/mario/less/mario.html">Mario</a>, less comfortable, in a file called <code>mario.py</code> in <code>pset6/</code>.</p>
-</li>
-<li>
-<p><a href="../../../../problems/mario/more/mario.html">Mario</a>, more comfortable, in a file called <code>mario.py</code> in <code>pset6/</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Implement either of the below exactly as specified but in Python:</p>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../../../../problems/greedy/greedy.html">Greedy</a>, less comfortable, in a file called <code>greedy.py</code> in <code>pset6/</code>.</p>
-</li>
-<li>
-<p><a href="../../../../problems/credit/credit.html">Credit</a>, more comfortable, in a file called <code>credit.py</code> in <code>pset6/</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Implement any (one) of the below exactly as specified but in Python:</p>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../../../../problems/caesar/caesar.html">Caesar</a>, less comfortable, in a file called <code>caesar.py</code> in <code>pset6/</code>.</p>
-</li>
-<li>
-<p><a href="../../../../problems/vigenere/vigenere.html">Vigenère</a>, less comfortable, in a file called <code>vigenere.py</code> in <code>pset6/</code>.</p>
-</li>
-<li>
-<p><a href="../../../../problems/crack/crack.html">Crack</a>, more comfortable, in a file called <code>crack.py</code> in <code>pset6/</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Implement <a href="../../../../problems/sentiments/sentiments.html">Sentiments</a> in <code>pset6/sentiments/</code>.</p>
-</li>
-</ol>
+<p>Implement <a href="../../../../problems/finance/finance.html">C$50 Finance</a> in <code>pset7/finance/</code>.</p>
 </div>
 <div class="paragraph">
-<p>No <code>check50</code> for these!</p>
+<p>No <code>check50</code> for this one!</p>
 </div>
 </div>
 </div>
@@ -641,16 +565,7 @@ cd ~/workspace/pset6/</code></pre>
 <p>Be sure to use Python 3, not Python 2.</p>
 </li>
 <li>
-<p>If a program is in a file called, say, <code>foo.py</code>, you can run that program with <code>python foo.py</code>.</p>
-</li>
-<li>
-<p>For Mario, Greedy, Credit, Caesar, Vigenère, and Crack, it is <strong>reasonable</strong> to look at your own implementations thereof in C and others' implementations thereof in C, including the staff&#8217;s implementations thereof (and postmortems) in C. It is <strong>not reasonable</strong> to look at others' implementations of the same in Python. It is <strong>not reasonable</strong> to look at others' implementations of Sentiments.</p>
-</li>
-<li>
-<p>Consider this problem set an opportunity not only to port your own prior work from C to Python but to improve upon your earlier designs using lessons learned since!</p>
-</li>
-<li>
-<p>When porting code from C to Python in CS50 IDE, you might want to select <strong>View &gt; Layout &gt; Horizontal Split</strong> so that you can see both side by side.</p>
+<p>All code that you write should be consistent with <a href="https://www.python.org/dev/peps/pep-0008/">Style Guide for Python Code</a>, otherwise known as PEP 8.</p>
 </li>
 <li>
 <p>Insofar as a goal of this problem set is to teach you how to teach yourself a new language, keep in mind that these acts are not only <strong>reasonable</strong>, per the syllabus, but encouraged toward that end:</p>
@@ -665,89 +580,7 @@ cd ~/workspace/pset6/</code></pre>
 </ul>
 </div>
 </li>
-<li>
-<p>You&#8217;re welcome to use the CS50 Library for Python, which includes <code>get_float</code>, <code>get_int</code>, and <code>get_string</code>. Just remember to include</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>import cs50</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>atop your code. Or you can use <a href="https://docs.python.org/3/library/functions.html#input"><code>input</code></a> and validate users' input yourself.</p>
-</div>
-</li>
-<li>
-<p>You might find <a href="https://docs.python.org/3/library/functions.html#chr"><code>chr</code></a> and/or <a href="https://docs.python.org/3/library/functions.html#ord"><code>ord</code></a> of help.</p>
-</li>
-<li>
-<p>You might find these references of interest:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.python.org/3/reference/index.html">The Python Language Reference</a></p>
-</li>
-<li>
-<p><a href="https://docs.python.org/3/library/">The Python Standard Library</a></p>
-</li>
-<li>
-<p><a href="https://docs.python.org/3/tutorial/index.html">The Python Tutorial</a></p>
-</li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="walkthrough"><a class="link" href="#walkthrough">Walkthrough</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="problems-1-3"><a class="link" href="#problems-1-3">Problems 1 – 3</a></h3>
-<div class="sectionbody">
-<div class="videoblock">
-<div class="content">
-<iframe src="https://video.cs50.net/2016/fall/psets/6/pset6/c-python" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="problem-4"><a class="link" href="#problem-4">Problem 4</a></h3>
-<div class="paragraph">
-<p>See <a href="../../../../problems/sentiments/sentiments.html#walkthrough">Sentiments</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="attributeerror-module-object-has-no-attribute-code-get_-code"><a class="link" href="#attributeerror-module-object-has-no-attribute-code-get_-code">AttributeError: 'module' object has no attribute <code>get_</code></a></h3>
-<div class="paragraph">
-<p>If seeing this error (for <code>cs50.get_char</code>, <code>cs50.get_float</code>, <code>cs50.get_int</code>, or <code>cs50.get_string</code>), try executing the below (which fixes a bug in an earlier version of the CS50 Library for Python):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>sudo chmod -R a+rX /usr/lib/python2.7/dist-packages/cs50
-sudo chmod -R a+rX /usr/lib/python3/dist-packages/cs50</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="importerror-no-module-named-sqlalchemy"><a class="link" href="#importerror-no-module-named-sqlalchemy">ImportError: No module named 'sqlalchemy'</a></h3>
-<div class="paragraph">
-<p>If seeing this error, execute</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>pip install --user sqlalchemy</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>to resolve!</p>
-</div>
 </div>
 </div>
 </div>
@@ -759,18 +592,18 @@ sudo chmod -R a+rX /usr/lib/python3/dist-packages/cs50</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code>update50
-cd ~/workspace/pset6/
-submit50 pset6</code></pre>
+cd ~/workspace/pset7/
+submit50 pset7</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="step-2-of-2"><a class="link" href="#step-2-of-2">Step 2 of 2</a></h3>
 <div class="paragraph">
-<p>Submit <a href="https://forms.cs50.net/2016/fall/psets/6" class="bare">https://forms.cs50.net/2016/fall/psets/6</a>!</p>
+<p>Submit <a href="https://forms.cs50.net/2016/fall/psets/7" class="bare">https://forms.cs50.net/2016/fall/psets/7</a>!</p>
 </div>
 <div class="paragraph">
-<p>This was Problem Set 6.</p>
+<p>This was Problem Set 7.</p>
 </div>
 </div>
 </div>
