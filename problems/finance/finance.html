@@ -903,8 +903,11 @@ finance.db      requirements.txt  templates</code></pre>
 <div class="sect1">
 <h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="importerror-no-module-named-application"><a class="link" href="#importerror-no-module-named-application">ImportError: No module named 'application'</a></h3>
 <div class="paragraph">
-<p><em>None so far! Reload this page periodically to check if any arise!</em></p>
+<p>By default, <code>flask</code> looks for a file called <code>application.py</code> in your current working directory (because we&#8217;ve configured the value of <code>FLASK_APP</code>, an environment variable, to be <code>application.py</code>). If seeing this error, odds are you&#8217;ve run <code>flask</code> in the wrong directory!</p>
+</div>
 </div>
 </div>
 </div>
