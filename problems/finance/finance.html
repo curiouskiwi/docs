@@ -437,7 +437,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
             
             /* don't wrap code blocks */
             pre, pre code {
-                overflow: scroll;
+                overflow: auto;
                 white-space: pre;
                 word-wrap: normal;
             }
@@ -907,6 +907,12 @@ finance.db      requirements.txt  templates</code></pre>
 <h3 id="importerror-no-module-named-application"><a class="link" href="#importerror-no-module-named-application">ImportError: No module named 'application'</a></h3>
 <div class="paragraph">
 <p>By default, <code>flask</code> looks for a file called <code>application.py</code> in your current working directory (because we&#8217;ve configured the value of <code>FLASK_APP</code>, an environment variable, to be <code>application.py</code>). If seeing this error, odds are you&#8217;ve run <code>flask</code> in the wrong directory!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oserror-errno-98-address-already-in-use"><a class="link" href="#oserror-errno-98-address-already-in-use">OSError: [Errno 98] Address already in use</a></h3>
+<div class="paragraph">
+<p>If, upon running <code>flask</code>, you see this error, odds are you (still) have <code>flask</code> running in another tab. Be sure to kill that other process, as with ctrl-c, before starting <code>flask</code> again.</p>
 </div>
 </div>
 </div>
