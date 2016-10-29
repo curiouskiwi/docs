@@ -4,6 +4,36 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    displayMath: [["\\[", "\\]"]],
+                    ignoreClass: "nostem|nostem|nolatexmath",
+                    inlineMath: [["\\(", "\\)"]]
+                },
+                asciimath2jax: {
+                    delimiters: [["\\$", "\\$"]],
+                    ignoreClass: "nostem|nostem|noasciimath",
+                    processEnvironments: true
+                }
+            });
+        </script>
+        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script>
+
+            $(function() {
+
+                // responsive embed
+                // http://getbootstrap.com/components/#responsive-embed
+                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
+                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
+
+            });
+
+        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -398,13 +428,45 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
-        <title>ISBN</title>
+        <style>
+
+            /* wrap inline code */
+            *:not(pre) > code {
+                white-space: pre-wrap;
+            }
+            
+            /* don't wrap code blocks */
+            pre, pre code {
+                overflow: scroll;
+                white-space: pre;
+                word-wrap: normal;
+            }
+
+            /* match margin-bottom of div.paragraph */
+            div.stemblock div.content {
+                margin-bottom: 1.25em;
+            }
+
+            /* fill page */
+            table {
+                width: 100%;
+            }
+
+            /* allow captions to wrap */
+            .tableblock > caption {
+                max-width: inherit;
+                white-space: inherit;
+            }
+
+        </style>
+        <title></title>
     </head>
-    <body class="toc2 toc-left">
-        <div id="header">
-            <div class="toc2" id="toc">
-                <div id="toctitle">Table of Contents</div>
-                <ul class="sectlevel1">
+    
+        <body class="toc2 toc-left">
+            <div id="header">
+                <div class="toc2" id="toc">
+                    <div id="toctitle">Table of Contents</div>
+                    <ul class="sectlevel1">
 <li><a href="#objectives">Objectives</a></li>
 <li><a href="#recommended-reading">Recommended Reading</a></li>
 <li><a href="#academic-honesty">Academic Honesty</a>
@@ -417,10 +479,10 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#readin-bookz">Readin' Bookz</a></li>
 <li><a href="#i-s-bn-calculatin">I S BN Calculatin'</a></li>
 </ul>
+                </div>
             </div>
-        </div>
-        <div id="content">
-            <h1>Problem: ISBN</h1>
+            <div id="content">
+                <h1>Problem: ISBN</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -776,6 +838,7 @@ NO</code></pre>
 <a href="#_footnoteref_4">4</a>. <a href="https://en.wikipedia.org/wiki/867-5309/Jenny" class="bare">https://en.wikipedia.org/wiki/867-5309/Jenny</a>
 </div>
 </div>
-        </div>
-    </body>
+            </div>
+        </body>
+    
 </html>
