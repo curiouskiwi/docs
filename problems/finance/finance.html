@@ -728,7 +728,7 @@ finance.db      requirements.txt  templates</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Odds are you&#8217;ll want to execute multiple `SELECT`s. Depending on how you implement your table(s), you might find <a href="https://www.google.com/search?q=SQLite+GROUP+BY">GROUP BY</a>, <a href="https://www.google.com/search?q=SQLite+HAVING">HAVING</a>, <a href="https://www.google.com/search?q=SQLite+SUM">SUM</a>, and/or <a href="https://www.google.com/search?q=SQLite+WHERE">WHERE</a> of interest.</p>
+<p>Odds are you&#8217;ll want to execute multiple <code>SELECT</code>s. Depending on how you implement your table(s), you might find <a href="https://www.google.com/search?q=SQLite+GROUP+BY">GROUP BY</a>, <a href="https://www.google.com/search?q=SQLite+HAVING">HAVING</a>, <a href="https://www.google.com/search?q=SQLite+SUM">SUM</a>, and/or <a href="https://www.google.com/search?q=SQLite+WHERE">WHERE</a> of interest.</p>
 </li>
 <li>
 <p>Odds are you&#8217;ll want to call <code>lookup</code> for each stock.</p>
@@ -880,6 +880,9 @@ finance.db      requirements.txt  templates</code></pre>
 <div class="paragraph">
 <p>If an <code>INSERT</code> or <code>UPDATE</code> would violate some constraint (e.g., a <code>UNIQUE</code> index), then <code>execute</code> returns <code>None</code>. In cases of error, <code>execute</code> raises a <code>RuntimeError</code>.</p>
 </div>
+</li>
+<li>
+<p>Be sure to use named bind parameters (i.e., a <a href="https://www.python.org/dev/peps/pep-0249/#paramstyle">paramstyle</a> of <code>named</code>) when calling CS50&#8217;s <code>execute</code> method, a la <code>WHERE name=:name</code>. Do <strong>not</strong> use <a href="https://docs.python.org/3.1/library/functions.html#format"><code>format</code></a> or <code>+</code> (i.e., concatenation), lest you risk a SQL injection attack.</p>
 </li>
 <li>
 <p>If (and only if) already comfortable with SQL, you&#8217;re welcome to use <a href="http://docs.sqlalchemy.org/en/latest/index.html">SQLAlchemy Core</a> or <a href="http://flask-sqlalchemy.pocoo.org/">Flask-SQLAlchemy</a> (i.e., <a href="http://docs.sqlalchemy.org/en/latest/index.html">SQLAlchemy ORM</a>) instead of <code>cs50.SQL</code>.</p>
