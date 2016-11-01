@@ -4,6 +4,36 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+        <script crossorigin="anonymous" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    displayMath: [["\\[", "\\]"]],
+                    ignoreClass: "nostem|nostem|nolatexmath",
+                    inlineMath: [["\\(", "\\)"]]
+                },
+                asciimath2jax: {
+                    delimiters: [["\\$", "\\$"]],
+                    ignoreClass: "nostem|nostem|noasciimath",
+                    processEnvironments: true
+                }
+            });
+        </script>
+        <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script>
+
+            $(function() {
+
+                // responsive embed
+                // http://getbootstrap.com/components/#responsive-embed
+                $('div.videoblock div.content').addClass('embed-responsive embed-responsive-16by9');
+                $('div.videoblock div.content iframe').addClass('embed-responsive-item');
+
+            });
+
+        </script>
         <style>
 
             /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -398,27 +428,59 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .listingblock .pygments .tok-ss { color: #a31515 } /* Literal.String.Symbol */
 
         </style>
+        <style>
+
+            /* wrap inline code */
+            *:not(pre) > code {
+                white-space: pre-wrap;
+            }
+            
+            /* don't wrap code blocks */
+            pre, pre code {
+                overflow: auto;
+                white-space: pre;
+                word-wrap: normal;
+            }
+
+            /* match margin-bottom of div.paragraph */
+            div.stemblock div.content {
+                margin-bottom: 1.25em;
+            }
+
+            /* fill page */
+            table {
+                width: 100%;
+            }
+
+            /* allow captions to wrap */
+            .tableblock > caption {
+                max-width: inherit;
+                white-space: inherit;
+            }
+
+        </style>
         <title>About Test</title>
     </head>
-    <body class="toc2 toc-left">
-        <div id="header">
-            <div class="toc2" id="toc">
-                <div id="toctitle">Table of Contents</div>
-                <ul class="sectlevel1">
+    
+        <body class="toc2 toc-left">
+            <div id="header">
+                <div class="toc2" id="toc">
+                    <div id="toctitle">Table of Contents</div>
+                    <ul class="sectlevel1">
 <li><a href="#how-to-prepare">How to Prepare</a></li>
 <li><a href="#practice-exercises">Practice Exercises</a></li>
 </ul>
+                </div>
             </div>
-        </div>
-        <div id="content">
-            <h1>About Test</h1>
+            <div id="content">
+                <h1>About Test</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Due by noon on Mon 10/17 is a take-home test that will cover Weeks 0 through 5 (and Problem Sets 0 through 5). The test is open-book: you may use any and all non-human resources during the test, but the only humans to whom you may turn for help or from whom you may receive help are the course’s heads.</p>
+<p>Released at noon on Fri 10/14 and due by noon on Mon 10/17 is a take-home test that will cover Weeks 0 through 5 (and Problem Sets 0 through 5). The test is open-book: you may use any and all non-human resources during the test, but the only humans to whom you may turn for help or from whom you may receive help are the course’s heads.</p>
 </div>
 <div class="paragraph">
-<p>The test will be released via the course&#8217;s website at noon on Fri 10/14 and will be submitted via <code>submit50</code> (anytime before noon on Mon 10/17). You should expect to spend several (but not 72!) hours on the test.</p>
+<p>The test will be released via the course&#8217;s website and will be submitted via <code>submit50</code>. You should expect to spend several (but not 72!) hours on the test.</p>
 </div>
 <div class="paragraph">
 <p>The teaching fellows will hold a course-wide review session for the test on Wed 10/12 from 1:00pm until 2:30pm in Sanders Theatre; it will be streamed live at <a href="https://live.cs50.net/">live.cs50.net</a> and be available on demand immediately afterward at <a href="https://cs50.harvard.edu/">cs50.harvard.edu</a>. Sections on Mon 10/10, Tue 10/11, and Wed 10/12 will also be opportunities for review. Office hours on Wed 10/12 and Thu 10/13 will be additional opportunities for Q&amp;A.</p>
@@ -437,9 +499,6 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Consult the latest version of the <strong>syllabus</strong> for a (non-exhaustive) list of topics covered in lectures in weeks 0 through 5. Keep in mind that topics that appeared in one week might have reappeared in subsequent weeks.</p>
-</li>
-<li>
 <p>Review each lecture&#8217;s <strong>notes</strong>.</p>
 </li>
 <li>
@@ -452,7 +511,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <p>Review each lecture&#8217;s <strong>video</strong>.</p>
 </li>
 <li>
-<p>Take past <strong>quizzes</strong>. Realize, though, that some topics covered in past terms might not have been covered in this term. Rely on this year&#8217;s syllabus, lectures, and problem sets as the official sources for this year&#8217;s topics.</p>
+<p>Take past <strong>quizzes</strong>. Realize, though, that some topics covered in past terms might not have been covered in this term. Rely on this year&#8217;s lectures and problem sets as the official sources for this year&#8217;s topics.</p>
 </li>
 <li>
 <p>Review problem sets' <strong>specifications</strong>, <strong>postmortems</strong>, and <strong>distribution code</strong>, if any.</p>
@@ -536,6 +595,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 </div>
-        </div>
-    </body>
+            </div>
+        </body>
+    
 </html>
