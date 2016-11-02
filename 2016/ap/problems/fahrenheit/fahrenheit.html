@@ -702,7 +702,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <p>Log into your CS50 IDE account (remember how?) and be sure before doing anything to run <code>update50</code> in your terminal window, waiting until any updates finish processing before moving further. We&#8217;ll remind you of this as much as possible, but do note that before each problem you should remember to run that command to be sure your IDE workspace is fully up-to-date.</p>
 </div>
 <div class="paragraph">
-<p>If you have it from <a href="http://cdn.cs50.net/ap/1617/problems/hello/hello.html">Hello</a>, take a look at your <code>hello.c</code> file, which should be somewhere in your <code>chapter1</code> directory. (If you don&#8217;t have it, create it now.) The contents should look probably like this:</p>
+<p>If you have it from <a href="http://docs.cs50.net/2016/ap/problems/hello/hello.html">Hello</a>, take a look at your <code>hello.c</code> file, which should be somewhere in your <code>chapter1</code> directory. (If you don&#8217;t have it, create it now.) The contents should look probably like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -725,16 +725,16 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <span class="tok-kt">int</span> <span class="tok-nf">main</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">)</span>
 <span class="tok-p">{</span>
     <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;Enter your name: &quot;</span><span class="tok-p">);</span>
-    <span class="tok-n">string</span> <span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">GetString</span><span class="tok-p">();</span>
+    <span class="tok-n">string</span> <span class="tok-n">name</span> <span class="tok-o">=</span> <span class="tok-n">get_String</span><span class="tok-p">();</span>
     <span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;hello, %s</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">,</span> <span class="tok-n">name</span><span class="tok-p">);</span>
 <span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Notice a couple of important differences in this program. It seems that we have decided to include another header file called <code>cs50.h</code>. In this file, which you can have a peek at <a href="http://mirror.cs50.net/library50/c/cs50-library-c-3.0/cs50.h">here</a> and which we&#8217;ll also discuss in more detail later in the course (so don&#8217;t be alarmed by some unfamiliar syntax), you&#8217;ll see that that&#8217;s where we&#8217;ve declared the data type of <code>string</code> and declared a function called <code>GetString</code>.</p>
+<p>Notice a couple of important differences in this program. It seems that we have decided to include another header file called <code>cs50.h</code>. In this file, which you can have a peek at <a href="http://mirror.cs50.net/library50/c/cs50-library-c-3.0/cs50.h">here</a> and which we&#8217;ll also discuss in more detail later in the course (so don&#8217;t be alarmed by some unfamiliar syntax), you&#8217;ll see that that&#8217;s where we&#8217;ve declared the data type of <code>string</code> and declared a function called <code>get_string</code>.</p>
 </div>
 <div class="paragraph">
-<p>A <code>string</code> in computer science essentially refers to a collection of characters&#8212;&#8203;a word, a sentence, or a phrase. Because when we ask the user for their name it probably consists of more than a single letter, which would be just a character (<code>char</code>), we need to use <code>GetString</code> to collect their input and we need to store it in a variable whose data type is <code>string</code>; we&#8217;ve done this, the variable called <code>name</code> has the data type of <code>string</code>.</p>
+<p>A <code>string</code> in computer science essentially refers to a collection of characters&#8212;&#8203;a word, a sentence, or a phrase. Because when we ask the user for their name it probably consists of more than a single letter, which would be just a character (<code>char</code>), we need to use <code>get_string</code> to collect their input and we need to store it in a variable whose data type is <code>string</code>; we&#8217;ve done this, the variable called <code>name</code> has the data type of <code>string</code>.</p>
 </div>
 <div class="paragraph">
 <p>What else has changed, though? That last line of code looks a bit strange. There&#8217;s a <code>%s</code> in there, and the variable <code>name</code> appears. What&#8217;s going on?</p>
@@ -753,7 +753,7 @@ hello, Alice</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>There&#8217;s not just <code>GetString</code> in <code>cs50.h</code> though. There are functions to get user input of nearly all types: <code>GetInt</code>, <code>GetFloat</code>, <code>GetDouble</code>, <code>GetLongLong</code>, <code>GetChar</code>.</p>
+<p>There&#8217;s not just <code>get_string</code> in <code>cs50.h</code> though. There are functions to get user input of nearly all types: <code>get_int</code>, <code>get_float</code>, <code>get_double</code>, <code>get_long_long</code>, <code>get_char</code>.</p>
 </div>
 </div>
 </div>
@@ -777,7 +777,7 @@ F: 212.0</code></pre>
 <p>To solve this problem, you needn&#8217;t do anything more complex than use your currently existing knowledge of C, and the information contained in this specification, including the temperature conversion formula. No matter how the user inputs the temperature in Celsius (that is, no matter to how many decimal places they choose), take care to display Fahrenheit to <em>exactly</em> one decimal place. No need to worry about floating-point imprecision or integer overflow, if you recall what those terms mean.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</sup></p>
 </div>
 <div class="paragraph">
-<p>Do recall that if you include <code>&lt;cs50.h&gt;</code> atop your <code>fahrenheit.c</code> file, you will have access to a function called <code>GetFloat</code>, which will allow the user to input a floating-point value (a number with a decimal point in it, also known as a <em>real number</em>).</p>
+<p>Do recall that if you include <code>&lt;cs50.h&gt;</code> atop your <code>fahrenheit.c</code> file, you will have access to a function called <code>get_float</code>, which will allow the user to input a floating-point value (a number with a decimal point in it, also known as a <em>real number</em>).</p>
 </div>
 <div class="paragraph">
 <p>Incidentally, know that <code>printf</code> can be used to specify how many places after the decimal point you wish to display to the user. For example, assuming you&#8217;ve written the following program in a file called <code>truncate.c</code>:</p>

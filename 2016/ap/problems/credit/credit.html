@@ -721,10 +721,10 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <p>In <code>credit.c</code>, write a program that prompts the user for a credit card number and then reports (via <code>printf</code>) whether it is a valid American Express, MasterCard, or Visa card number, per the definitions of each&#8217;s format herein.  So that we can automate some tests of your code, we ask that your program&#8217;s last line of output be <code>AMEX\n</code> or <code>MASTERCARD\n</code> or <code>VISA\n</code> or <code>INVALID\n</code>, nothing more, nothing less, and that <code>main</code> always return <code>0</code>.  For simplicity, you may assume that the user&#8217;s input will be entirely numeric (i.e., devoid of hyphens, as might be printed on an actual card).  But do not assume that the user&#8217;s input will fit in an <code>int</code>!</p>
 </div>
 <div class="paragraph">
-<p>One option (although not necessarily the only option!) is to use <code>GetLongLong</code> from CS50&#8217;s library to get users' input.  (Why?)</p>
+<p>One option (although not necessarily the only option!) is to use <code>get_long_long</code> from CS50&#8217;s library to get users' input.  (Why?)</p>
 </div>
 <div class="paragraph">
-<p>Of course, to use <code>GetLongLong</code>, you&#8217;ll need to tell <code>clang</code> about CS50&#8217;s library.  Be sure to put</p>
+<p>Of course, to use <code>get_long_long</code>, you&#8217;ll need to tell <code>clang</code> about CS50&#8217;s library.  Be sure to put</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -769,7 +769,7 @@ AMEX</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Of course, <code>GetLongLong</code> itself will reject hyphens (and more) anyway:</p>
+<p>Of course, <code>get_long_long</code> itself will reject hyphens (and more) anyway:</p>
 </div>
 <div class="listingblock">
 <div class="content">
