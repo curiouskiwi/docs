@@ -459,7 +459,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
             }
 
         </style>
-        <title></title>
+        <title>Mashup</title>
     </head>
     
         <body class="toc2 toc-left">
@@ -468,160 +468,188 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
                     <div id="toctitle">Table of Contents</div>
                     <ul class="sectlevel1">
 <li><a href="#tl-dr">tl;dr</a></li>
-<li><a href="#help">Help</a></li>
-<li><a href="#academic-honesty">Academic Honesty</a></li>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#problems">Problems</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#distribution">Distribution</a></li>
+<li><a href="#specification">Specification</a></li>
+<li><a href="#walkthrough">Walkthrough</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#staff-s-solution">Staff&#8217;s Solution</a></li>
 <li><a href="#hints">Hints</a></li>
-<li><a href="#how-to-submit">How to Submit</a>
-<ul class="sectlevel2">
-<li><a href="#step-1-of-2">Step 1 of 2</a></li>
-<li><a href="#step-2-of-2">Step 2 of 2</a></li>
-</ul>
-</li>
+<li><a href="#faqs">FAQs</a></li>
+<li><a href="#changelog">CHANGELOG</a></li>
 </ul>
                 </div>
             </div>
             <div id="content">
-                <h1>Problem Set 7: C$50 Finance</h1>
+                <h1>Mashup</h1>
 <div class="sect1">
 <h2 id="tl-dr"><a class="link" href="#tl-dr">tl;dr</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Implement a website that lets users search for articles atop a map, a la the below.</p>
+</div>
+<div class="imageblock related thumb">
+<div class="content">
+<img src="data:image/png:base64," alt="Mashup">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="background"><a class="link" href="#background">Background</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="distribution"><a class="link" href="#distribution">Distribution</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="downloading"><a class="link" href="#downloading">Downloading</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>$ wget https://github.com/cs50/problems/archive/mashup.zip
+$ unzip mashup.zip
+$ rm mashup.zip
+$ mv problems-mashup mashup
+$ cd mashup
+$ ls
+application.py  mashup.db         static/
+helpers.py      requirements.txt  templates/</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running"><a class="link" href="#running">Running</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Watch <a href="https://video.cs50.net/2016/fall/lectures/9">Week 9&#8217;s lecture</a>.</p>
+<p>Install this problem&#8217;s dependencies (within <code>mashup/</code>):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>pip3 install --user -r requirements.txt</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>Implement a stock-trading website.</p>
+<p>Start Flask&#8217;s built-in web server (within <code>mashup/</code>):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>flask run</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Select <strong>CS50 IDE &gt; Web Server</strong> to see the distribution code in action. You won&#8217;t be able to search for news, though, just yet!</p>
+</div>
 </li>
 <li>
-<p>Submit a form.</p>
+<p>In another terminal window, start phpLiteAdmin (within <code>mashup/</code>):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>phpliteadmin mashup.db</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And open the URL that <code>phpliteadmin</code> outputs in a new tab. No tables yet! Here on out, if you&#8217;d prefer a command line, you&#8217;re welcome to use <code>sqlite3</code> instead of phpLiteAdmin.</p>
+</div>
 </li>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="understanding"><a class="link" href="#understanding">Understanding</a></h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="help"><a class="link" href="#help">Help</a></h2>
+<h2 id="specification"><a class="link" href="#specification">Specification</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For help with Week 9 and Problem Set 7:</p>
+<p>TODO</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="walkthrough"><a class="link" href="#walkthrough">Walkthrough</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Coming Mon 11/7 eve.</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>No <code>check50</code> for this one, but be sure to try to "break" your own site, as by</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Attend David&#8217;s walkthrough on Mon 10/31, 1pm – 2:30pm, in Sanders Theatre.</p>
+<p>searching for cities that don&#8217;t exist,</p>
 </li>
 <li>
-<p>Watch David&#8217;s walkthrough herein.</p>
+<p>clicking markers for cities that don&#8217;t have any articles,</p>
 </li>
 <li>
-<p>Attend a walkthrough during office hours on</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wed 11/2 at 9pm in Widener or</p>
+<p>dragging and zooming in and out to update your map&#8217;s markers, and</p>
 </li>
 <li>
-<p>Thu 11/3 at 9pm in Widener.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Attend your TF&#8217;s section (or another if you have a conflict).</p>
-</li>
-<li>
-<p>Post questions and search answers in <a href="https://cs50.harvard.edu/discuss">CS50 Discuss</a>.</p>
-</li>
-<li>
-<p>Attend individual TFs' and CAs' <a href="https://cs50.harvard.edu/hours">office hours</a> at HSA.</p>
-</li>
-<li>
-<p>Attend course-wide <a href="https://cs50.harvard.edu/hours">office hours</a>.</p>
+<p>searching with potentially dangerous characters like <code>'</code> and <code>;</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="academic-honesty"><a class="link" href="#academic-honesty">Academic Honesty</a></h2>
+<h2 id="staff-s-solution"><a class="link" href="#staff-s-solution">Staff&#8217;s Solution</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Do keep in mind the course&#8217;s policy on <a href="http://docs.cs50.net/2016/fall/syllabus/cs50.html#academic-honesty">academic honesty</a>, particularly    its "regret clause."</p>
+<p>You&#8217;re welcome to stylize your own app differently, but here&#8217;s what the staff&#8217;s solution looks like!</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="getting-started"><a class="link" href="#getting-started">Getting Started</a></h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>update50
-mkdir ~/workspace/pset7/
-cd ~/workspace/pset7/</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="problems"><a class="link" href="#problems">Problems</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Implement <a href="../../../../problems/finance/finance.html">C$50 Finance</a> in <code>pset7/finance/</code>.</p>
+<p><a href="http://pset8.cs50.net/" class="bare">http://pset8.cs50.net/</a></p>
+</div>
+<div class="paragraph">
+<p>It is <strong>reasonable</strong> to look at the staff&#8217;s HTML and CSS. It is <strong>not reasonable</strong> to look at the staff&#8217;s JavaScript.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="hints"><a class="link" href="#hints">Hints</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Be sure to use Python 3, not Python 2.</p>
-</li>
-<li>
-<p>All code that you write should be consistent with <a href="https://www.python.org/dev/peps/pep-0008/">Style Guide for Python Code</a>, otherwise known as PEP 8.</p>
-</li>
-<li>
-<p>Insofar as a goal of this problem set is to teach you how to teach yourself a new language, keep in mind that these acts are not only <strong>reasonable</strong>, per the syllabus, but encouraged toward that end:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Incorporating a few lines of code that you find online or elsewhere into your own code, provided that those lines are not themselves solutions to assigned problems and that you cite the lines' origins.</p>
-</li>
-<li>
-<p>Turning to the web or elsewhere for instruction beyond the course&#8217;s own, for references, and for solutions to technical difficulties, but not for outright solutions to problem set&#8217;s problems or your own final project.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="paragraph">
+<p>TODO</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
+<h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="step-1-of-2"><a class="link" href="#step-1-of-2">Step 1 of 2</a></h3>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code>update50
-cd ~/workspace/pset7/finance/
-submit50 pset7</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="step-2-of-2"><a class="link" href="#step-2-of-2">Step 2 of 2</a></h3>
 <div class="paragraph">
-<p>Submit <a href="https://forms.cs50.net/2016/fall/psets/7" class="bare">https://forms.cs50.net/2016/fall/psets/7</a>!</p>
+<p><em>None so far! Reload this page periodically to check if any arise!</em></p>
 </div>
-<div class="paragraph">
-<p>This was Problem Set 7.</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="changelog"><a class="link" href="#changelog">CHANGELOG</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>2016-11-04</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial release.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
