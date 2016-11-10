@@ -494,7 +494,11 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#testing">Testing</a></li>
 <li><a href="#staff-s-solution">Staff&#8217;s Solution</a></li>
 <li><a href="#hints">Hints</a></li>
-<li><a href="#faqs">FAQs</a></li>
+<li><a href="#faqs">FAQs</a>
+<ul class="sectlevel2">
+<li><a href="#create-table-places-failed-duplicate-column-name">CREATE TABLE places(&#8230;&#8203;) failed: duplicate column name</a></li>
+</ul>
+</li>
 <li><a href="#changelog">CHANGELOG</a></li>
 </ul>
                 </div>
@@ -1373,8 +1377,11 @@ all those CSS and JavaScript libraries we&#8217;ll be using (plus some others). 
 <div class="sect1">
 <h2 id="faqs"><a class="link" href="#faqs">FAQs</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="create-table-places-failed-duplicate-column-name"><a class="link" href="#create-table-places-failed-duplicate-column-name">CREATE TABLE places(&#8230;&#8203;) failed: duplicate column name</a></h3>
 <div class="paragraph">
-<p><em>None so far! Reload this page periodically to check if any arise!</em></p>
+<p>If you see this message upon running <code>.import</code> in <code>sqlite3</code>, odds are you haven&#8217;t run <code>sqlite3</code> in the same directory as <code>mashup.db</code>. If so, exit <code>sqlite3</code> with <code>.exit</code>, <code>cd</code> to your <code>mashup</code> directory, and then re-run <code>sqlite3 mashup.db</code>.</p>
+</div>
 </div>
 </div>
 </div>
